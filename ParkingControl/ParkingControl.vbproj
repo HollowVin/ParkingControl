@@ -73,9 +73,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-  <Compile Include="Classes\Factura.vb" />
-    <Compile Include="Classes\ParkingSpot.vb" />
-    <Compile Include="Form1.vb">
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
