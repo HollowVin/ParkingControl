@@ -55,6 +55,10 @@ Partial Class Parqueadero
         Me.TakenSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.CPrintButton = New System.Windows.Forms.Button()
+        Me.CTotalTimeLabel = New System.Windows.Forms.Label()
+        Me.BFCButton = New System.Windows.Forms.Button()
+        Me.BCleanAllButton = New System.Windows.Forms.Button()
+        Me.CTotalCobrarLabel = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.ParkingTab.SuspendLayout()
         Me.Check_inTab.SuspendLayout()
@@ -110,6 +114,8 @@ Partial Class Parqueadero
         '
         'Check_inTab
         '
+        Me.Check_inTab.Controls.Add(Me.CTotalCobrarLabel)
+        Me.Check_inTab.Controls.Add(Me.CTotalTimeLabel)
         Me.Check_inTab.Controls.Add(Me.CPrintButton)
         Me.Check_inTab.Controls.Add(Me.CIngresarButton)
         Me.Check_inTab.Controls.Add(Me.CPlateTextBox)
@@ -162,7 +168,7 @@ Partial Class Parqueadero
         'CDepartureHourLabel
         '
         Me.CDepartureHourLabel.AutoSize = True
-        Me.CDepartureHourLabel.Location = New System.Drawing.Point(474, 135)
+        Me.CDepartureHourLabel.Location = New System.Drawing.Point(341, 104)
         Me.CDepartureHourLabel.Name = "CDepartureHourLabel"
         Me.CDepartureHourLabel.Size = New System.Drawing.Size(90, 17)
         Me.CDepartureHourLabel.TabIndex = 1
@@ -171,7 +177,7 @@ Partial Class Parqueadero
         'CCheckinHourLabel
         '
         Me.CCheckinHourLabel.AutoSize = True
-        Me.CCheckinHourLabel.Location = New System.Drawing.Point(99, 135)
+        Me.CCheckinHourLabel.Location = New System.Drawing.Point(98, 104)
         Me.CCheckinHourLabel.Name = "CCheckinHourLabel"
         Me.CCheckinHourLabel.Size = New System.Drawing.Size(102, 17)
         Me.CCheckinHourLabel.TabIndex = 0
@@ -179,6 +185,8 @@ Partial Class Parqueadero
         '
         'BillTab
         '
+        Me.BillTab.Controls.Add(Me.BCleanAllButton)
+        Me.BillTab.Controls.Add(Me.BFCButton)
         Me.BillTab.Controls.Add(Me.BPrintButton)
         Me.BillTab.Controls.Add(Me.BLastNameTextBox)
         Me.BillTab.Controls.Add(Me.BDateTextBox)
@@ -204,7 +212,7 @@ Partial Class Parqueadero
         '
         'BPrintButton
         '
-        Me.BPrintButton.Location = New System.Drawing.Point(340, 255)
+        Me.BPrintButton.Location = New System.Drawing.Point(445, 279)
         Me.BPrintButton.Name = "BPrintButton"
         Me.BPrintButton.Size = New System.Drawing.Size(94, 26)
         Me.BPrintButton.TabIndex = 16
@@ -215,7 +223,7 @@ Partial Class Parqueadero
         '
         Me.BLastNameTextBox.Location = New System.Drawing.Point(139, 90)
         Me.BLastNameTextBox.Name = "BLastNameTextBox"
-        Me.BLastNameTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.BLastNameTextBox.Size = New System.Drawing.Size(195, 22)
         Me.BLastNameTextBox.TabIndex = 15
         '
         'BDateTextBox
@@ -257,7 +265,7 @@ Partial Class Parqueadero
         '
         Me.BNameTextBox.Location = New System.Drawing.Point(139, 39)
         Me.BNameTextBox.Name = "BNameTextBox"
-        Me.BNameTextBox.Size = New System.Drawing.Size(100, 22)
+        Me.BNameTextBox.Size = New System.Drawing.Size(195, 22)
         Me.BNameTextBox.TabIndex = 8
         '
         'BDateLabel
@@ -343,12 +351,48 @@ Partial Class Parqueadero
         '
         'CPrintButton
         '
-        Me.CPrintButton.Location = New System.Drawing.Point(339, 249)
+        Me.CPrintButton.Location = New System.Drawing.Point(345, 271)
         Me.CPrintButton.Name = "CPrintButton"
         Me.CPrintButton.Size = New System.Drawing.Size(90, 30)
         Me.CPrintButton.TabIndex = 10
         Me.CPrintButton.Text = "Imprimir"
         Me.CPrintButton.UseVisualStyleBackColor = True
+        '
+        'CTotalTimeLabel
+        '
+        Me.CTotalTimeLabel.AutoSize = True
+        Me.CTotalTimeLabel.Location = New System.Drawing.Point(98, 189)
+        Me.CTotalTimeLabel.Name = "CTotalTimeLabel"
+        Me.CTotalTimeLabel.Size = New System.Drawing.Size(99, 17)
+        Me.CTotalTimeLabel.TabIndex = 11
+        Me.CTotalTimeLabel.Text = "Tiempo_Total:"
+        '
+        'BFCButton
+        '
+        Me.BFCButton.Location = New System.Drawing.Point(201, 279)
+        Me.BFCButton.Name = "BFCButton"
+        Me.BFCButton.Size = New System.Drawing.Size(133, 26)
+        Me.BFCButton.TabIndex = 17
+        Me.BFCButton.Text = "Consumidor_Final"
+        Me.BFCButton.UseVisualStyleBackColor = True
+        '
+        'BCleanAllButton
+        '
+        Me.BCleanAllButton.Location = New System.Drawing.Point(445, 212)
+        Me.BCleanAllButton.Name = "BCleanAllButton"
+        Me.BCleanAllButton.Size = New System.Drawing.Size(133, 26)
+        Me.BCleanAllButton.TabIndex = 18
+        Me.BCleanAllButton.Text = "Limpiar_Todo"
+        Me.BCleanAllButton.UseVisualStyleBackColor = True
+        '
+        'CTotalCobrarLabel
+        '
+        Me.CTotalCobrarLabel.AutoSize = True
+        Me.CTotalCobrarLabel.Location = New System.Drawing.Point(341, 189)
+        Me.CTotalCobrarLabel.Name = "CTotalCobrarLabel"
+        Me.CTotalCobrarLabel.Size = New System.Drawing.Size(111, 17)
+        Me.CTotalCobrarLabel.TabIndex = 12
+        Me.CTotalCobrarLabel.Text = "Total_a_Cobrar:"
         '
         'Parqueadero
         '
@@ -407,4 +451,8 @@ Partial Class Parqueadero
     Friend WithEvents CPlateTextBox As TextBox
     Friend WithEvents CIngresarButton As Button
     Friend WithEvents CPrintButton As Button
+    Friend WithEvents CTotalTimeLabel As Label
+    Friend WithEvents BFCButton As Button
+    Friend WithEvents BCleanAllButton As Button
+    Friend WithEvents CTotalCobrarLabel As Label
 End Class
