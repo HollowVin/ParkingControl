@@ -73,9 +73,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Car.vb" />
+    <Compile Include="Factura.vb" />
+    <Compile Include="ParkingSpot.vb" />
     <Compile Include="Parqueadero.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -125,5 +125,6 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

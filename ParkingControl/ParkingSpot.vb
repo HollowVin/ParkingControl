@@ -7,4 +7,6 @@
     Private HourRate As Decimal
     Private OpeningHour As DateTime
     Private ClosingHour As DateTime
+
+
 End Class
