@@ -56,6 +56,7 @@ Partial Class Parqueadero
         Me.AvailableSpotsLabel = New System.Windows.Forms.Label()
         Me.TakenSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.CIngresarButton = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.ParkingTab.SuspendLayout()
         Me.Check_inTab.SuspendLayout()
@@ -111,6 +112,7 @@ Partial Class Parqueadero
         '
         'Check_inTab
         '
+        Me.Check_inTab.Controls.Add(Me.CIngresarButton)
         Me.Check_inTab.Controls.Add(Me.CPlateTextBox)
         Me.Check_inTab.Controls.Add(Me.CChargeButton)
         Me.Check_inTab.Controls.Add(Me.CGenerateButton)
@@ -246,7 +248,7 @@ Partial Class Parqueadero
         '
         'BAddressTextBox
         '
-        Me.BAddressTextBox.Location = New System.Drawing.Point(181, 209)
+        Me.BAddressTextBox.Location = New System.Drawing.Point(181, 215)
         Me.BAddressTextBox.Name = "BAddressTextBox"
         Me.BAddressTextBox.Size = New System.Drawing.Size(100, 22)
         Me.BAddressTextBox.TabIndex = 13
@@ -327,7 +329,7 @@ Partial Class Parqueadero
         'BAddressLabel
         '
         Me.BAddressLabel.AutoSize = True
-        Me.BAddressLabel.Location = New System.Drawing.Point(82, 214)
+        Me.BAddressLabel.Location = New System.Drawing.Point(82, 220)
         Me.BAddressLabel.Name = "BAddressLabel"
         Me.BAddressLabel.Size = New System.Drawing.Size(71, 17)
         Me.BAddressLabel.TabIndex = 1
@@ -359,6 +361,15 @@ Partial Class Parqueadero
         Me.TakenSpotsLabel.Size = New System.Drawing.Size(97, 17)
         Me.TakenSpotsLabel.TabIndex = 4
         Me.TakenSpotsLabel.Text = "Ocupados: 15"
+        '
+        'CIngresarButton
+        '
+        Me.CIngresarButton.Location = New System.Drawing.Point(372, 27)
+        Me.CIngresarButton.Name = "CIngresarButton"
+        Me.CIngresarButton.Size = New System.Drawing.Size(75, 23)
+        Me.CIngresarButton.TabIndex = 9
+        Me.CIngresarButton.Text = "Ingresar"
+        Me.CIngresarButton.UseVisualStyleBackColor = True
         '
         'Parqueadero
         '
@@ -418,4 +429,5 @@ Partial Class Parqueadero
     Friend WithEvents CChargeButton As Button
     Friend WithEvents CGenerateButton As Button
     Friend WithEvents CPlateTextBox As TextBox
+    Friend WithEvents CIngresarButton As Button
 End Class

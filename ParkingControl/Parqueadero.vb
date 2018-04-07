@@ -29,12 +29,13 @@
 
     Private Sub CChargeButton_Click(sender As Object, e As EventArgs) Handles CChargeButton.Click
         CCodeTextBox.Enabled = True
+
     End Sub
 
     Private Sub CGenerateButton_Click(sender As Object, e As EventArgs) Handles CGenerateButton.Click
         CCodeTextBox.Clear()
         CCodeTextBox.Enabled = False
         Dim Hora As String = DateTime.Now.ToString("HH:mm:ss")
-        CCheckinHourLabel.Name = "Hora_Ingreso: " + DateTime.Now.ToString("HH:mm:ss")
+        CCheckinHourLabel.Text = "Hora_Ingreso: " + Hora
     End Sub
 End Class

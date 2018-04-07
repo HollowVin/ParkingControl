@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Datos_Parqueadero
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Datos_Parqueadero
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.DNameLabel = New System.Windows.Forms.Label()
         Me.DFare1Label = New System.Windows.Forms.Label()
@@ -34,8 +34,7 @@ Partial Class Datos_Parqueadero
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.DFare4TextBox = New System.Windows.Forms.TextBox()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.DSaveButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'DNameLabel
@@ -134,31 +133,21 @@ Partial Class Datos_Parqueadero
         Me.TextBox8.Size = New System.Drawing.Size(246, 22)
         Me.TextBox8.TabIndex = 17
         '
-        'Button1
+        'DSaveButton
         '
-        Me.Button1.Location = New System.Drawing.Point(231, 277)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 18
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(435, 277)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 19
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.DSaveButton.Location = New System.Drawing.Point(311, 277)
+        Me.DSaveButton.Name = "DSaveButton"
+        Me.DSaveButton.Size = New System.Drawing.Size(75, 23)
+        Me.DSaveButton.TabIndex = 18
+        Me.DSaveButton.Text = "Guardar"
+        Me.DSaveButton.UseVisualStyleBackColor = True
         '
         'Datos_Parqueadero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(713, 376)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.DSaveButton)
         Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.DFare4TextBox)
         Me.Controls.Add(Me.TextBox6)
@@ -190,6 +179,5 @@ Partial Class Datos_Parqueadero
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents DFare4TextBox As TextBox
     Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents DSaveButton As Button
 End Class
