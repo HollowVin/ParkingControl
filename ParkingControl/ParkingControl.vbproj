@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\OpenTimes.vb" />
     <Compile Include="Datos_Parqueadero.Designer.vb">
       <DependentUpon>Datos_Parqueadero.vb</DependentUpon>
     </Compile>

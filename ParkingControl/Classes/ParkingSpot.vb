@@ -5,8 +5,6 @@
     Private QuarterHourRate As Decimal
     Private HalfHourRate As Decimal
     Private HourRate As Decimal
-    Private OpeningHour As DateTime
-    Private ClosingHour As DateTime
-
-
+    Private WorkDaysOpenTimes As OpenTimes
+    Private WeekendsOpenTimes As OpenTimes
 End Class
