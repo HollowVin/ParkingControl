@@ -76,7 +76,12 @@
     End Sub
 
     Private Sub CPrintButton_Click(sender As Object, e As EventArgs) Handles CPrintButton.Click
+        If (CPlateTextBox.Text = "") Then
+            MessageBox.Show("Ingrese la placa del vehiculo")
+        End If
         counter = +1
+        AvailableSpotsLabel.Text = "Disponibles: " + counter.ToString
+        OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
     End Sub
 
     Private Sub BFCButton_Click(sender As Object, e As EventArgs) Handles BFCButton.Click
@@ -92,5 +97,12 @@
         BLastNameTextBox.Text = " "
         BCI_RUCTextBox.Text = " "
         BPhoneTextBox.Text = ""
+    End Sub
+
+    Private Sub CPlateTextBox_TextChanged(sender As Object, e As EventArgs) Handles CPlateTextBox.TextChanged
+
+    End Sub
+
+    Private Sub BPrintButton_Click(sender As Object, e As EventArgs) Handles BPrintButton.Click
     End Sub
 End Class

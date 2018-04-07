@@ -52,7 +52,7 @@ Partial Class Parqueadero
         Me.BAddressLabel = New System.Windows.Forms.Label()
         Me.BNameLabel = New System.Windows.Forms.Label()
         Me.AvailableSpotsLabel = New System.Windows.Forms.Label()
-        Me.TakenSpotsLabel = New System.Windows.Forms.Label()
+        Me.OccupiedSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.CPrintButton = New System.Windows.Forms.Button()
         Me.CTotalTimeLabel = New System.Windows.Forms.Label()
@@ -340,14 +340,14 @@ Partial Class Parqueadero
         Me.AvailableSpotsLabel.TabIndex = 2
         Me.AvailableSpotsLabel.Text = "Disponibles: 45"
         '
-        'TakenSpotsLabel
+        'OccupiedSpotsLabel
         '
-        Me.TakenSpotsLabel.AutoSize = True
-        Me.TakenSpotsLabel.Location = New System.Drawing.Point(451, 45)
-        Me.TakenSpotsLabel.Name = "TakenSpotsLabel"
-        Me.TakenSpotsLabel.Size = New System.Drawing.Size(97, 17)
-        Me.TakenSpotsLabel.TabIndex = 4
-        Me.TakenSpotsLabel.Text = "Ocupados: 15"
+        Me.OccupiedSpotsLabel.AutoSize = True
+        Me.OccupiedSpotsLabel.Location = New System.Drawing.Point(451, 45)
+        Me.OccupiedSpotsLabel.Name = "OccupiedSpotsLabel"
+        Me.OccupiedSpotsLabel.Size = New System.Drawing.Size(97, 17)
+        Me.OccupiedSpotsLabel.TabIndex = 4
+        Me.OccupiedSpotsLabel.Text = "Ocupados: 15"
         '
         'CPrintButton
         '
@@ -399,7 +399,7 @@ Partial Class Parqueadero
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 420)
-        Me.Controls.Add(Me.TakenSpotsLabel)
+        Me.Controls.Add(Me.OccupiedSpotsLabel)
         Me.Controls.Add(Me.ParkingTab)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.AvailableSpotsLabel)
@@ -428,7 +428,7 @@ Partial Class Parqueadero
     Friend WithEvents CDepartureHourLabel As Label
     Friend WithEvents CCheckinHourLabel As Label
     Friend WithEvents AvailableSpotsLabel As Label
-    Friend WithEvents TakenSpotsLabel As Label
+    Friend WithEvents OccupiedSpotsLabel As Label
     Friend WithEvents BDateLabel As Label
     Friend WithEvents BCI_RUCLabel As Label
     Friend WithEvents BLastNameLabel As Label
