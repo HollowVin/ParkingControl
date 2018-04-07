@@ -78,10 +78,11 @@
     Private Sub CPrintButton_Click(sender As Object, e As EventArgs) Handles CPrintButton.Click
         If (CPlateTextBox.Text = "") Then
             MessageBox.Show("Ingrese la placa del vehiculo")
+        Else
+            counter += 1
+            AvailableSpotsLabel.Text = "Disponibles: " + (100 - counter).ToString
+            OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
         End If
-        counter = +1
-        AvailableSpotsLabel.Text = "Disponibles: " + counter.ToString
-        OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
     End Sub
 
     Private Sub BFCButton_Click(sender As Object, e As EventArgs) Handles BFCButton.Click
