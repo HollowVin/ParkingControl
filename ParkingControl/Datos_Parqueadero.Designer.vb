@@ -35,6 +35,14 @@ Partial Class Datos_Parqueadero
         Me.DFare4TextBox = New System.Windows.Forms.TextBox()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.DSaveButton = New System.Windows.Forms.Button()
+        Me.DOpeningTimeLabel = New System.Windows.Forms.Label()
+        Me.DScheduleLabel = New System.Windows.Forms.Label()
+        Me.DClosingHourLabel = New System.Windows.Forms.Label()
+        Me.DDaysComboBox = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'DNameLabel
@@ -135,18 +143,98 @@ Partial Class Datos_Parqueadero
         '
         'DSaveButton
         '
-        Me.DSaveButton.Location = New System.Drawing.Point(311, 277)
+        Me.DSaveButton.Location = New System.Drawing.Point(311, 393)
         Me.DSaveButton.Name = "DSaveButton"
         Me.DSaveButton.Size = New System.Drawing.Size(75, 23)
         Me.DSaveButton.TabIndex = 18
         Me.DSaveButton.Text = "Guardar"
         Me.DSaveButton.UseVisualStyleBackColor = True
         '
+        'DOpeningTimeLabel
+        '
+        Me.DOpeningTimeLabel.AutoSize = True
+        Me.DOpeningTimeLabel.Location = New System.Drawing.Point(42, 329)
+        Me.DOpeningTimeLabel.Name = "DOpeningTimeLabel"
+        Me.DOpeningTimeLabel.Size = New System.Drawing.Size(96, 17)
+        Me.DOpeningTimeLabel.TabIndex = 19
+        Me.DOpeningTimeLabel.Text = "Hora_Abierto:"
+        '
+        'DScheduleLabel
+        '
+        Me.DScheduleLabel.AutoSize = True
+        Me.DScheduleLabel.Location = New System.Drawing.Point(42, 248)
+        Me.DScheduleLabel.Name = "DScheduleLabel"
+        Me.DScheduleLabel.Size = New System.Drawing.Size(63, 17)
+        Me.DScheduleLabel.TabIndex = 23
+        Me.DScheduleLabel.Text = "Horario: "
+        '
+        'DClosingHourLabel
+        '
+        Me.DClosingHourLabel.AutoSize = True
+        Me.DClosingHourLabel.Location = New System.Drawing.Point(432, 329)
+        Me.DClosingHourLabel.Name = "DClosingHourLabel"
+        Me.DClosingHourLabel.Size = New System.Drawing.Size(102, 17)
+        Me.DClosingHourLabel.TabIndex = 24
+        Me.DClosingHourLabel.Text = "Hora_Cerrado:"
+        '
+        'DDaysComboBox
+        '
+        Me.DDaysComboBox.FormattingEnabled = True
+        Me.DDaysComboBox.Items.AddRange(New Object() {"Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"})
+        Me.DDaysComboBox.Location = New System.Drawing.Point(140, 248)
+        Me.DDaysComboBox.Name = "DDaysComboBox"
+        Me.DDaysComboBox.Size = New System.Drawing.Size(55, 24)
+        Me.DDaysComboBox.TabIndex = 25
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(211, 255)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(13, 17)
+        Me.Label1.TabIndex = 26
+        Me.Label1.Text = "-"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"})
+        Me.ComboBox1.Location = New System.Drawing.Point(239, 248)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(55, 24)
+        Me.ComboBox1.TabIndex = 27
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
+        Me.ComboBox4.Location = New System.Drawing.Point(144, 326)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(55, 24)
+        Me.ComboBox4.TabIndex = 29
+        '
+        'ComboBox5
+        '
+        Me.ComboBox5.FormattingEnabled = True
+        Me.ComboBox5.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
+        Me.ComboBox5.Location = New System.Drawing.Point(554, 322)
+        Me.ComboBox5.Name = "ComboBox5"
+        Me.ComboBox5.Size = New System.Drawing.Size(55, 24)
+        Me.ComboBox5.TabIndex = 32
+        '
         'Datos_Parqueadero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(713, 336)
+        Me.ClientSize = New System.Drawing.Size(747, 441)
+        Me.Controls.Add(Me.ComboBox5)
+        Me.Controls.Add(Me.ComboBox4)
+        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.DDaysComboBox)
+        Me.Controls.Add(Me.DClosingHourLabel)
+        Me.Controls.Add(Me.DScheduleLabel)
+        Me.Controls.Add(Me.DOpeningTimeLabel)
         Me.Controls.Add(Me.DSaveButton)
         Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.DFare4TextBox)
@@ -180,4 +268,12 @@ Partial Class Datos_Parqueadero
     Friend WithEvents DFare4TextBox As TextBox
     Friend WithEvents TextBox8 As TextBox
     Friend WithEvents DSaveButton As Button
+    Friend WithEvents DOpeningTimeLabel As Label
+    Friend WithEvents DScheduleLabel As Label
+    Friend WithEvents DClosingHourLabel As Label
+    Friend WithEvents DDaysComboBox As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents ComboBox5 As ComboBox
 End Class

@@ -256,6 +256,7 @@ Partial Class Parqueadero
         '
         'BTotalTextBox
         '
+        Me.BTotalTextBox.Enabled = False
         Me.BTotalTextBox.Location = New System.Drawing.Point(541, 157)
         Me.BTotalTextBox.Name = "BTotalTextBox"
         Me.BTotalTextBox.Size = New System.Drawing.Size(100, 22)

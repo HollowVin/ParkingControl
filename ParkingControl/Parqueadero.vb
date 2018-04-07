@@ -29,9 +29,12 @@
     End Sub
 
     Private Sub CChargeButton_Click(sender As Object, e As EventArgs) Handles CChargeButton.Click
-        Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
-        CDepartureHourLabel.Text = "Hora_Salida: " + Departure_Hour
-
+        If (CPlateTextBox.Text = "") Then
+            MessageBox.Show("Ingrese la placa del vehiculo")
+        Else
+            Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
+            CDepartureHourLabel.Text = "Hora_Salida: " + Departure_Hour
+        End If
     End Sub
 
     Private Sub CGenerateButton_Click(sender As Object, e As EventArgs)
@@ -39,8 +42,12 @@
     End Sub
 
     Private Sub CIngresarButton_Click(sender As Object, e As EventArgs) Handles CIngresarButton.Click
-        Dim Checkin_Hour As String = DateTime.Now.ToString("HH:mm:ss")
-        CCheckinHourLabel.Text = "Hora_Ingreso: " + Checkin_Hour
+        If (CPlateTextBox.Text = "") Then
+            MessageBox.Show("Ingrese la placa del vehiculo")
+        Else
+            Dim Checkin_Hour As String = DateTime.Now.ToString("HH:mm:ss")
+            CCheckinHourLabel.Text = "Hora_Ingreso: " + Checkin_Hour
+        End If
     End Sub
 
     Private Sub BDateTextBox_TextChanged(sender As Object, e As EventArgs) Handles BDateTextBox.TextChanged
@@ -83,6 +90,9 @@
             AvailableSpotsLabel.Text = "Disponibles: " + (100 - counter).ToString
             OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
         End If
+
+        CPlateTextBox.Text = ""
+        CCheckinHourLabel.Text = "Hora_Ingreso"
     End Sub
 
     Private Sub BFCButton_Click(sender As Object, e As EventArgs) Handles BFCButton.Click
@@ -94,9 +104,9 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BCleanAllButton.Click
-        BNameTextBox.Text = " "
-        BLastNameTextBox.Text = " "
-        BCI_RUCTextBox.Text = " "
+        BNameTextBox.Text = ""
+        BLastNameTextBox.Text = ""
+        BCI_RUCTextBox.Text = ""
         BPhoneTextBox.Text = ""
     End Sub
 
