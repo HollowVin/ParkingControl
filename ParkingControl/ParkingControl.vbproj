@@ -73,15 +73,15 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-  <Compile Include="Datos_Parqueadero.Designer.vb">
+    <Compile Include="Datos_Parqueadero.Designer.vb">
       <DependentUpon>Datos_Parqueadero.vb</DependentUpon>
     </Compile>
     <Compile Include="Datos_Parqueadero.vb">
       <SubType>Form</SubType>
     </Compile>
-	<Compile Include="Car.vb" />
-    <Compile Include="Factura.vb" />
-    <Compile Include="ParkingSpot.vb" />
+    <Compile Include="Classes\Car.vb" />
+    <Compile Include="Classes\Factura.vb" />
+    <Compile Include="Classes\ParkingSpot.vb" />
     <Compile Include="Parqueadero.vb">
       <SubType>Form</SubType>
     </Compile>
