@@ -32,10 +32,7 @@ Partial Class Parqueadero
         Me.CIngresarButton = New System.Windows.Forms.Button()
         Me.CPlateTextBox = New System.Windows.Forms.TextBox()
         Me.CChargeButton = New System.Windows.Forms.Button()
-        Me.CGenerateButton = New System.Windows.Forms.Button()
         Me.CPlateLabel = New System.Windows.Forms.Label()
-        Me.CCodeTextBox = New System.Windows.Forms.TextBox()
-        Me.CCodeLabel = New System.Windows.Forms.Label()
         Me.CDepartureLabel = New System.Windows.Forms.Label()
         Me.CCheckinHourLabel = New System.Windows.Forms.Label()
         Me.BillTab = New System.Windows.Forms.TabPage()
@@ -57,6 +54,7 @@ Partial Class Parqueadero
         Me.AvailableSpotsLabel = New System.Windows.Forms.Label()
         Me.TakenSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.CPrintButton = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.ParkingTab.SuspendLayout()
         Me.Check_inTab.SuspendLayout()
@@ -112,13 +110,11 @@ Partial Class Parqueadero
         '
         'Check_inTab
         '
+        Me.Check_inTab.Controls.Add(Me.CPrintButton)
         Me.Check_inTab.Controls.Add(Me.CIngresarButton)
         Me.Check_inTab.Controls.Add(Me.CPlateTextBox)
         Me.Check_inTab.Controls.Add(Me.CChargeButton)
-        Me.Check_inTab.Controls.Add(Me.CGenerateButton)
         Me.Check_inTab.Controls.Add(Me.CPlateLabel)
-        Me.Check_inTab.Controls.Add(Me.CCodeTextBox)
-        Me.Check_inTab.Controls.Add(Me.CCodeLabel)
         Me.Check_inTab.Controls.Add(Me.CDepartureLabel)
         Me.Check_inTab.Controls.Add(Me.CCheckinHourLabel)
         Me.Check_inTab.Location = New System.Drawing.Point(4, 25)
@@ -131,7 +127,7 @@ Partial Class Parqueadero
         '
         'CIngresarButton
         '
-        Me.CIngresarButton.Location = New System.Drawing.Point(372, 27)
+        Me.CIngresarButton.Location = New System.Drawing.Point(354, 30)
         Me.CIngresarButton.Name = "CIngresarButton"
         Me.CIngresarButton.Size = New System.Drawing.Size(75, 23)
         Me.CIngresarButton.TabIndex = 9
@@ -140,59 +136,33 @@ Partial Class Parqueadero
         '
         'CPlateTextBox
         '
-        Me.CPlateTextBox.Location = New System.Drawing.Point(181, 174)
+        Me.CPlateTextBox.Location = New System.Drawing.Point(178, 28)
         Me.CPlateTextBox.Name = "CPlateTextBox"
         Me.CPlateTextBox.Size = New System.Drawing.Size(137, 22)
         Me.CPlateTextBox.TabIndex = 8
         '
         'CChargeButton
         '
-        Me.CChargeButton.Location = New System.Drawing.Point(461, 246)
+        Me.CChargeButton.Location = New System.Drawing.Point(477, 30)
         Me.CChargeButton.Name = "CChargeButton"
         Me.CChargeButton.Size = New System.Drawing.Size(75, 23)
         Me.CChargeButton.TabIndex = 7
         Me.CChargeButton.Text = "Cobrar"
         Me.CChargeButton.UseVisualStyleBackColor = True
         '
-        'CGenerateButton
-        '
-        Me.CGenerateButton.Location = New System.Drawing.Point(243, 246)
-        Me.CGenerateButton.Name = "CGenerateButton"
-        Me.CGenerateButton.Size = New System.Drawing.Size(75, 23)
-        Me.CGenerateButton.TabIndex = 6
-        Me.CGenerateButton.Text = "Generar"
-        Me.CGenerateButton.UseVisualStyleBackColor = True
-        '
         'CPlateLabel
         '
         Me.CPlateLabel.AutoSize = True
-        Me.CPlateLabel.Location = New System.Drawing.Point(102, 179)
+        Me.CPlateLabel.Location = New System.Drawing.Point(99, 33)
         Me.CPlateLabel.Name = "CPlateLabel"
         Me.CPlateLabel.Size = New System.Drawing.Size(51, 17)
         Me.CPlateLabel.TabIndex = 5
         Me.CPlateLabel.Text = "Placa: "
         '
-        'CCodeTextBox
-        '
-        Me.CCodeTextBox.Enabled = False
-        Me.CCodeTextBox.Location = New System.Drawing.Point(181, 28)
-        Me.CCodeTextBox.Name = "CCodeTextBox"
-        Me.CCodeTextBox.Size = New System.Drawing.Size(137, 22)
-        Me.CCodeTextBox.TabIndex = 4
-        '
-        'CCodeLabel
-        '
-        Me.CCodeLabel.AutoSize = True
-        Me.CCodeLabel.Location = New System.Drawing.Point(99, 33)
-        Me.CCodeLabel.Name = "CCodeLabel"
-        Me.CCodeLabel.Size = New System.Drawing.Size(60, 17)
-        Me.CCodeLabel.TabIndex = 3
-        Me.CCodeLabel.Text = "Codigo: "
-        '
         'CDepartureLabel
         '
         Me.CDepartureLabel.AutoSize = True
-        Me.CDepartureLabel.Location = New System.Drawing.Point(458, 113)
+        Me.CDepartureLabel.Location = New System.Drawing.Point(474, 135)
         Me.CDepartureLabel.Name = "CDepartureLabel"
         Me.CDepartureLabel.Size = New System.Drawing.Size(90, 17)
         Me.CDepartureLabel.TabIndex = 1
@@ -201,7 +171,7 @@ Partial Class Parqueadero
         'CCheckinHourLabel
         '
         Me.CCheckinHourLabel.AutoSize = True
-        Me.CCheckinHourLabel.Location = New System.Drawing.Point(99, 113)
+        Me.CCheckinHourLabel.Location = New System.Drawing.Point(115, 135)
         Me.CCheckinHourLabel.Name = "CCheckinHourLabel"
         Me.CCheckinHourLabel.Size = New System.Drawing.Size(102, 17)
         Me.CCheckinHourLabel.TabIndex = 0
@@ -371,6 +341,15 @@ Partial Class Parqueadero
         Me.TakenSpotsLabel.TabIndex = 4
         Me.TakenSpotsLabel.Text = "Ocupados: 15"
         '
+        'CPrintButton
+        '
+        Me.CPrintButton.Location = New System.Drawing.Point(321, 244)
+        Me.CPrintButton.Name = "CPrintButton"
+        Me.CPrintButton.Size = New System.Drawing.Size(75, 23)
+        Me.CPrintButton.TabIndex = 10
+        Me.CPrintButton.Text = "Imprimir"
+        Me.CPrintButton.UseVisualStyleBackColor = True
+        '
         'Parqueadero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -402,12 +381,10 @@ Partial Class Parqueadero
     Friend WithEvents ParkingTab As TabControl
     Friend WithEvents Check_inTab As TabPage
     Friend WithEvents BillTab As TabPage
-    Friend WithEvents CCodeLabel As Label
     Friend WithEvents CDepartureLabel As Label
     Friend WithEvents CCheckinHourLabel As Label
     Friend WithEvents AvailableSpotsLabel As Label
     Friend WithEvents TakenSpotsLabel As Label
-    Friend WithEvents CCodeTextBox As TextBox
     Friend WithEvents BDateLabel As Label
     Friend WithEvents BCI_RUCLabel As Label
     Friend WithEvents BLastNameLabel As Label
@@ -427,7 +404,7 @@ Partial Class Parqueadero
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents CChargeButton As Button
-    Friend WithEvents CGenerateButton As Button
     Friend WithEvents CPlateTextBox As TextBox
     Friend WithEvents CIngresarButton As Button
+    Friend WithEvents CPrintButton As Button
 End Class
