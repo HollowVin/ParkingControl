@@ -29,6 +29,7 @@ Partial Class Parqueadero
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParkingTab = New System.Windows.Forms.TabControl()
         Me.Check_inTab = New System.Windows.Forms.TabPage()
+        Me.CIngresarButton = New System.Windows.Forms.Button()
         Me.CPlateTextBox = New System.Windows.Forms.TextBox()
         Me.CChargeButton = New System.Windows.Forms.Button()
         Me.CGenerateButton = New System.Windows.Forms.Button()
@@ -56,7 +57,6 @@ Partial Class Parqueadero
         Me.AvailableSpotsLabel = New System.Windows.Forms.Label()
         Me.TakenSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.CIngresarButton = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.ParkingTab.SuspendLayout()
         Me.Check_inTab.SuspendLayout()
@@ -128,6 +128,15 @@ Partial Class Parqueadero
         Me.Check_inTab.TabIndex = 0
         Me.Check_inTab.Text = "Ingreso"
         Me.Check_inTab.UseVisualStyleBackColor = True
+        '
+        'CIngresarButton
+        '
+        Me.CIngresarButton.Location = New System.Drawing.Point(372, 27)
+        Me.CIngresarButton.Name = "CIngresarButton"
+        Me.CIngresarButton.Size = New System.Drawing.Size(75, 23)
+        Me.CIngresarButton.TabIndex = 9
+        Me.CIngresarButton.Text = "Ingresar"
+        Me.CIngresarButton.UseVisualStyleBackColor = True
         '
         'CPlateTextBox
         '
@@ -361,15 +370,6 @@ Partial Class Parqueadero
         Me.TakenSpotsLabel.Size = New System.Drawing.Size(97, 17)
         Me.TakenSpotsLabel.TabIndex = 4
         Me.TakenSpotsLabel.Text = "Ocupados: 15"
-        '
-        'CIngresarButton
-        '
-        Me.CIngresarButton.Location = New System.Drawing.Point(372, 27)
-        Me.CIngresarButton.Name = "CIngresarButton"
-        Me.CIngresarButton.Size = New System.Drawing.Size(75, 23)
-        Me.CIngresarButton.TabIndex = 9
-        Me.CIngresarButton.Text = "Ingresar"
-        Me.CIngresarButton.UseVisualStyleBackColor = True
         '
         'Parqueadero
         '

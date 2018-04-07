@@ -38,4 +38,9 @@
         Dim Hora As String = DateTime.Now.ToString("HH:mm:ss")
         CCheckinHourLabel.Text = "Hora_Ingreso: " + Hora
     End Sub
+
+    Private Sub CIngresarButton_Click(sender As Object, e As EventArgs) Handles CIngresarButton.Click
+        CCodeTextBox.Clear()
+        CCodeTextBox.Enabled = True
+    End Sub
 End Class
