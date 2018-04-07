@@ -33,7 +33,7 @@ Partial Class Parqueadero
         Me.CPlateTextBox = New System.Windows.Forms.TextBox()
         Me.CChargeButton = New System.Windows.Forms.Button()
         Me.CPlateLabel = New System.Windows.Forms.Label()
-        Me.CDepartureLabel = New System.Windows.Forms.Label()
+        Me.CDepartureHourLabel = New System.Windows.Forms.Label()
         Me.CCheckinHourLabel = New System.Windows.Forms.Label()
         Me.BillTab = New System.Windows.Forms.TabPage()
         Me.BPrintButton = New System.Windows.Forms.Button()
@@ -115,7 +115,7 @@ Partial Class Parqueadero
         Me.Check_inTab.Controls.Add(Me.CPlateTextBox)
         Me.Check_inTab.Controls.Add(Me.CChargeButton)
         Me.Check_inTab.Controls.Add(Me.CPlateLabel)
-        Me.Check_inTab.Controls.Add(Me.CDepartureLabel)
+        Me.Check_inTab.Controls.Add(Me.CDepartureHourLabel)
         Me.Check_inTab.Controls.Add(Me.CCheckinHourLabel)
         Me.Check_inTab.Location = New System.Drawing.Point(4, 25)
         Me.Check_inTab.Name = "Check_inTab"
@@ -127,25 +127,25 @@ Partial Class Parqueadero
         '
         'CIngresarButton
         '
-        Me.CIngresarButton.Location = New System.Drawing.Point(354, 30)
+        Me.CIngresarButton.Location = New System.Drawing.Point(345, 28)
         Me.CIngresarButton.Name = "CIngresarButton"
-        Me.CIngresarButton.Size = New System.Drawing.Size(75, 23)
+        Me.CIngresarButton.Size = New System.Drawing.Size(84, 32)
         Me.CIngresarButton.TabIndex = 9
         Me.CIngresarButton.Text = "Ingresar"
         Me.CIngresarButton.UseVisualStyleBackColor = True
         '
         'CPlateTextBox
         '
-        Me.CPlateTextBox.Location = New System.Drawing.Point(178, 28)
+        Me.CPlateTextBox.Location = New System.Drawing.Point(156, 28)
         Me.CPlateTextBox.Name = "CPlateTextBox"
         Me.CPlateTextBox.Size = New System.Drawing.Size(137, 22)
         Me.CPlateTextBox.TabIndex = 8
         '
         'CChargeButton
         '
-        Me.CChargeButton.Location = New System.Drawing.Point(477, 30)
+        Me.CChargeButton.Location = New System.Drawing.Point(477, 28)
         Me.CChargeButton.Name = "CChargeButton"
-        Me.CChargeButton.Size = New System.Drawing.Size(75, 23)
+        Me.CChargeButton.Size = New System.Drawing.Size(97, 32)
         Me.CChargeButton.TabIndex = 7
         Me.CChargeButton.Text = "Cobrar"
         Me.CChargeButton.UseVisualStyleBackColor = True
@@ -159,19 +159,19 @@ Partial Class Parqueadero
         Me.CPlateLabel.TabIndex = 5
         Me.CPlateLabel.Text = "Placa: "
         '
-        'CDepartureLabel
+        'CDepartureHourLabel
         '
-        Me.CDepartureLabel.AutoSize = True
-        Me.CDepartureLabel.Location = New System.Drawing.Point(474, 135)
-        Me.CDepartureLabel.Name = "CDepartureLabel"
-        Me.CDepartureLabel.Size = New System.Drawing.Size(90, 17)
-        Me.CDepartureLabel.TabIndex = 1
-        Me.CDepartureLabel.Text = "Hora_Salida:"
+        Me.CDepartureHourLabel.AutoSize = True
+        Me.CDepartureHourLabel.Location = New System.Drawing.Point(474, 135)
+        Me.CDepartureHourLabel.Name = "CDepartureHourLabel"
+        Me.CDepartureHourLabel.Size = New System.Drawing.Size(90, 17)
+        Me.CDepartureHourLabel.TabIndex = 1
+        Me.CDepartureHourLabel.Text = "Hora_Salida:"
         '
         'CCheckinHourLabel
         '
         Me.CCheckinHourLabel.AutoSize = True
-        Me.CCheckinHourLabel.Location = New System.Drawing.Point(115, 135)
+        Me.CCheckinHourLabel.Location = New System.Drawing.Point(99, 135)
         Me.CCheckinHourLabel.Name = "CCheckinHourLabel"
         Me.CCheckinHourLabel.Size = New System.Drawing.Size(102, 17)
         Me.CCheckinHourLabel.TabIndex = 0
@@ -204,7 +204,7 @@ Partial Class Parqueadero
         '
         'BPrintButton
         '
-        Me.BPrintButton.Location = New System.Drawing.Point(450, 274)
+        Me.BPrintButton.Location = New System.Drawing.Point(340, 255)
         Me.BPrintButton.Name = "BPrintButton"
         Me.BPrintButton.Size = New System.Drawing.Size(94, 26)
         Me.BPrintButton.TabIndex = 16
@@ -213,28 +213,28 @@ Partial Class Parqueadero
         '
         'BLastNameTextBox
         '
-        Me.BLastNameTextBox.Location = New System.Drawing.Point(181, 93)
+        Me.BLastNameTextBox.Location = New System.Drawing.Point(139, 90)
         Me.BLastNameTextBox.Name = "BLastNameTextBox"
         Me.BLastNameTextBox.Size = New System.Drawing.Size(100, 22)
         Me.BLastNameTextBox.TabIndex = 15
         '
         'BDateTextBox
         '
-        Me.BDateTextBox.Location = New System.Drawing.Point(181, 155)
+        Me.BDateTextBox.Location = New System.Drawing.Point(139, 152)
         Me.BDateTextBox.Name = "BDateTextBox"
         Me.BDateTextBox.Size = New System.Drawing.Size(100, 22)
         Me.BDateTextBox.TabIndex = 14
         '
         'BAddressTextBox
         '
-        Me.BAddressTextBox.Location = New System.Drawing.Point(181, 215)
+        Me.BAddressTextBox.Location = New System.Drawing.Point(139, 212)
         Me.BAddressTextBox.Name = "BAddressTextBox"
         Me.BAddressTextBox.Size = New System.Drawing.Size(100, 22)
         Me.BAddressTextBox.TabIndex = 13
         '
         'BPhoneTextBox
         '
-        Me.BPhoneTextBox.Location = New System.Drawing.Point(181, 278)
+        Me.BPhoneTextBox.Location = New System.Drawing.Point(541, 95)
         Me.BPhoneTextBox.Name = "BPhoneTextBox"
         Me.BPhoneTextBox.Size = New System.Drawing.Size(100, 22)
         Me.BPhoneTextBox.TabIndex = 12
@@ -255,7 +255,7 @@ Partial Class Parqueadero
         '
         'BNameTextBox
         '
-        Me.BNameTextBox.Location = New System.Drawing.Point(181, 42)
+        Me.BNameTextBox.Location = New System.Drawing.Point(139, 39)
         Me.BNameTextBox.Name = "BNameTextBox"
         Me.BNameTextBox.Size = New System.Drawing.Size(100, 22)
         Me.BNameTextBox.TabIndex = 8
@@ -263,7 +263,7 @@ Partial Class Parqueadero
         'BDateLabel
         '
         Me.BDateLabel.AutoSize = True
-        Me.BDateLabel.Location = New System.Drawing.Point(82, 160)
+        Me.BDateLabel.Location = New System.Drawing.Point(40, 157)
         Me.BDateLabel.Name = "BDateLabel"
         Me.BDateLabel.Size = New System.Drawing.Size(55, 17)
         Me.BDateLabel.TabIndex = 7
@@ -272,7 +272,7 @@ Partial Class Parqueadero
         'BCI_RUCLabel
         '
         Me.BCI_RUCLabel.AutoSize = True
-        Me.BCI_RUCLabel.Location = New System.Drawing.Point(446, 48)
+        Me.BCI_RUCLabel.Location = New System.Drawing.Point(442, 48)
         Me.BCI_RUCLabel.Name = "BCI_RUCLabel"
         Me.BCI_RUCLabel.Size = New System.Drawing.Size(57, 17)
         Me.BCI_RUCLabel.TabIndex = 6
@@ -281,7 +281,7 @@ Partial Class Parqueadero
         'BLastNameLabel
         '
         Me.BLastNameLabel.AutoSize = True
-        Me.BLastNameLabel.Location = New System.Drawing.Point(82, 98)
+        Me.BLastNameLabel.Location = New System.Drawing.Point(40, 95)
         Me.BLastNameLabel.Name = "BLastNameLabel"
         Me.BLastNameLabel.Size = New System.Drawing.Size(73, 17)
         Me.BLastNameLabel.TabIndex = 4
@@ -290,7 +290,7 @@ Partial Class Parqueadero
         'BPhoneLabel
         '
         Me.BPhoneLabel.AutoSize = True
-        Me.BPhoneLabel.Location = New System.Drawing.Point(82, 281)
+        Me.BPhoneLabel.Location = New System.Drawing.Point(442, 98)
         Me.BPhoneLabel.Name = "BPhoneLabel"
         Me.BPhoneLabel.Size = New System.Drawing.Size(68, 17)
         Me.BPhoneLabel.TabIndex = 3
@@ -299,7 +299,7 @@ Partial Class Parqueadero
         'BTotalLabel
         '
         Me.BTotalLabel.AutoSize = True
-        Me.BTotalLabel.Location = New System.Drawing.Point(447, 160)
+        Me.BTotalLabel.Location = New System.Drawing.Point(442, 160)
         Me.BTotalLabel.Name = "BTotalLabel"
         Me.BTotalLabel.Size = New System.Drawing.Size(44, 17)
         Me.BTotalLabel.TabIndex = 2
@@ -308,7 +308,7 @@ Partial Class Parqueadero
         'BAddressLabel
         '
         Me.BAddressLabel.AutoSize = True
-        Me.BAddressLabel.Location = New System.Drawing.Point(82, 220)
+        Me.BAddressLabel.Location = New System.Drawing.Point(40, 217)
         Me.BAddressLabel.Name = "BAddressLabel"
         Me.BAddressLabel.Size = New System.Drawing.Size(71, 17)
         Me.BAddressLabel.TabIndex = 1
@@ -317,7 +317,7 @@ Partial Class Parqueadero
         'BNameLabel
         '
         Me.BNameLabel.AutoSize = True
-        Me.BNameLabel.Location = New System.Drawing.Point(82, 48)
+        Me.BNameLabel.Location = New System.Drawing.Point(40, 45)
         Me.BNameLabel.Name = "BNameLabel"
         Me.BNameLabel.Size = New System.Drawing.Size(73, 17)
         Me.BNameLabel.TabIndex = 0
@@ -343,9 +343,9 @@ Partial Class Parqueadero
         '
         'CPrintButton
         '
-        Me.CPrintButton.Location = New System.Drawing.Point(321, 244)
+        Me.CPrintButton.Location = New System.Drawing.Point(339, 249)
         Me.CPrintButton.Name = "CPrintButton"
-        Me.CPrintButton.Size = New System.Drawing.Size(75, 23)
+        Me.CPrintButton.Size = New System.Drawing.Size(90, 30)
         Me.CPrintButton.TabIndex = 10
         Me.CPrintButton.Text = "Imprimir"
         Me.CPrintButton.UseVisualStyleBackColor = True
@@ -354,7 +354,7 @@ Partial Class Parqueadero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 420)
         Me.Controls.Add(Me.TakenSpotsLabel)
         Me.Controls.Add(Me.ParkingTab)
         Me.Controls.Add(Me.MenuStrip1)
@@ -381,7 +381,7 @@ Partial Class Parqueadero
     Friend WithEvents ParkingTab As TabControl
     Friend WithEvents Check_inTab As TabPage
     Friend WithEvents BillTab As TabPage
-    Friend WithEvents CDepartureLabel As Label
+    Friend WithEvents CDepartureHourLabel As Label
     Friend WithEvents CCheckinHourLabel As Label
     Friend WithEvents AvailableSpotsLabel As Label
     Friend WithEvents TakenSpotsLabel As Label

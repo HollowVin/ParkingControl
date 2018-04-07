@@ -146,7 +146,7 @@ Partial Class Datos_Parqueadero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(713, 376)
+        Me.ClientSize = New System.Drawing.Size(713, 336)
         Me.Controls.Add(Me.DSaveButton)
         Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.DFare4TextBox)
