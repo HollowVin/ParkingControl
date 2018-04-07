@@ -54,6 +54,7 @@ Partial Class Form1
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LalalalaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.TabParqueadero.SuspendLayout()
         Me.TabIngreso.SuspendLayout()
@@ -72,7 +73,7 @@ Partial Class Form1
         '
         'ArchivoToolStripMenuItem
         '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ParqueaderoToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ParqueaderoToolStripMenuItem, Me.LalalalaToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(71, 24)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
@@ -347,6 +348,12 @@ Partial Class Form1
         Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.EditarToolStripMenuItem.Text = "Editar"
         '
+        'LalalalaToolStripMenuItem
+        '
+        Me.LalalalaToolStripMenuItem.Name = "LalalalaToolStripMenuItem"
+        Me.LalalalaToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.LalalalaToolStripMenuItem.Text = "lalalala"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -403,4 +410,5 @@ Partial Class Form1
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents EditarToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LalalalaToolStripMenuItem As ToolStripMenuItem
 End Class
