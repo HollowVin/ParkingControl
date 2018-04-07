@@ -1,4 +1,5 @@
 ﻿Public Class ParkingSpot
+    Private Code As Integer
     Private Name As String
     Private Address As String
     Private Capacity As Integer
