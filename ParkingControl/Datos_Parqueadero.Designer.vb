@@ -48,132 +48,148 @@ Partial Class Datos_Parqueadero
         'DNameLabel
         '
         Me.DNameLabel.AutoSize = True
-        Me.DNameLabel.Location = New System.Drawing.Point(42, 39)
+        Me.DNameLabel.Location = New System.Drawing.Point(32, 32)
+        Me.DNameLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.DNameLabel.Name = "DNameLabel"
-        Me.DNameLabel.Size = New System.Drawing.Size(62, 17)
+        Me.DNameLabel.Size = New System.Drawing.Size(47, 13)
         Me.DNameLabel.TabIndex = 0
         Me.DNameLabel.Text = "Nombre:"
         '
         'DFare1Label
         '
         Me.DFare1Label.AutoSize = True
-        Me.DFare1Label.Location = New System.Drawing.Point(432, 183)
+        Me.DFare1Label.Location = New System.Drawing.Point(324, 149)
+        Me.DFare1Label.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.DFare1Label.Name = "DFare1Label"
-        Me.DFare1Label.Size = New System.Drawing.Size(94, 17)
+        Me.DFare1Label.Size = New System.Drawing.Size(70, 13)
         Me.DFare1Label.TabIndex = 4
         Me.DFare1Label.Text = "Tarifa 1 hora:"
         '
         'DFare2Label
         '
         Me.DFare2Label.AutoSize = True
-        Me.DFare2Label.Location = New System.Drawing.Point(432, 112)
+        Me.DFare2Label.Location = New System.Drawing.Point(324, 91)
+        Me.DFare2Label.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.DFare2Label.Name = "DFare2Label"
-        Me.DFare2Label.Size = New System.Drawing.Size(106, 17)
+        Me.DFare2Label.Size = New System.Drawing.Size(81, 13)
         Me.DFare2Label.TabIndex = 5
         Me.DFare2Label.Text = "Tarifa 1/2 hora:"
         '
         'DFare4Label
         '
         Me.DFare4Label.AutoSize = True
-        Me.DFare4Label.Location = New System.Drawing.Point(432, 41)
+        Me.DFare4Label.Location = New System.Drawing.Point(324, 33)
+        Me.DFare4Label.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.DFare4Label.Name = "DFare4Label"
-        Me.DFare4Label.Size = New System.Drawing.Size(106, 17)
+        Me.DFare4Label.Size = New System.Drawing.Size(81, 13)
         Me.DFare4Label.TabIndex = 6
         Me.DFare4Label.Text = "Tarifa 1/4 hora:"
         '
         'DCapacityLabel
         '
         Me.DCapacityLabel.AutoSize = True
-        Me.DCapacityLabel.Location = New System.Drawing.Point(42, 183)
+        Me.DCapacityLabel.Location = New System.Drawing.Point(32, 149)
+        Me.DCapacityLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.DCapacityLabel.Name = "DCapacityLabel"
-        Me.DCapacityLabel.Size = New System.Drawing.Size(79, 17)
+        Me.DCapacityLabel.Size = New System.Drawing.Size(61, 13)
         Me.DCapacityLabel.TabIndex = 7
         Me.DCapacityLabel.Text = "Capacidad:"
         '
         'DAddressLabel
         '
         Me.DAddressLabel.AutoSize = True
-        Me.DAddressLabel.Location = New System.Drawing.Point(42, 110)
+        Me.DAddressLabel.Location = New System.Drawing.Point(32, 89)
+        Me.DAddressLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.DAddressLabel.Name = "DAddressLabel"
-        Me.DAddressLabel.Size = New System.Drawing.Size(71, 17)
+        Me.DAddressLabel.Size = New System.Drawing.Size(55, 13)
         Me.DAddressLabel.TabIndex = 8
         Me.DAddressLabel.Text = "Direccion:"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(140, 36)
+        Me.TextBox1.Location = New System.Drawing.Point(105, 29)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(154, 22)
-        Me.TextBox1.TabIndex = 10
+        Me.TextBox1.Size = New System.Drawing.Size(116, 20)
+        Me.TextBox1.TabIndex = 1
         '
         'DFare1TextBox
         '
-        Me.DFare1TextBox.Location = New System.Drawing.Point(554, 178)
+        Me.DFare1TextBox.Location = New System.Drawing.Point(416, 145)
+        Me.DFare1TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DFare1TextBox.Name = "DFare1TextBox"
-        Me.DFare1TextBox.Size = New System.Drawing.Size(100, 22)
-        Me.DFare1TextBox.TabIndex = 13
+        Me.DFare1TextBox.Size = New System.Drawing.Size(76, 20)
+        Me.DFare1TextBox.TabIndex = 6
         '
         'DFare2TextBox
         '
-        Me.DFare2TextBox.Location = New System.Drawing.Point(554, 105)
+        Me.DFare2TextBox.Location = New System.Drawing.Point(416, 85)
+        Me.DFare2TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DFare2TextBox.Name = "DFare2TextBox"
-        Me.DFare2TextBox.Size = New System.Drawing.Size(100, 22)
-        Me.DFare2TextBox.TabIndex = 14
+        Me.DFare2TextBox.Size = New System.Drawing.Size(76, 20)
+        Me.DFare2TextBox.TabIndex = 5
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(140, 178)
+        Me.TextBox6.Location = New System.Drawing.Point(105, 145)
+        Me.TextBox6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(112, 22)
-        Me.TextBox6.TabIndex = 15
+        Me.TextBox6.Size = New System.Drawing.Size(85, 20)
+        Me.TextBox6.TabIndex = 3
         '
         'DFare4TextBox
         '
-        Me.DFare4TextBox.Location = New System.Drawing.Point(554, 34)
+        Me.DFare4TextBox.Location = New System.Drawing.Point(416, 28)
+        Me.DFare4TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DFare4TextBox.Name = "DFare4TextBox"
-        Me.DFare4TextBox.Size = New System.Drawing.Size(100, 22)
-        Me.DFare4TextBox.TabIndex = 16
+        Me.DFare4TextBox.Size = New System.Drawing.Size(76, 20)
+        Me.DFare4TextBox.TabIndex = 4
         '
         'TextBox8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(140, 105)
+        Me.TextBox8.Location = New System.Drawing.Point(105, 85)
+        Me.TextBox8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(246, 22)
-        Me.TextBox8.TabIndex = 17
+        Me.TextBox8.Size = New System.Drawing.Size(186, 20)
+        Me.TextBox8.TabIndex = 2
         '
         'DSaveButton
         '
-        Me.DSaveButton.Location = New System.Drawing.Point(311, 393)
+        Me.DSaveButton.Location = New System.Drawing.Point(233, 319)
+        Me.DSaveButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DSaveButton.Name = "DSaveButton"
-        Me.DSaveButton.Size = New System.Drawing.Size(75, 23)
-        Me.DSaveButton.TabIndex = 18
+        Me.DSaveButton.Size = New System.Drawing.Size(56, 19)
+        Me.DSaveButton.TabIndex = 11
         Me.DSaveButton.Text = "Guardar"
         Me.DSaveButton.UseVisualStyleBackColor = True
         '
         'DOpeningTimeLabel
         '
         Me.DOpeningTimeLabel.AutoSize = True
-        Me.DOpeningTimeLabel.Location = New System.Drawing.Point(42, 329)
+        Me.DOpeningTimeLabel.Location = New System.Drawing.Point(32, 267)
+        Me.DOpeningTimeLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.DOpeningTimeLabel.Name = "DOpeningTimeLabel"
-        Me.DOpeningTimeLabel.Size = New System.Drawing.Size(96, 17)
+        Me.DOpeningTimeLabel.Size = New System.Drawing.Size(72, 13)
         Me.DOpeningTimeLabel.TabIndex = 19
         Me.DOpeningTimeLabel.Text = "Hora_Abierto:"
         '
         'DScheduleLabel
         '
         Me.DScheduleLabel.AutoSize = True
-        Me.DScheduleLabel.Location = New System.Drawing.Point(42, 248)
+        Me.DScheduleLabel.Location = New System.Drawing.Point(32, 202)
+        Me.DScheduleLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.DScheduleLabel.Name = "DScheduleLabel"
-        Me.DScheduleLabel.Size = New System.Drawing.Size(63, 17)
+        Me.DScheduleLabel.Size = New System.Drawing.Size(47, 13)
         Me.DScheduleLabel.TabIndex = 23
         Me.DScheduleLabel.Text = "Horario: "
         '
         'DClosingHourLabel
         '
         Me.DClosingHourLabel.AutoSize = True
-        Me.DClosingHourLabel.Location = New System.Drawing.Point(432, 329)
+        Me.DClosingHourLabel.Location = New System.Drawing.Point(324, 267)
+        Me.DClosingHourLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.DClosingHourLabel.Name = "DClosingHourLabel"
-        Me.DClosingHourLabel.Size = New System.Drawing.Size(102, 17)
+        Me.DClosingHourLabel.Size = New System.Drawing.Size(76, 13)
         Me.DClosingHourLabel.TabIndex = 24
         Me.DClosingHourLabel.Text = "Hora_Cerrado:"
         '
@@ -181,17 +197,19 @@ Partial Class Datos_Parqueadero
         '
         Me.DDaysComboBox.FormattingEnabled = True
         Me.DDaysComboBox.Items.AddRange(New Object() {"Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"})
-        Me.DDaysComboBox.Location = New System.Drawing.Point(140, 248)
+        Me.DDaysComboBox.Location = New System.Drawing.Point(105, 202)
+        Me.DDaysComboBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DDaysComboBox.Name = "DDaysComboBox"
-        Me.DDaysComboBox.Size = New System.Drawing.Size(55, 24)
-        Me.DDaysComboBox.TabIndex = 25
+        Me.DDaysComboBox.Size = New System.Drawing.Size(42, 21)
+        Me.DDaysComboBox.TabIndex = 7
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(211, 255)
+        Me.Label1.Location = New System.Drawing.Point(158, 207)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(13, 17)
+        Me.Label1.Size = New System.Drawing.Size(10, 13)
         Me.Label1.TabIndex = 26
         Me.Label1.Text = "-"
         '
@@ -199,34 +217,37 @@ Partial Class Datos_Parqueadero
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"})
-        Me.ComboBox1.Location = New System.Drawing.Point(239, 248)
+        Me.ComboBox1.Location = New System.Drawing.Point(179, 202)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(55, 24)
-        Me.ComboBox1.TabIndex = 27
+        Me.ComboBox1.Size = New System.Drawing.Size(42, 21)
+        Me.ComboBox1.TabIndex = 8
         '
         'ComboBox4
         '
         Me.ComboBox4.FormattingEnabled = True
         Me.ComboBox4.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
-        Me.ComboBox4.Location = New System.Drawing.Point(144, 326)
+        Me.ComboBox4.Location = New System.Drawing.Point(108, 265)
+        Me.ComboBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(55, 24)
-        Me.ComboBox4.TabIndex = 29
+        Me.ComboBox4.Size = New System.Drawing.Size(42, 21)
+        Me.ComboBox4.TabIndex = 9
         '
         'ComboBox5
         '
         Me.ComboBox5.FormattingEnabled = True
         Me.ComboBox5.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
-        Me.ComboBox5.Location = New System.Drawing.Point(554, 322)
+        Me.ComboBox5.Location = New System.Drawing.Point(416, 262)
+        Me.ComboBox5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(55, 24)
-        Me.ComboBox5.TabIndex = 32
+        Me.ComboBox5.Size = New System.Drawing.Size(42, 21)
+        Me.ComboBox5.TabIndex = 10
         '
         'Datos_Parqueadero
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(747, 441)
+        Me.ClientSize = New System.Drawing.Size(560, 358)
         Me.Controls.Add(Me.ComboBox5)
         Me.Controls.Add(Me.ComboBox4)
         Me.Controls.Add(Me.ComboBox1)
@@ -248,6 +269,7 @@ Partial Class Datos_Parqueadero
         Me.Controls.Add(Me.DFare2Label)
         Me.Controls.Add(Me.DFare1Label)
         Me.Controls.Add(Me.DNameLabel)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Datos_Parqueadero"
         Me.Text = "Datos_Parqueadero"
         Me.ResumeLayout(False)
