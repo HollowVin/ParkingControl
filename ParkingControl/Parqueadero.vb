@@ -113,4 +113,8 @@
 
     Private Sub BPrintButton_Click(sender As Object, e As EventArgs) Handles BPrintButton.Click
     End Sub
+
+    Private Sub Parqueadero_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Application.Exit()
+    End Sub
 End Class

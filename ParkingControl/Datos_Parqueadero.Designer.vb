@@ -108,7 +108,7 @@ Partial Class Datos_Parqueadero
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(105, 29)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(116, 20)
         Me.TextBox1.TabIndex = 1
@@ -116,7 +116,7 @@ Partial Class Datos_Parqueadero
         'DFare1TextBox
         '
         Me.DFare1TextBox.Location = New System.Drawing.Point(416, 145)
-        Me.DFare1TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DFare1TextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.DFare1TextBox.Name = "DFare1TextBox"
         Me.DFare1TextBox.Size = New System.Drawing.Size(76, 20)
         Me.DFare1TextBox.TabIndex = 6
@@ -124,7 +124,7 @@ Partial Class Datos_Parqueadero
         'DFare2TextBox
         '
         Me.DFare2TextBox.Location = New System.Drawing.Point(416, 85)
-        Me.DFare2TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DFare2TextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.DFare2TextBox.Name = "DFare2TextBox"
         Me.DFare2TextBox.Size = New System.Drawing.Size(76, 20)
         Me.DFare2TextBox.TabIndex = 5
@@ -132,7 +132,7 @@ Partial Class Datos_Parqueadero
         'TextBox6
         '
         Me.TextBox6.Location = New System.Drawing.Point(105, 145)
-        Me.TextBox6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox6.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(85, 20)
         Me.TextBox6.TabIndex = 3
@@ -140,7 +140,7 @@ Partial Class Datos_Parqueadero
         'DFare4TextBox
         '
         Me.DFare4TextBox.Location = New System.Drawing.Point(416, 28)
-        Me.DFare4TextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DFare4TextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.DFare4TextBox.Name = "DFare4TextBox"
         Me.DFare4TextBox.Size = New System.Drawing.Size(76, 20)
         Me.DFare4TextBox.TabIndex = 4
@@ -148,7 +148,7 @@ Partial Class Datos_Parqueadero
         'TextBox8
         '
         Me.TextBox8.Location = New System.Drawing.Point(105, 85)
-        Me.TextBox8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TextBox8.Margin = New System.Windows.Forms.Padding(2)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(186, 20)
         Me.TextBox8.TabIndex = 2
@@ -156,7 +156,7 @@ Partial Class Datos_Parqueadero
         'DSaveButton
         '
         Me.DSaveButton.Location = New System.Drawing.Point(233, 319)
-        Me.DSaveButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DSaveButton.Margin = New System.Windows.Forms.Padding(2)
         Me.DSaveButton.Name = "DSaveButton"
         Me.DSaveButton.Size = New System.Drawing.Size(56, 19)
         Me.DSaveButton.TabIndex = 11
@@ -198,7 +198,7 @@ Partial Class Datos_Parqueadero
         Me.DDaysComboBox.FormattingEnabled = True
         Me.DDaysComboBox.Items.AddRange(New Object() {"Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"})
         Me.DDaysComboBox.Location = New System.Drawing.Point(105, 202)
-        Me.DDaysComboBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DDaysComboBox.Margin = New System.Windows.Forms.Padding(2)
         Me.DDaysComboBox.Name = "DDaysComboBox"
         Me.DDaysComboBox.Size = New System.Drawing.Size(42, 21)
         Me.DDaysComboBox.TabIndex = 7
@@ -218,7 +218,7 @@ Partial Class Datos_Parqueadero
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"})
         Me.ComboBox1.Location = New System.Drawing.Point(179, 202)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(42, 21)
         Me.ComboBox1.TabIndex = 8
@@ -228,7 +228,7 @@ Partial Class Datos_Parqueadero
         Me.ComboBox4.FormattingEnabled = True
         Me.ComboBox4.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
         Me.ComboBox4.Location = New System.Drawing.Point(108, 265)
-        Me.ComboBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(42, 21)
         Me.ComboBox4.TabIndex = 9
@@ -238,7 +238,7 @@ Partial Class Datos_Parqueadero
         Me.ComboBox5.FormattingEnabled = True
         Me.ComboBox5.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
         Me.ComboBox5.Location = New System.Drawing.Point(416, 262)
-        Me.ComboBox5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ComboBox5.Margin = New System.Windows.Forms.Padding(2)
         Me.ComboBox5.Name = "ComboBox5"
         Me.ComboBox5.Size = New System.Drawing.Size(42, 21)
         Me.ComboBox5.TabIndex = 10
@@ -269,7 +269,7 @@ Partial Class Datos_Parqueadero
         Me.Controls.Add(Me.DFare2Label)
         Me.Controls.Add(Me.DFare1Label)
         Me.Controls.Add(Me.DNameLabel)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Datos_Parqueadero"
         Me.Text = "Datos_Parqueadero"
         Me.ResumeLayout(False)
