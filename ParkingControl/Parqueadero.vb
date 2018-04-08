@@ -29,11 +29,8 @@
     End Sub
 
     Private Sub CChargeButton_Click(sender As Object, e As EventArgs) Handles CChargeButton.Click
-        If (CPlateTextBox.Text = "") Then
-            MessageBox.Show("Ingrese la placa del vehiculo")
-        Else
-            Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
-        End If
+        DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(2).Value = DateTime.Now
+        Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
     End Sub
 
     Private Sub CGenerateButton_Click(sender As Object, e As EventArgs)
@@ -44,7 +41,7 @@
         If (CPlateTextBox.Text = "") Then
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
-
+            DataGridView1.Rows.Add(CPlateTextBox.Text, DateTime.Now)
         End If
     End Sub
 
