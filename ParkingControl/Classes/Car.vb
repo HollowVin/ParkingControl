@@ -1,6 +1,6 @@
 ﻿Public Class Car
-    Private Code As String
-    Private PlateNumber As String
-    Private EnterHour As DateTime
-    Private ExitHour As DateTime
+    Public Property CodeVal As String
+    Public Property PlateNumber As String
+    Public Property EnterHour As DateTime
+    Public Property ExitHour As DateTime
 End Class
