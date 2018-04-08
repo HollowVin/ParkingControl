@@ -33,7 +33,6 @@
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
             Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
-            CDepartureHourLabel.Text = "Hora_Salida: " + Departure_Hour
         End If
     End Sub
 
@@ -46,7 +45,6 @@
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
             Dim Checkin_Hour As String = DateTime.Now.ToString("HH:mm:ss")
-            CCheckinHourLabel.Text = "Hora_Ingreso: " + Checkin_Hour
         End If
     End Sub
 
@@ -92,7 +90,6 @@
         End If
 
         CPlateTextBox.Text = ""
-        CCheckinHourLabel.Text = "Hora_Ingreso"
     End Sub
 
     Private Sub BFCButton_Click(sender As Object, e As EventArgs) Handles BFCButton.Click

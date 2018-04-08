@@ -22,6 +22,7 @@ Partial Class Parqueadero
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"10", "1", "2", "3", "4"}, -1)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParqueaderoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -57,6 +58,11 @@ Partial Class Parqueadero
         Me.AvailableSpotsLabel = New System.Windows.Forms.Label()
         Me.OccupiedSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.MenuStrip1.SuspendLayout()
         Me.ParkingTab.SuspendLayout()
         Me.Check_inTab.SuspendLayout()
@@ -114,6 +120,7 @@ Partial Class Parqueadero
         '
         'Check_inTab
         '
+        Me.Check_inTab.Controls.Add(Me.ListView1)
         Me.Check_inTab.Controls.Add(Me.CTotalCobrarLabel)
         Me.Check_inTab.Controls.Add(Me.CTotalTimeLabel)
         Me.Check_inTab.Controls.Add(Me.CPrintButton)
@@ -403,6 +410,34 @@ Partial Class Parqueadero
         Me.OccupiedSpotsLabel.TabIndex = 4
         Me.OccupiedSpotsLabel.Text = "Ocupados: 15"
         '
+        'ListView1
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
+        ListViewItem1.Tag = ""
+        Me.ListView1.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
+        Me.ListView1.Location = New System.Drawing.Point(77, 54)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(245, 97)
+        Me.ListView1.TabIndex = 13
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Placa"
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Entrada"
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "Salida"
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "Cobro"
+        '
         'Parqueadero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -463,4 +498,9 @@ Partial Class Parqueadero
     Friend WithEvents BFCButton As Button
     Friend WithEvents BCleanAllButton As Button
     Friend WithEvents CTotalCobrarLabel As Label
+    Friend WithEvents ListView1 As ListView
+    Friend WithEvents ColumnHeader1 As ColumnHeader
+    Friend WithEvents ColumnHeader2 As ColumnHeader
+    Friend WithEvents ColumnHeader3 As ColumnHeader
+    Friend WithEvents ColumnHeader4 As ColumnHeader
 End Class
