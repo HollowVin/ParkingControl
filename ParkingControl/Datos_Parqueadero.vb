@@ -3,4 +3,8 @@
         Me.Hide()
         Parqueadero.Show()
     End Sub
+
+    Private Sub Datos_Parqueadero_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        Application.Exit()
+    End Sub
 End Class

@@ -108,7 +108,7 @@ Partial Class Parqueadero
         Me.ParkingTab.Controls.Add(Me.Check_inTab)
         Me.ParkingTab.Controls.Add(Me.BillTab)
         Me.ParkingTab.Location = New System.Drawing.Point(0, 53)
-        Me.ParkingTab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ParkingTab.Margin = New System.Windows.Forms.Padding(2)
         Me.ParkingTab.Name = "ParkingTab"
         Me.ParkingTab.SelectedIndex = 0
         Me.ParkingTab.Size = New System.Drawing.Size(600, 314)
@@ -126,9 +126,9 @@ Partial Class Parqueadero
         Me.Check_inTab.Controls.Add(Me.CDepartureHourLabel)
         Me.Check_inTab.Controls.Add(Me.CCheckinHourLabel)
         Me.Check_inTab.Location = New System.Drawing.Point(4, 22)
-        Me.Check_inTab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Check_inTab.Margin = New System.Windows.Forms.Padding(2)
         Me.Check_inTab.Name = "Check_inTab"
-        Me.Check_inTab.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Check_inTab.Padding = New System.Windows.Forms.Padding(2)
         Me.Check_inTab.Size = New System.Drawing.Size(592, 288)
         Me.Check_inTab.TabIndex = 0
         Me.Check_inTab.Text = "Ingreso"
@@ -157,7 +157,7 @@ Partial Class Parqueadero
         'CPrintButton
         '
         Me.CPrintButton.Location = New System.Drawing.Point(259, 220)
-        Me.CPrintButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CPrintButton.Margin = New System.Windows.Forms.Padding(2)
         Me.CPrintButton.Name = "CPrintButton"
         Me.CPrintButton.Size = New System.Drawing.Size(68, 24)
         Me.CPrintButton.TabIndex = 10
@@ -167,7 +167,7 @@ Partial Class Parqueadero
         'CIngresarButton
         '
         Me.CIngresarButton.Location = New System.Drawing.Point(259, 23)
-        Me.CIngresarButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CIngresarButton.Margin = New System.Windows.Forms.Padding(2)
         Me.CIngresarButton.Name = "CIngresarButton"
         Me.CIngresarButton.Size = New System.Drawing.Size(63, 26)
         Me.CIngresarButton.TabIndex = 9
@@ -177,7 +177,7 @@ Partial Class Parqueadero
         'CPlateTextBox
         '
         Me.CPlateTextBox.Location = New System.Drawing.Point(117, 23)
-        Me.CPlateTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CPlateTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.CPlateTextBox.Name = "CPlateTextBox"
         Me.CPlateTextBox.Size = New System.Drawing.Size(104, 20)
         Me.CPlateTextBox.TabIndex = 8
@@ -185,7 +185,7 @@ Partial Class Parqueadero
         'CChargeButton
         '
         Me.CChargeButton.Location = New System.Drawing.Point(358, 23)
-        Me.CChargeButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CChargeButton.Margin = New System.Windows.Forms.Padding(2)
         Me.CChargeButton.Name = "CChargeButton"
         Me.CChargeButton.Size = New System.Drawing.Size(73, 26)
         Me.CChargeButton.TabIndex = 7
@@ -242,9 +242,9 @@ Partial Class Parqueadero
         Me.BillTab.Controls.Add(Me.BAddressLabel)
         Me.BillTab.Controls.Add(Me.BNameLabel)
         Me.BillTab.Location = New System.Drawing.Point(4, 22)
-        Me.BillTab.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BillTab.Margin = New System.Windows.Forms.Padding(2)
         Me.BillTab.Name = "BillTab"
-        Me.BillTab.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BillTab.Padding = New System.Windows.Forms.Padding(2)
         Me.BillTab.Size = New System.Drawing.Size(592, 288)
         Me.BillTab.TabIndex = 1
         Me.BillTab.Text = "Factura"
@@ -253,7 +253,7 @@ Partial Class Parqueadero
         'BCleanAllButton
         '
         Me.BCleanAllButton.Location = New System.Drawing.Point(334, 151)
-        Me.BCleanAllButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BCleanAllButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BCleanAllButton.Name = "BCleanAllButton"
         Me.BCleanAllButton.Size = New System.Drawing.Size(100, 21)
         Me.BCleanAllButton.TabIndex = 18
@@ -263,7 +263,7 @@ Partial Class Parqueadero
         'BFCButton
         '
         Me.BFCButton.Location = New System.Drawing.Point(151, 210)
-        Me.BFCButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BFCButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BFCButton.Name = "BFCButton"
         Me.BFCButton.Size = New System.Drawing.Size(100, 21)
         Me.BFCButton.TabIndex = 17
@@ -273,7 +273,7 @@ Partial Class Parqueadero
         'BPrintButton
         '
         Me.BPrintButton.Location = New System.Drawing.Point(334, 210)
-        Me.BPrintButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BPrintButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BPrintButton.Name = "BPrintButton"
         Me.BPrintButton.Size = New System.Drawing.Size(70, 21)
         Me.BPrintButton.TabIndex = 6
@@ -283,7 +283,7 @@ Partial Class Parqueadero
         'BLastNameTextBox
         '
         Me.BLastNameTextBox.Location = New System.Drawing.Point(104, 73)
-        Me.BLastNameTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BLastNameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.BLastNameTextBox.Name = "BLastNameTextBox"
         Me.BLastNameTextBox.Size = New System.Drawing.Size(147, 20)
         Me.BLastNameTextBox.TabIndex = 2
@@ -291,7 +291,7 @@ Partial Class Parqueadero
         'BDateTextBox
         '
         Me.BDateTextBox.Location = New System.Drawing.Point(104, 111)
-        Me.BDateTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BDateTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.BDateTextBox.Name = "BDateTextBox"
         Me.BDateTextBox.Size = New System.Drawing.Size(76, 20)
         Me.BDateTextBox.TabIndex = 14
@@ -299,7 +299,7 @@ Partial Class Parqueadero
         'BAddressTextBox
         '
         Me.BAddressTextBox.Location = New System.Drawing.Point(104, 151)
-        Me.BAddressTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BAddressTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.BAddressTextBox.Name = "BAddressTextBox"
         Me.BAddressTextBox.Size = New System.Drawing.Size(76, 20)
         Me.BAddressTextBox.TabIndex = 5
@@ -307,7 +307,7 @@ Partial Class Parqueadero
         'BPhoneTextBox
         '
         Me.BPhoneTextBox.Location = New System.Drawing.Point(406, 73)
-        Me.BPhoneTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BPhoneTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.BPhoneTextBox.Name = "BPhoneTextBox"
         Me.BPhoneTextBox.Size = New System.Drawing.Size(76, 20)
         Me.BPhoneTextBox.TabIndex = 4
@@ -315,7 +315,7 @@ Partial Class Parqueadero
         'BCI_RUCTextBox
         '
         Me.BCI_RUCTextBox.Location = New System.Drawing.Point(406, 36)
-        Me.BCI_RUCTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BCI_RUCTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.BCI_RUCTextBox.Name = "BCI_RUCTextBox"
         Me.BCI_RUCTextBox.Size = New System.Drawing.Size(76, 20)
         Me.BCI_RUCTextBox.TabIndex = 3
@@ -324,7 +324,7 @@ Partial Class Parqueadero
         '
         Me.BTotalTextBox.Enabled = False
         Me.BTotalTextBox.Location = New System.Drawing.Point(406, 111)
-        Me.BTotalTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BTotalTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.BTotalTextBox.Name = "BTotalTextBox"
         Me.BTotalTextBox.Size = New System.Drawing.Size(76, 20)
         Me.BTotalTextBox.TabIndex = 9
@@ -332,7 +332,7 @@ Partial Class Parqueadero
         'BNameTextBox
         '
         Me.BNameTextBox.Location = New System.Drawing.Point(104, 32)
-        Me.BNameTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BNameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.BNameTextBox.Name = "BNameTextBox"
         Me.BNameTextBox.Size = New System.Drawing.Size(147, 20)
         Me.BNameTextBox.TabIndex = 1
@@ -437,7 +437,7 @@ Partial Class Parqueadero
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.AvailableSpotsLabel)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Parqueadero"
         Me.Text = "Parqueadero"
         Me.MenuStrip1.ResumeLayout(False)
