@@ -22,7 +22,6 @@ Partial Class Parqueadero
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"10", "1", "2", "3", "4"}, -1)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParqueaderoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -58,15 +57,16 @@ Partial Class Parqueadero
         Me.AvailableSpotsLabel = New System.Windows.Forms.Label()
         Me.OccupiedSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.ParkingTab.SuspendLayout()
         Me.Check_inTab.SuspendLayout()
         Me.BillTab.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -120,7 +120,7 @@ Partial Class Parqueadero
         '
         'Check_inTab
         '
-        Me.Check_inTab.Controls.Add(Me.ListView1)
+        Me.Check_inTab.Controls.Add(Me.DataGridView1)
         Me.Check_inTab.Controls.Add(Me.CTotalCobrarLabel)
         Me.Check_inTab.Controls.Add(Me.CTotalTimeLabel)
         Me.Check_inTab.Controls.Add(Me.CPrintButton)
@@ -410,33 +410,42 @@ Partial Class Parqueadero
         Me.OccupiedSpotsLabel.TabIndex = 4
         Me.OccupiedSpotsLabel.Text = "Ocupados: 15"
         '
-        'ListView1
+        'DataGridView1
         '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
-        ListViewItem1.Tag = ""
-        Me.ListView1.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1})
-        Me.ListView1.Location = New System.Drawing.Point(77, 54)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(245, 97)
-        Me.ListView1.TabIndex = 13
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToOrderColumns = True
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
+        Me.DataGridView1.Location = New System.Drawing.Point(77, 61)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.Size = New System.Drawing.Size(444, 141)
+        Me.DataGridView1.TabIndex = 13
         '
-        'ColumnHeader1
+        'Column1
         '
-        Me.ColumnHeader1.Text = "Placa"
+        Me.Column1.HeaderText = "Placa"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
         '
-        'ColumnHeader2
+        'Column2
         '
-        Me.ColumnHeader2.Text = "Entrada"
+        Me.Column2.HeaderText = "Entrada"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
         '
-        'ColumnHeader3
+        'Column3
         '
-        Me.ColumnHeader3.Text = "Salida"
+        Me.Column3.HeaderText = "Salida"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
         '
-        'ColumnHeader4
+        'Column4
         '
-        Me.ColumnHeader4.Text = "Cobro"
+        Me.Column4.HeaderText = "Cobro"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
         '
         'Parqueadero
         '
@@ -458,6 +467,7 @@ Partial Class Parqueadero
         Me.Check_inTab.PerformLayout()
         Me.BillTab.ResumeLayout(False)
         Me.BillTab.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -498,9 +508,9 @@ Partial Class Parqueadero
     Friend WithEvents BFCButton As Button
     Friend WithEvents BCleanAllButton As Button
     Friend WithEvents CTotalCobrarLabel As Label
-    Friend WithEvents ListView1 As ListView
-    Friend WithEvents ColumnHeader1 As ColumnHeader
-    Friend WithEvents ColumnHeader2 As ColumnHeader
-    Friend WithEvents ColumnHeader3 As ColumnHeader
-    Friend WithEvents ColumnHeader4 As ColumnHeader
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
 End Class

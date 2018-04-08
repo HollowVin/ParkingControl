@@ -44,7 +44,7 @@
         If (CPlateTextBox.Text = "") Then
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
-            Dim Checkin_Hour As String = DateTime.Now.ToString("HH:mm:ss")
+
         End If
     End Sub
 
