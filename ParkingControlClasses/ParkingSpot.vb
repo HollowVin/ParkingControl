@@ -8,6 +8,7 @@
     Public Property HourRate As Decimal
     Public Property WorkDaysOpenTimes As OpenTimes
     Public Property WeekendsOpenTimes As OpenTimes
+    Public Property CarsEntered As List(Of Car)
 
     Public Sub New(Code As Integer, Name As String, Address As String, Capacity As Integer, QuarterHourRate As Decimal,
             HalfHourRate As Decimal, HourRate As Decimal, WorkDaysOpenTimes As OpenTimes, WeekendsOpenTimes As OpenTimes)
@@ -20,5 +21,6 @@
         Me.HourRate = HourRate
         Me.WorkDaysOpenTimes = WorkDaysOpenTimes
         Me.WeekendsOpenTimes = WeekendsOpenTimes
+        CarsEntered = New List(Of Car)
     End Sub
 End Class
