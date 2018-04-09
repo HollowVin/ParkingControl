@@ -30,12 +30,18 @@
     End Sub
 
     Private Sub CChargeButton_Click(sender As Object, e As EventArgs) Handles CChargeButton.Click
-        DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(2).Value = DateTime.Now
-        Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
-        Dim placa As String = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(0).Value
-        Dim ChargeAmount As Decimal = Datos_Parqueadero.parks.CarExits(placa)
-        DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value = ChargeAmount
-        DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(4).Value = True
+        Dim SelectedRow As DataGridViewRow = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index)
+
+        If Not SelectedRow.Cells.Item(4).Value Then
+            DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(2).Value = DateTime.Now
+            Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
+            Dim placa As String = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(0).Value
+            Dim ChargeAmount As Decimal = Datos_Parqueadero.parks.CarExits(placa)
+            DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value = ChargeAmount
+            DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(4).Value = True
+        Else
+            MessageBox.Show("El vehículo ya ha sido cobrado")
+        End If
     End Sub
 
     Private Sub CGenerateButton_Click(sender As Object, e As EventArgs)
@@ -125,5 +131,10 @@
 
     Private Sub Parqueadero_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Application.Exit()
+    End Sub
+
+    Private Sub DataGridView1_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles DataGridView1.RowsAdded
+        CChargeButton.Enabled = True
+        CPrintButton.Enabled = True
     End Sub
 End Class

@@ -30,6 +30,11 @@ Partial Class Parqueadero
         Me.ParkingTab = New System.Windows.Forms.TabControl()
         Me.Check_inTab = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LeavingColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.CTotalCobrarLabel = New System.Windows.Forms.Label()
         Me.CTotalTimeLabel = New System.Windows.Forms.Label()
         Me.CPrintButton = New System.Windows.Forms.Button()
@@ -58,11 +63,6 @@ Partial Class Parqueadero
         Me.AvailableSpotsLabel = New System.Windows.Forms.Label()
         Me.OccupiedSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LeavingColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.ParkingTab.SuspendLayout()
         Me.Check_inTab.SuspendLayout()
@@ -153,6 +153,39 @@ Partial Class Parqueadero
         Me.DataGridView1.Size = New System.Drawing.Size(474, 141)
         Me.DataGridView1.TabIndex = 13
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = "Placa"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "Entrada"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Salida"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Cobro"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'LeavingColumn
+        '
+        Me.LeavingColumn.FalseValue = ""
+        Me.LeavingColumn.HeaderText = "S"
+        Me.LeavingColumn.Name = "LeavingColumn"
+        Me.LeavingColumn.ReadOnly = True
+        Me.LeavingColumn.TrueValue = ""
+        Me.LeavingColumn.Width = 30
+        '
         'CTotalCobrarLabel
         '
         Me.CTotalCobrarLabel.AutoSize = True
@@ -175,6 +208,7 @@ Partial Class Parqueadero
         '
         'CPrintButton
         '
+        Me.CPrintButton.Enabled = False
         Me.CPrintButton.Location = New System.Drawing.Point(259, 220)
         Me.CPrintButton.Margin = New System.Windows.Forms.Padding(2)
         Me.CPrintButton.Name = "CPrintButton"
@@ -203,6 +237,7 @@ Partial Class Parqueadero
         '
         'CChargeButton
         '
+        Me.CChargeButton.Enabled = False
         Me.CChargeButton.Location = New System.Drawing.Point(358, 23)
         Me.CChargeButton.Margin = New System.Windows.Forms.Padding(2)
         Me.CChargeButton.Name = "CChargeButton"
@@ -425,39 +460,6 @@ Partial Class Parqueadero
         Me.OccupiedSpotsLabel.Size = New System.Drawing.Size(74, 13)
         Me.OccupiedSpotsLabel.TabIndex = 4
         Me.OccupiedSpotsLabel.Text = "Ocupados: 15"
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = "Placa"
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Entrada"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Salida"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.HeaderText = "Cobro"
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'LeavingColumn
-        '
-        Me.LeavingColumn.FalseValue = ""
-        Me.LeavingColumn.HeaderText = "S"
-        Me.LeavingColumn.Name = "LeavingColumn"
-        Me.LeavingColumn.ReadOnly = True
-        Me.LeavingColumn.TrueValue = ""
-        Me.LeavingColumn.Width = 30
         '
         'Parqueadero
         '
