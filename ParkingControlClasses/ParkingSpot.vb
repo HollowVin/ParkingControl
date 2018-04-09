@@ -9,6 +9,7 @@
     Public Property WorkDaysOpenTimes As OpenTimes
     Public Property WeekendsOpenTimes As OpenTimes
     Public Property CarsEntered As List(Of Car)
+    Public Property FacturasEntered As List(Of Factura)
 
     Public Sub New(Code As Integer, Name As String, Address As String, Capacity As Integer, QuarterHourRate As Decimal,
             HalfHourRate As Decimal, HourRate As Decimal)
@@ -59,4 +60,8 @@
             Return 0
         End If
     End Function
+
+    Public Sub AddFactura(Factura As Factura)
+        FacturasEntered.Add(Factura)
+    End Sub
 End Class
