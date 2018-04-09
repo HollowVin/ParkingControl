@@ -1,6 +1,5 @@
 ﻿Public Class Parqueadero
     Dim counter As Integer
-    Dim cars As ParkingControlClasses.Car
     Dim parks As ParkingControlClasses.ParkingSpot
 
     Private Sub Ingreso_Click(sender As Object, e As EventArgs) Handles Check_inTab.Click
@@ -34,6 +33,7 @@
         If (CPlateTextBox.Text = "") Then
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
+
             Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
             CDepartureHourLabel.Text = "Hora_Salida: " + Departure_Hour
         End If
@@ -47,12 +47,9 @@
         If (CPlateTextBox.Text = "") Then
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
-            Dim placa As String
-            cars = New ParkingControlClasses.Car(1, placa)
-
-            placa = CPlateTextBox.Text()
-            CCheckinHourLabel.Text = "Hora_Ingreso: " + cars.EnterHour.ToString("HH:mm:ss")
-
+            parks.CarsEntered = New List(Of ParkingControlClasses.Car)
+            parks.CarEnters(CPlateTextBox.Text)
+            CCheckinHourLabel.Text = "Hora_Ingreso: " + DateTime.Now.ToString("HH:mm:ss")
         End If
     End Sub
 
@@ -122,6 +119,9 @@
     End Sub
 
     Private Sub BPrintButton_Click(sender As Object, e As EventArgs) Handles BPrintButton.Click
+        Dim placa As String = CPlateTextBox.Text
+
+        parks.CarExits(placa)
     End Sub
 
     Private Sub Parqueadero_Closed(sender As Object, e As EventArgs) Handles Me.Closed
