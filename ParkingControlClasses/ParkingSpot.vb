@@ -26,7 +26,7 @@
     End Sub
 
     Public Function CarEnters(Car As Car) As Boolean
-        If CarsEntered.Contains(Car) Then
+        If CarsEntered.Exists(Function(x) x.PlateNumber = Car.PlateNumber) Then
             Return False
         Else
             Car.EnterTime = DateTime.Now
