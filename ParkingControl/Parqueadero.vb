@@ -1,11 +1,12 @@
 ﻿Public Class Parqueadero
     Dim counter As Integer
+    Dim cars As ParkingControlClasses.Car
+
     Private Sub Ingreso_Click(sender As Object, e As EventArgs) Handles Check_inTab.Click
 
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles AvailableSpotsLabel.Click
-
     End Sub
 
     Private Sub Label10_Click(sender As Object, e As EventArgs) Handles BLastNameLabel.Click
@@ -45,8 +46,12 @@
         If (CPlateTextBox.Text = "") Then
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
-            Dim Checkin_Hour As String = DateTime.Now.ToString("HH:mm:ss")
-            CCheckinHourLabel.Text = "Hora_Ingreso: " + Checkin_Hour
+            Dim placa As String
+            cars = New ParkingControlClasses.Car(1, placa)
+
+            placa = CPlateTextBox.Text()
+            CCheckinHourLabel.Text = "Hora_Ingreso: " + cars.EnterHour
+
         End If
     End Sub
 
@@ -82,12 +87,12 @@
 
     End Sub
 
-    Private Sub CPrintButton_Click(sender As Object, e As EventArgs) Handles CPrintButton.Click
+    Private Sub CPrintButton_Click(sender As Object, e As EventArgs)
         If (CPlateTextBox.Text = "") Then
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
             counter += 1
-            AvailableSpotsLabel.Text = "Disponibles: " + (100 - counter).ToString
+            AvailableSpotsLabel.Text = "Disponibles: " + (CType(cap.DCapacityTextBox.Text, Integer) - counter).ToString
             OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
         End If
 

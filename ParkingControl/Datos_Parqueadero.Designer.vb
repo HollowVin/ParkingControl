@@ -28,21 +28,21 @@ Partial Class Datos_Parqueadero
         Me.DFare4Label = New System.Windows.Forms.Label()
         Me.DCapacityLabel = New System.Windows.Forms.Label()
         Me.DAddressLabel = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.DNameTextBox = New System.Windows.Forms.TextBox()
         Me.DFare1TextBox = New System.Windows.Forms.TextBox()
         Me.DFare2TextBox = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.DCapacityTextBox = New System.Windows.Forms.TextBox()
         Me.DFare4TextBox = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.DAddressTextBox = New System.Windows.Forms.TextBox()
         Me.DSaveButton = New System.Windows.Forms.Button()
         Me.DOpeningTimeLabel = New System.Windows.Forms.Label()
         Me.DScheduleLabel = New System.Windows.Forms.Label()
         Me.DClosingHourLabel = New System.Windows.Forms.Label()
         Me.DDaysComboBox = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
+        Me.DDaysComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.DOpenHourComboBox = New System.Windows.Forms.ComboBox()
+        Me.DCloseHourComboBox = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'DNameLabel
@@ -99,13 +99,13 @@ Partial Class Datos_Parqueadero
         Me.DAddressLabel.TabIndex = 8
         Me.DAddressLabel.Text = "Direccion:"
         '
-        'TextBox1
+        'DNameTextBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(140, 36)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(153, 22)
-        Me.TextBox1.TabIndex = 1
+        Me.DNameTextBox.Location = New System.Drawing.Point(140, 36)
+        Me.DNameTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DNameTextBox.Name = "DNameTextBox"
+        Me.DNameTextBox.Size = New System.Drawing.Size(153, 22)
+        Me.DNameTextBox.TabIndex = 1
         '
         'DFare1TextBox
         '
@@ -123,13 +123,13 @@ Partial Class Datos_Parqueadero
         Me.DFare2TextBox.Size = New System.Drawing.Size(100, 22)
         Me.DFare2TextBox.TabIndex = 5
         '
-        'TextBox6
+        'DCapacityTextBox
         '
-        Me.TextBox6.Location = New System.Drawing.Point(140, 178)
-        Me.TextBox6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(112, 22)
-        Me.TextBox6.TabIndex = 3
+        Me.DCapacityTextBox.Location = New System.Drawing.Point(140, 178)
+        Me.DCapacityTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DCapacityTextBox.Name = "DCapacityTextBox"
+        Me.DCapacityTextBox.Size = New System.Drawing.Size(112, 22)
+        Me.DCapacityTextBox.TabIndex = 3
         '
         'DFare4TextBox
         '
@@ -139,13 +139,13 @@ Partial Class Datos_Parqueadero
         Me.DFare4TextBox.Size = New System.Drawing.Size(100, 22)
         Me.DFare4TextBox.TabIndex = 4
         '
-        'TextBox8
+        'DAddressTextBox
         '
-        Me.TextBox8.Location = New System.Drawing.Point(140, 105)
-        Me.TextBox8.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(247, 22)
-        Me.TextBox8.TabIndex = 2
+        Me.DAddressTextBox.Location = New System.Drawing.Point(140, 105)
+        Me.DAddressTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DAddressTextBox.Name = "DAddressTextBox"
+        Me.DAddressTextBox.Size = New System.Drawing.Size(247, 22)
+        Me.DAddressTextBox.TabIndex = 2
         '
         'DSaveButton
         '
@@ -203,56 +203,56 @@ Partial Class Datos_Parqueadero
         Me.Label1.TabIndex = 26
         Me.Label1.Text = "-"
         '
-        'ComboBox1
+        'DDaysComboBox2
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"})
-        Me.ComboBox1.Location = New System.Drawing.Point(239, 249)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(55, 24)
-        Me.ComboBox1.TabIndex = 8
+        Me.DDaysComboBox2.FormattingEnabled = True
+        Me.DDaysComboBox2.Items.AddRange(New Object() {"Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"})
+        Me.DDaysComboBox2.Location = New System.Drawing.Point(239, 249)
+        Me.DDaysComboBox2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DDaysComboBox2.Name = "DDaysComboBox2"
+        Me.DDaysComboBox2.Size = New System.Drawing.Size(55, 24)
+        Me.DDaysComboBox2.TabIndex = 8
         '
-        'ComboBox4
+        'DOpenHourComboBox
         '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
-        Me.ComboBox4.Location = New System.Drawing.Point(144, 326)
-        Me.ComboBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(55, 24)
-        Me.ComboBox4.TabIndex = 9
+        Me.DOpenHourComboBox.FormattingEnabled = True
+        Me.DOpenHourComboBox.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
+        Me.DOpenHourComboBox.Location = New System.Drawing.Point(144, 326)
+        Me.DOpenHourComboBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DOpenHourComboBox.Name = "DOpenHourComboBox"
+        Me.DOpenHourComboBox.Size = New System.Drawing.Size(55, 24)
+        Me.DOpenHourComboBox.TabIndex = 9
         '
-        'ComboBox5
+        'DCloseHourComboBox
         '
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
-        Me.ComboBox5.Location = New System.Drawing.Point(555, 322)
-        Me.ComboBox5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(55, 24)
-        Me.ComboBox5.TabIndex = 10
+        Me.DCloseHourComboBox.FormattingEnabled = True
+        Me.DCloseHourComboBox.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
+        Me.DCloseHourComboBox.Location = New System.Drawing.Point(555, 322)
+        Me.DCloseHourComboBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DCloseHourComboBox.Name = "DCloseHourComboBox"
+        Me.DCloseHourComboBox.Size = New System.Drawing.Size(55, 24)
+        Me.DCloseHourComboBox.TabIndex = 10
         '
         'Datos_Parqueadero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(747, 441)
-        Me.Controls.Add(Me.ComboBox5)
-        Me.Controls.Add(Me.ComboBox4)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.DCloseHourComboBox)
+        Me.Controls.Add(Me.DOpenHourComboBox)
+        Me.Controls.Add(Me.DDaysComboBox2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DDaysComboBox)
         Me.Controls.Add(Me.DClosingHourLabel)
         Me.Controls.Add(Me.DScheduleLabel)
         Me.Controls.Add(Me.DOpeningTimeLabel)
         Me.Controls.Add(Me.DSaveButton)
-        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.DAddressTextBox)
         Me.Controls.Add(Me.DFare4TextBox)
-        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.DCapacityTextBox)
         Me.Controls.Add(Me.DFare2TextBox)
         Me.Controls.Add(Me.DFare1TextBox)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.DNameTextBox)
         Me.Controls.Add(Me.DAddressLabel)
         Me.Controls.Add(Me.DCapacityLabel)
         Me.Controls.Add(Me.DFare4Label)
@@ -273,19 +273,19 @@ Partial Class Datos_Parqueadero
     Friend WithEvents DFare4Label As Label
     Friend WithEvents DCapacityLabel As Label
     Friend WithEvents DAddressLabel As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents DNameTextBox As TextBox
     Friend WithEvents DFare1TextBox As TextBox
     Friend WithEvents DFare2TextBox As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents DCapacityTextBox As TextBox
     Friend WithEvents DFare4TextBox As TextBox
-    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents DAddressTextBox As TextBox
     Friend WithEvents DSaveButton As Button
     Friend WithEvents DOpeningTimeLabel As Label
     Friend WithEvents DScheduleLabel As Label
     Friend WithEvents DClosingHourLabel As Label
     Friend WithEvents DDaysComboBox As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox4 As ComboBox
-    Friend WithEvents ComboBox5 As ComboBox
+    Friend WithEvents DDaysComboBox2 As ComboBox
+    Friend WithEvents DOpenHourComboBox As ComboBox
+    Friend WithEvents DCloseHourComboBox As ComboBox
 End Class
