@@ -117,9 +117,7 @@
     End Sub
 
     Private Sub BPrintButton_Click(sender As Object, e As EventArgs) Handles BPrintButton.Click
-        Dim placa As String = CPlateTextBox.Text
-
-        Datos_Parqueadero.parks.CarExits(placa)
+        Datos_Parqueadero.parks.CarExits(CPlateTextBox.Text)
     End Sub
 
     Private Sub Parqueadero_Closed(sender As Object, e As EventArgs) Handles Me.Closed
