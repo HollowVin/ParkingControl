@@ -1,5 +1,6 @@
 ﻿Public Class Parqueadero
     Dim counter As Integer
+
     Private Sub Ingreso_Click(sender As Object, e As EventArgs) Handles Check_inTab.Click
 
     End Sub
@@ -41,7 +42,8 @@
         If (CPlateTextBox.Text = "") Then
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
-            DataGridView1.Rows.Add(CPlateTextBox.Text, DateTime.Now)
+            Datos_Parqueadero.parks.CarEnters(CPlateTextBox.Text)
+            DataGridView1.Rows.Add(CPlateTextBox.Text, parks.CarsEntered.Last().EnterHour)
         End If
     End Sub
 
@@ -82,7 +84,7 @@
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
             counter += 1
-            AvailableSpotsLabel.Text = "Disponibles: " + (100 - counter).ToString
+            AvailableSpotsLabel.Text = "Disponibles: " + (Datos_Parqueadero.parks.Capacity - counter).ToString
             OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
         End If
 
@@ -109,6 +111,8 @@
     End Sub
 
     Private Sub BPrintButton_Click(sender As Object, e As EventArgs) Handles BPrintButton.Click
+        Dim placa As String = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(0).Value
+        parks.CarExits(placa)
     End Sub
 
     Private Sub Parqueadero_Closed(sender As Object, e As EventArgs) Handles Me.Closed
