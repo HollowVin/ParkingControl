@@ -43,7 +43,7 @@
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
             Datos_Parqueadero.parks.CarEnters(CPlateTextBox.Text)
-            DataGridView1.Rows.Add(CPlateTextBox.Text, parks.CarsEntered.Last().EnterHour)
+            DataGridView1.Rows.Add(CPlateTextBox.Text, Datos_Parqueadero.parks.CarsEntered.Last().EnterTime)
         End If
     End Sub
 
@@ -112,7 +112,7 @@
 
     Private Sub BPrintButton_Click(sender As Object, e As EventArgs) Handles BPrintButton.Click
         Dim placa As String = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(0).Value
-        parks.CarExits(placa)
+        Datos_Parqueadero.parks.CarExits(placa)
     End Sub
 
     Private Sub Parqueadero_Closed(sender As Object, e As EventArgs) Handles Me.Closed
