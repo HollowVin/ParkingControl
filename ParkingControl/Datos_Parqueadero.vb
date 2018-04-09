@@ -5,7 +5,6 @@
         Dim nombre, direccion As String
         Dim capacidad As Integer
         Dim cuarto, Media, total As Decimal
-        parks = New ParkingControlClasses.ParkingSpot(1, nombre, direccion, capacidad, cuarto, Media, total)
 
         nombre = DNameTextBox.Text
         direccion = DAddressTextBox.Text
@@ -13,6 +12,9 @@
         cuarto = CType(DFare4TextBox.Text, Decimal)
         Media = CType(DFare2TextBox.Text, Decimal)
         total = CType(DFare1TextBox.Text, Decimal)
+
+        parks = New ParkingControlClasses.ParkingSpot(1, nombre, direccion, capacidad, cuarto, Media, total)
+
         Me.Hide()
         Parqueadero.Show()
     End Sub

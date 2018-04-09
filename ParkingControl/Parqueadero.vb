@@ -6,6 +6,7 @@
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles AvailableSpotsLabel.Click
+
     End Sub
 
     Private Sub Label10_Click(sender As Object, e As EventArgs) Handles BLastNameLabel.Click
@@ -29,12 +30,17 @@
     End Sub
 
     Private Sub CChargeButton_Click(sender As Object, e As EventArgs) Handles CChargeButton.Click
-        If (CPlateTextBox.Text = "") Then
-            MessageBox.Show("Ingrese la placa del vehiculo")
-        Else
+        Dim SelectedRow As DataGridViewRow = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index)
 
+        If Not SelectedRow.Cells.Item(4).Value Then
+            DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(2).Value = DateTime.Now
             Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
-            CDepartureHourLabel.Text = "Hora_Salida: " + Departure_Hour
+            Dim placa As String = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(0).Value
+            Dim ChargeAmount As Decimal = Datos_Parqueadero.parks.CarExits(placa)
+            DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value = ChargeAmount
+            DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(4).Value = True
+        Else
+            MessageBox.Show("El vehículo ya ha sido cobrado")
         End If
     End Sub
 
@@ -46,8 +52,11 @@
         If (CPlateTextBox.Text = "") Then
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
-            Datos_Parqueadero.parks.CarEnters(CPlateTextBox.Text)
-            CCheckinHourLabel.Text = "Hora_Ingreso: " + DateTime.Now.ToString("HH:mm:ss")
+            If Datos_Parqueadero.parks.CarEnters(CPlateTextBox.Text) Then
+                DataGridView1.Rows.Add(CPlateTextBox.Text, Datos_Parqueadero.parks.CarsEntered.Last().EnterTime)
+            Else
+                MessageBox.Show("El vehículo con esa placa ya ha ingresado")
+            End If
         End If
     End Sub
 
@@ -83,17 +92,18 @@
 
     End Sub
 
-    Private Sub CPrintButton_Click(sender As Object, e As EventArgs)
-        If (CPlateTextBox.Text = "") Then
-            MessageBox.Show("Ingrese la placa del vehiculo")
-        Else
+    Private Sub CPrintButton_Click(sender As Object, e As EventArgs) Handles CPrintButton.Click
+        Dim SelectedRow As DataGridViewRow = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index)
+
+        If SelectedRow.Cells.Item(4).Value Then
             counter += 1
             AvailableSpotsLabel.Text = "Disponibles: " + (Datos_Parqueadero.parks.Capacity - counter).ToString
             OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
+            ParkingTab.SelectTab(1)
+            BTotalTextBox.Text = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value
+        Else
+            MessageBox.Show("El vehículo no ha sido cobrado aún")
         End If
-
-        CPlateTextBox.Text = ""
-        CCheckinHourLabel.Text = "Hora_Ingreso"
     End Sub
 
     Private Sub BFCButton_Click(sender As Object, e As EventArgs) Handles BFCButton.Click
@@ -116,12 +126,15 @@
     End Sub
 
     Private Sub BPrintButton_Click(sender As Object, e As EventArgs) Handles BPrintButton.Click
-        Dim placa As String = CPlateTextBox.Text
 
-        Datos_Parqueadero.parks.CarExits(placa)
     End Sub
 
     Private Sub Parqueadero_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Application.Exit()
+    End Sub
+
+    Private Sub DataGridView1_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles DataGridView1.RowsAdded
+        CChargeButton.Enabled = True
+        CPrintButton.Enabled = True
     End Sub
 End Class
