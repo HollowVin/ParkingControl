@@ -35,6 +35,13 @@
         End If
     End Function
 
+    Public Function GetCarByPlateNumber(PlateNumber As String) As Car
+        If CarsEntered.Exists(Function(x) x.PlateNumber = PlateNumber) Then
+            Return CarsEntered.Find(Function(x) x.PlateNumber = PlateNumber)
+        End If
+        Return Nothing
+    End Function
+
     Public Function CarExits(Car As Car) As Decimal
         If CarsEntered.Contains(Car) Then
             Dim ExitTime As DateTime = DateTime.Now
