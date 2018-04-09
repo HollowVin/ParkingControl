@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ParkingControl", "ParkingControl\ParkingControl.vbproj", "{AF02D719-21CA-4896-AD1B-342ED089A488}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ParkingControlClasses", "ParkingControlClasses\ParkingControlClasses.vbproj", "{072A5A58-5F18-46C8-8080-8132A6149603}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AF02D719-21CA-4896-AD1B-342ED089A488}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF02D719-21CA-4896-AD1B-342ED089A488}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF02D719-21CA-4896-AD1B-342ED089A488}.Release|Any CPU.Build.0 = Release|Any CPU
+		{072A5A58-5F18-46C8-8080-8132A6149603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072A5A58-5F18-46C8-8080-8132A6149603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072A5A58-5F18-46C8-8080-8132A6149603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{072A5A58-5F18-46C8-8080-8132A6149603}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
