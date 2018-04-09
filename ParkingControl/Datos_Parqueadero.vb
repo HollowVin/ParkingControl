@@ -1,9 +1,11 @@
 ﻿Public Class Datos_Parqueadero
+    Public parks As ParkingControlClasses.ParkingSpot
+
     Private Sub DSaveButton_Click(sender As Object, e As EventArgs) Handles DSaveButton.Click
         Dim nombre, direccion As String
         Dim capacidad As Integer
         Dim cuarto, Media, total As Decimal
-        Dim parks As ParkingControlClasses.ParkingSpot = New ParkingControlClasses.ParkingSpot(1, nombre, direccion, capacidad, cuarto, media, total)
+        parks = New ParkingControlClasses.ParkingSpot(1, nombre, direccion, capacidad, cuarto, Media, total)
 
         nombre = DNameTextBox.Text
         direccion = DAddressTextBox.Text
@@ -20,6 +22,10 @@
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles DNameTextBox.TextChanged
+
+    End Sub
+
+    Private Sub Datos_Parqueadero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class
