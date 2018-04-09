@@ -35,6 +35,7 @@
         Dim placa As String = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(0).Value
         Dim ChargeAmount As Decimal = Datos_Parqueadero.parks.CarExits(placa)
         DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value = ChargeAmount
+        DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(4).Value = True
     End Sub
 
     Private Sub CGenerateButton_Click(sender As Object, e As EventArgs)
@@ -86,16 +87,17 @@
     End Sub
 
     Private Sub CPrintButton_Click(sender As Object, e As EventArgs) Handles CPrintButton.Click
-        If (CPlateTextBox.Text = "") Then
-            MessageBox.Show("Ingrese la placa del vehiculo")
-        Else
+        Dim SelectedRow As DataGridViewRow = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index)
+
+        If SelectedRow.Cells.Item(4).Value Then
             counter += 1
             AvailableSpotsLabel.Text = "Disponibles: " + (Datos_Parqueadero.parks.Capacity - counter).ToString
             OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
-            BTotalTextBox.Select()
+            ParkingTab.SelectTab(1)
+            BTotalTextBox.Text = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value
+        Else
+            MessageBox.Show("El vehículo no ha sido cobrado aún")
         End If
-
-        CPlateTextBox.Text = ""
     End Sub
 
     Private Sub BFCButton_Click(sender As Object, e As EventArgs) Handles BFCButton.Click

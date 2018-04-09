@@ -29,6 +29,7 @@ Partial Class Parqueadero
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParkingTab = New System.Windows.Forms.TabControl()
         Me.Check_inTab = New System.Windows.Forms.TabPage()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.CTotalCobrarLabel = New System.Windows.Forms.Label()
         Me.CTotalTimeLabel = New System.Windows.Forms.Label()
         Me.CPrintButton = New System.Windows.Forms.Button()
@@ -57,16 +58,16 @@ Partial Class Parqueadero
         Me.AvailableSpotsLabel = New System.Windows.Forms.Label()
         Me.OccupiedSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LeavingColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.MenuStrip1.SuspendLayout()
         Me.ParkingTab.SuspendLayout()
         Me.Check_inTab.SuspendLayout()
-        Me.BillTab.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BillTab.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -136,6 +137,21 @@ Partial Class Parqueadero
         Me.Check_inTab.TabIndex = 0
         Me.Check_inTab.Text = "Ingreso"
         Me.Check_inTab.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToOrderColumns = True
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.LeavingColumn})
+        Me.DataGridView1.Location = New System.Drawing.Point(57, 65)
+        Me.DataGridView1.MultiSelect = False
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(474, 141)
+        Me.DataGridView1.TabIndex = 13
         '
         'CTotalCobrarLabel
         '
@@ -410,21 +426,6 @@ Partial Class Parqueadero
         Me.OccupiedSpotsLabel.TabIndex = 4
         Me.OccupiedSpotsLabel.Text = "Ocupados: 15"
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
-        Me.DataGridView1.Location = New System.Drawing.Point(77, 61)
-        Me.DataGridView1.MultiSelect = False
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(444, 141)
-        Me.DataGridView1.TabIndex = 13
-        '
         'Column1
         '
         Me.Column1.HeaderText = "Placa"
@@ -449,6 +450,15 @@ Partial Class Parqueadero
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
         '
+        'LeavingColumn
+        '
+        Me.LeavingColumn.FalseValue = ""
+        Me.LeavingColumn.HeaderText = "S"
+        Me.LeavingColumn.Name = "LeavingColumn"
+        Me.LeavingColumn.ReadOnly = True
+        Me.LeavingColumn.TrueValue = ""
+        Me.LeavingColumn.Width = 30
+        '
         'Parqueadero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -467,9 +477,9 @@ Partial Class Parqueadero
         Me.ParkingTab.ResumeLayout(False)
         Me.Check_inTab.ResumeLayout(False)
         Me.Check_inTab.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BillTab.ResumeLayout(False)
         Me.BillTab.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -515,4 +525,5 @@ Partial Class Parqueadero
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents LeavingColumn As DataGridViewCheckBoxColumn
 End Class
