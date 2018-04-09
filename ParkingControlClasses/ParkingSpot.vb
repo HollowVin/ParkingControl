@@ -28,7 +28,7 @@
     End Sub
 
     Public Function CarEnters(PlateNumber As String) As Boolean
-        If CarsEntered.Exists(Function(x) x.PlateNumber = PlateNumber) Then
+        If Not GetCarByPlateNumber(PlateNumber) Is Nothing Then
             Return False
         Else
             NumberOfCars = NumberOfCars + 1
@@ -45,10 +45,12 @@
         Return Nothing
     End Function
 
-    Public Function CarExits(Car As Car) As Decimal
-        If CarsEntered.Contains(Car) Then
+    Public Function CarExits(PlateNumber As String) As Decimal
+        Dim CarInside As Car = GetCarByPlateNumber(PlateNumber)
+
+        If Not CarInside Is Nothing Then
             Dim ExitTime As DateTime = DateTime.Now
-            Dim TimeDifference As TimeSpan = ExitTime - Car.EnterTime
+            Dim TimeDifference As TimeSpan = ExitTime - CarInside.EnterTime
 
             Dim Hours As Integer = TimeDifference.Hours
             Dim Minutes As Integer = TimeDifference.Minutes
@@ -65,6 +67,7 @@
                 ChargeAmount = ChargeAmount + HourRate
             End If
 
+            CarsEntered.Remove(CarInside)
             Return ChargeAmount
         Else
             Return 0
