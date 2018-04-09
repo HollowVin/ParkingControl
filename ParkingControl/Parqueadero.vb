@@ -32,6 +32,9 @@
     Private Sub CChargeButton_Click(sender As Object, e As EventArgs) Handles CChargeButton.Click
         DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(2).Value = DateTime.Now
         Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
+        Dim placa As String = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(0).Value
+        Dim ChargeAmount As Decimal = Datos_Parqueadero.parks.CarExits(placa)
+        DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value = ChargeAmount
     End Sub
 
     Private Sub CGenerateButton_Click(sender As Object, e As EventArgs)
@@ -42,8 +45,11 @@
         If (CPlateTextBox.Text = "") Then
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
-            Datos_Parqueadero.parks.CarEnters(CPlateTextBox.Text)
-            DataGridView1.Rows.Add(CPlateTextBox.Text, Datos_Parqueadero.parks.CarsEntered.Last().EnterTime)
+            If Datos_Parqueadero.parks.CarEnters(CPlateTextBox.Text) Then
+                DataGridView1.Rows.Add(CPlateTextBox.Text, Datos_Parqueadero.parks.CarsEntered.Last().EnterTime)
+            Else
+                MessageBox.Show("El vehículo con esa placa ya ha ingresado")
+            End If
         End If
     End Sub
 
@@ -86,6 +92,7 @@
             counter += 1
             AvailableSpotsLabel.Text = "Disponibles: " + (Datos_Parqueadero.parks.Capacity - counter).ToString
             OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
+            BTotalTextBox.Select()
         End If
 
         CPlateTextBox.Text = ""
@@ -111,8 +118,7 @@
     End Sub
 
     Private Sub BPrintButton_Click(sender As Object, e As EventArgs) Handles BPrintButton.Click
-        Dim placa As String = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(0).Value
-        Datos_Parqueadero.parks.CarExits(placa)
+
     End Sub
 
     Private Sub Parqueadero_Closed(sender As Object, e As EventArgs) Handles Me.Closed
