@@ -47,7 +47,7 @@
         If (CPlateTextBox.Text = "") Then
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
-            parks.CarsEntered = New List(Of ParkingControlClasses.Car)
+            'parks.CarsEntered = New List(Of ParkingControlClasses.Car)
             parks.CarEnters(CPlateTextBox.Text)
             CCheckinHourLabel.Text = "Hora_Ingreso: " + DateTime.Now.ToString("HH:mm:ss")
         End If
