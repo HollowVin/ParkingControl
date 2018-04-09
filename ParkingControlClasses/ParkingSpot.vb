@@ -24,6 +24,7 @@
         'Me.WorkDaysOpenTimes = WorkDaysOpenTimes
         'Me.WeekendsOpenTimes = WeekendsOpenTimes
         CarsEntered = New List(Of Car)
+        FacturasEntered = New List(Of Factura)
         NumberOfCars = 0
     End Sub
 
