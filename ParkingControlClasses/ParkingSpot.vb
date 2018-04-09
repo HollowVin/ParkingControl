@@ -55,14 +55,13 @@
 
             Dim Hours As Integer = TimeDifference.Hours
             Dim Minutes As Integer = TimeDifference.Minutes
-            Dim QuarterMinutes = Minutes Mod 15
 
             Dim ChargeAmount As Decimal
             ChargeAmount = Hours * HourRate
 
-            If QuarterMinutes = 1 Then
+            If Minutes <= 15 Then
                 ChargeAmount = ChargeAmount + QuarterHourRate
-            ElseIf QuarterMinutes = 2 Then
+            ElseIf Minutes <= 30 Then
                 ChargeAmount = ChargeAmount + HalfHourRate
             Else
                 ChargeAmount = ChargeAmount + HourRate
