@@ -6,5 +6,6 @@
     Public Sub New(CodeVal As String, PlateNumber As String)
         Me.CodeVal = CodeVal
         Me.PlateNumber = PlateNumber
+        EnterTime = DateTime.Now
     End Sub
 End Class

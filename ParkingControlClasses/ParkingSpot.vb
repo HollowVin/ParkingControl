@@ -10,6 +10,7 @@
     Public Property WeekendsOpenTimes As OpenTimes
     Public Property CarsEntered As List(Of Car)
     Public Property FacturasEntered As List(Of Factura)
+    Public Property NumberOfCars As Integer
 
     Public Sub New(Code As Integer, Name As String, Address As String, Capacity As Integer, QuarterHourRate As Decimal,
             HalfHourRate As Decimal, HourRate As Decimal)
@@ -23,14 +24,16 @@
         'Me.WorkDaysOpenTimes = WorkDaysOpenTimes
         'Me.WeekendsOpenTimes = WeekendsOpenTimes
         CarsEntered = New List(Of Car)
+        NumberOfCars = 0
     End Sub
 
-    Public Function CarEnters(Car As Car) As Boolean
-        If CarsEntered.Exists(Function(x) x.PlateNumber = Car.PlateNumber) Then
+    Public Function CarEnters(PlateNumber As String) As Boolean
+        If CarsEntered.Exists(Function(x) x.PlateNumber = PlateNumber) Then
             Return False
         Else
-            Car.EnterTime = DateTime.Now
-            CarsEntered.Add(Car)
+            NumberOfCars = NumberOfCars + 1
+            Dim NewCar As Car = New Car(NumberOfCars, PlateNumber)
+            CarsEntered.Add(NewCar)
             Return True
         End If
     End Function
