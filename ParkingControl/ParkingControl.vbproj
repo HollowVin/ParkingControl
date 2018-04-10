@@ -101,6 +101,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Ventana_Facturas.Designer.vb">
+      <DependentUpon>Ventana_Facturas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventana_Facturas.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Datos_Parqueadero.resx">
@@ -114,6 +120,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventana_Facturas.resx">
+      <DependentUpon>Ventana_Facturas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

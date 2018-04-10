@@ -94,8 +94,11 @@
             MessageBox.Show("Ingrese la placa del vehiculo")
         Else
             If Datos_Parqueadero.parks.CarEnters(CPlateTextBox.Text) Then
+                CConsultButton.Enabled = True
                 counter += 1
-                DataGridView1.Rows.Add(CPlateTextBox.Text, Datos_Parqueadero.parks.CarsEntered.Last().EnterTime.ToString("HH:mm:ss"))
+
+                DataGridView1.Rows.Add(Datos_Parqueadero.parks.CarsEntered.Last().PlateNumber.ToString,
+                                       Datos_Parqueadero.parks.CarsEntered.Last().EnterTime.ToString("HH:mm:ss"))
                 available = CType(Datos_Parqueadero.DCapacityTextBox.Text, Integer) - counter
                 AvailableSpotsLabel.Text = "Disponibles: " + available.ToString
                 OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
@@ -126,23 +129,28 @@
 
     Private Sub BPrintButton_Click(sender As Object, e As EventArgs) Handles BPrintButton.Click
         bill = New ParkingControlClasses.Factura(1, "", "", "", "", 0.00)
+        Dim numero As Integer
 
-
-
-        If (BNameTextBox.Text = "" And BLastNameTextBox.Text = "" And BCI_RUCTextBox.Text = "" And BTotalTextBox.Text = "") Then
+        If (BNameTextBox.Text = "" Or BLastNameTextBox.Text = "" Or BCI_RUCTextBox.Text = "" Or BTotalTextBox.Text = "") Then
             MessageBox.Show("Los campos Nombre, Apellido, CI y Total son obligatorios")
         Else
             counter -= 1
             available += 1
+            numero += 1
+
             AvailableSpotsLabel.Text = "Disponibles: " + available.ToString
             OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
+
             bill.Name = BNameTextBox.Text + BLastNameTextBox.Text
             bill.Address = BAddressTextBox.Text
             bill.PhoneNumber = BPhoneTextBox.Text
             bill.CI = BCI_RUCTextBox.Text
             bill.EmissionDate = BDateTextBox.Text
             bill.Total = BTotalTextBox.Text
+            Datos_Parqueadero.parks.AddFactura(bill)
+
             MessageBox.Show("Factura impresa con exito")
+
             BNameTextBox.Clear()
             BLastNameTextBox.Clear()
             BAddressTextBox.Clear()
@@ -150,6 +158,11 @@
             BCI_RUCTextBox.Clear()
             BDateTextBox.Clear()
             BTotalTextBox.Clear()
+
+            Ventana_Facturas.TablaFacturas.Rows.Add(numero.ToString,
+                                                    Datos_Parqueadero.parks.FacturasEntered.Last().CI.ToString,
+                                                    Datos_Parqueadero.parks.FacturasEntered.Last().EmissionDate.ToString,
+                                                    Datos_Parqueadero.parks.FacturasEntered.Last().Total.ToString)
         End If
     End Sub
 
@@ -181,7 +194,16 @@
     Private Sub OccupiedSpotsLabel_Click(sender As Object, e As EventArgs) Handles OccupiedSpotsLabel.Click
     End Sub
 
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub RegistroFacturasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroFacturasToolStripMenuItem.Click
+        Ventana_Facturas.Show()
+    End Sub
+
     Private Sub CConsultButton_Click(sender As Object, e As EventArgs) Handles CConsultButton.Click
+
         Dim SelectedRow As DataGridViewRow = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index)
 
         DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(2).Value = DateTime.Now.ToString("HH:mm:ss")

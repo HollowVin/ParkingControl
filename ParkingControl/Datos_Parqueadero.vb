@@ -11,8 +11,6 @@
         parks.HalfHourRate = CType(DFare2TextBox.Text, Decimal)
         parks.HourRate = CType(DFare1TextBox.Text, Decimal)
 
-
-
         Parqueadero.AvailableSpotsLabel.Text = "Disponibles: " + DCapacityTextBox.Text
 
         Me.Hide()

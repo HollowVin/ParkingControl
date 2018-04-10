@@ -22,6 +22,7 @@ Partial Class Parqueadero
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParqueaderoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -29,6 +30,7 @@ Partial Class Parqueadero
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParkingTab = New System.Windows.Forms.TabControl()
         Me.Check_inTab = New System.Windows.Forms.TabPage()
+        Me.CConsultButton = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -42,6 +44,7 @@ Partial Class Parqueadero
         Me.CChargeButton = New System.Windows.Forms.Button()
         Me.CPlateLabel = New System.Windows.Forms.Label()
         Me.BillTab = New System.Windows.Forms.TabPage()
+        Me.CalculateDateButton = New System.Windows.Forms.Button()
         Me.BCleanAllButton = New System.Windows.Forms.Button()
         Me.BFCButton = New System.Windows.Forms.Button()
         Me.BPrintButton = New System.Windows.Forms.Button()
@@ -62,8 +65,8 @@ Partial Class Parqueadero
         Me.AvailableSpotsLabel = New System.Windows.Forms.Label()
         Me.OccupiedSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
-        Me.CalculateDateButton = New System.Windows.Forms.Button()
-        Me.CConsultButton = New System.Windows.Forms.Button()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.RegistroFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ParkingTab.SuspendLayout()
         Me.Check_inTab.SuspendLayout()
@@ -84,7 +87,7 @@ Partial Class Parqueadero
         '
         'ArchivoToolStripMenuItem
         '
-        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ParqueaderoToolStripMenuItem})
+        Me.ArchivoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ParqueaderoToolStripMenuItem, Me.RegistroFacturasToolStripMenuItem})
         Me.ArchivoToolStripMenuItem.Name = "ArchivoToolStripMenuItem"
         Me.ArchivoToolStripMenuItem.Size = New System.Drawing.Size(71, 24)
         Me.ArchivoToolStripMenuItem.Text = "Archivo"
@@ -93,7 +96,7 @@ Partial Class Parqueadero
         '
         Me.ParqueaderoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem})
         Me.ParqueaderoToolStripMenuItem.Name = "ParqueaderoToolStripMenuItem"
-        Me.ParqueaderoToolStripMenuItem.Size = New System.Drawing.Size(168, 26)
+        Me.ParqueaderoToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
         Me.ParqueaderoToolStripMenuItem.Text = "Parqueadero"
         '
         'EditarToolStripMenuItem
@@ -139,6 +142,17 @@ Partial Class Parqueadero
         Me.Check_inTab.Text = "Ingreso"
         Me.Check_inTab.UseVisualStyleBackColor = True
         '
+        'CConsultButton
+        '
+        Me.CConsultButton.Enabled = False
+        Me.CConsultButton.Location = New System.Drawing.Point(339, 28)
+        Me.CConsultButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CConsultButton.Name = "CConsultButton"
+        Me.CConsultButton.Size = New System.Drawing.Size(97, 32)
+        Me.CConsultButton.TabIndex = 14
+        Me.CConsultButton.Text = "Consultar"
+        Me.CConsultButton.UseVisualStyleBackColor = True
+        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToAddRows = False
@@ -147,7 +161,7 @@ Partial Class Parqueadero
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.LeavingColumn})
         Me.DataGridView1.Location = New System.Drawing.Point(76, 80)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
@@ -272,6 +286,14 @@ Partial Class Parqueadero
         Me.BillTab.TabIndex = 1
         Me.BillTab.Text = "Factura"
         Me.BillTab.UseVisualStyleBackColor = True
+        '
+        'CalculateDateButton
+        '
+        Me.CalculateDateButton.Location = New System.Drawing.Point(245, 140)
+        Me.CalculateDateButton.Name = "CalculateDateButton"
+        Me.CalculateDateButton.Size = New System.Drawing.Size(19, 19)
+        Me.CalculateDateButton.TabIndex = 19
+        Me.CalculateDateButton.UseVisualStyleBackColor = True
         '
         'BCleanAllButton
         '
@@ -441,23 +463,17 @@ Partial Class Parqueadero
         Me.OccupiedSpotsLabel.TabIndex = 4
         Me.OccupiedSpotsLabel.Text = "Ocupados: 0"
         '
-        'CalculateDateButton
+        'ContextMenuStrip1
         '
-        Me.CalculateDateButton.Location = New System.Drawing.Point(245, 140)
-        Me.CalculateDateButton.Name = "CalculateDateButton"
-        Me.CalculateDateButton.Size = New System.Drawing.Size(19, 19)
-        Me.CalculateDateButton.TabIndex = 19
-        Me.CalculateDateButton.UseVisualStyleBackColor = True
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
-        'CConsultButton
+        'RegistroFacturasToolStripMenuItem
         '
-        Me.CConsultButton.Location = New System.Drawing.Point(339, 28)
-        Me.CConsultButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.CConsultButton.Name = "CConsultButton"
-        Me.CConsultButton.Size = New System.Drawing.Size(97, 32)
-        Me.CConsultButton.TabIndex = 14
-        Me.CConsultButton.Text = "Consultar"
-        Me.CConsultButton.UseVisualStyleBackColor = True
+        Me.RegistroFacturasToolStripMenuItem.Name = "RegistroFacturasToolStripMenuItem"
+        Me.RegistroFacturasToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.RegistroFacturasToolStripMenuItem.Text = "Registro Facturas"
         '
         'Parqueadero
         '
@@ -527,4 +543,6 @@ Partial Class Parqueadero
     Friend WithEvents LeavingColumn As DataGridViewCheckBoxColumn
     Friend WithEvents CalculateDateButton As Button
     Friend WithEvents CConsultButton As Button
+    Friend WithEvents RegistroFacturasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
 End Class
