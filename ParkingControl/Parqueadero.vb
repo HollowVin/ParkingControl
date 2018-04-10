@@ -1,6 +1,7 @@
 ﻿Public Class Parqueadero
-    Dim counter As Integer
+    Dim counter, available As Integer
     Dim bill As ParkingControlClasses.Factura
+
 
     Private Sub Ingreso_Click(sender As Object, e As EventArgs) Handles Check_inTab.Click
 
@@ -34,12 +35,15 @@
         Dim SelectedRow As DataGridViewRow = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index)
 
         If Not SelectedRow.Cells.Item(4).Value Then
+
             DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(2).Value = DateTime.Now.ToString("HH:mm:ss")
             Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
             Dim placa As String = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(0).Value
             Dim ChargeAmount As Decimal = Datos_Parqueadero.parks.CarExits(placa)
             DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value = ChargeAmount
             DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(4).Value = True
+            ParkingTab.SelectTab(1)
+            BTotalTextBox.Text = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value
         Else
             MessageBox.Show("El vehículo ya ha sido cobrado")
         End If
@@ -49,16 +53,8 @@
 
     End Sub
 
-    Private Sub CIngresarButton_Click(sender As Object, e As EventArgs) Handles CIngresarButton.Click
-        If (CPlateTextBox.Text = "") Then
-            MessageBox.Show("Ingrese la placa del vehiculo")
-        Else
-            If Datos_Parqueadero.parks.CarEnters(CPlateTextBox.Text) Then
-                DataGridView1.Rows.Add(CPlateTextBox.Text, Datos_Parqueadero.parks.CarsEntered.Last().EnterTime.ToString("HH:mm:ss"))
-            Else
-                MessageBox.Show("El vehículo con esa placa ya ha ingresado")
-            End If
-        End If
+    Private Sub CIngresarButton_Click(sender As Object, e As EventArgs)
+
     End Sub
 
     Private Sub BDateTextBox_TextChanged(sender As Object, e As EventArgs) Handles BDateTextBox.TextChanged
@@ -94,18 +90,18 @@
     End Sub
 
     Private Sub CPrintButton_Click(sender As Object, e As EventArgs) Handles CPrintButton.Click
-        Dim SelectedRow As DataGridViewRow = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index)
-        Dim ChargeAmount As Decimal = Datos_Parqueadero.parks.CarExits(CPlateTextBox.Text)
-
-        If SelectedRow.Cells.Item(4).Value Then
-            counter += 1
-            AvailableSpotsLabel.Text = "Disponibles: " + (Datos_Parqueadero.parks.Capacity - counter).ToString
-            OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
-            ParkingTab.SelectTab(1)
-            BTotalTextBox.Text = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value
-            BTotalTextBox.Text = ChargeAmount
+        If (CPlateTextBox.Text = "") Then
+            MessageBox.Show("Ingrese la placa del vehiculo")
         Else
-            MessageBox.Show("El vehículo no ha sido cobrado aún")
+            If Datos_Parqueadero.parks.CarEnters(CPlateTextBox.Text) Then
+                counter += 1
+                DataGridView1.Rows.Add(CPlateTextBox.Text, Datos_Parqueadero.parks.CarsEntered.Last().EnterTime.ToString("HH:mm:ss"))
+                available = CType(Datos_Parqueadero.DCapacityTextBox.Text, Integer) - counter
+                AvailableSpotsLabel.Text = "Disponibles: " + available.ToString
+                OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
+            Else
+                MessageBox.Show("El vehículo con esa placa ya ha ingresado")
+            End If
         End If
     End Sub
 
@@ -131,9 +127,15 @@
     Private Sub BPrintButton_Click(sender As Object, e As EventArgs) Handles BPrintButton.Click
         bill = New ParkingControlClasses.Factura(1, "", "", "", "", 0.00)
 
-        If (BNameTextBox.Text = "" And BLastNameTextBox.Text = "" And BCI_RUCTextBox.Text = "") Then
-            MessageBox.Show("Los campos Nombre, Apellido y CI son obligatorios")
+
+
+        If (BNameTextBox.Text = "" And BLastNameTextBox.Text = "" And BCI_RUCTextBox.Text = "" And BTotalTextBox.Text = "") Then
+            MessageBox.Show("Los campos Nombre, Apellido, CI y Total son obligatorios")
         Else
+            counter -= 1
+            available += 1
+            AvailableSpotsLabel.Text = "Disponibles: " + available.ToString
+            OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
             bill.Name = BNameTextBox.Text + BLastNameTextBox.Text
             bill.Address = BAddressTextBox.Text
             bill.PhoneNumber = BPhoneTextBox.Text
@@ -166,5 +168,26 @@
 
     Private Sub CalculateDateButton_Click(sender As Object, e As EventArgs) Handles CalculateDateButton.Click
         BDateTextBox.Text = DateTime.Now.ToString("d")
+    End Sub
+
+    Private Sub BTotalTextBox_TextChanged(sender As Object, e As EventArgs) Handles BTotalTextBox.TextChanged
+
+    End Sub
+
+    Private Sub Parqueadero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub OccupiedSpotsLabel_Click(sender As Object, e As EventArgs) Handles OccupiedSpotsLabel.Click
+    End Sub
+
+    Private Sub CConsultButton_Click(sender As Object, e As EventArgs) Handles CConsultButton.Click
+        Dim SelectedRow As DataGridViewRow = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index)
+
+        DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(2).Value = DateTime.Now.ToString("HH:mm:ss")
+        Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
+        Dim placa As String = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(0).Value
+        Dim ChargeAmount As Decimal = Datos_Parqueadero.parks.CarExits(placa)
+        DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value = ChargeAmount
     End Sub
 End Class

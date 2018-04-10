@@ -2,18 +2,18 @@
     Public parks As ParkingControlClasses.ParkingSpot
 
     Private Sub DSaveButton_Click(sender As Object, e As EventArgs) Handles DSaveButton.Click
-        Dim nombre, direccion As String
-        Dim capacidad As Integer
-        Dim cuarto, Media, total As Decimal
+        parks = New ParkingControlClasses.ParkingSpot(1, "", "", 0, 0.00, 0.00, 0.00)
 
-        nombre = DNameTextBox.Text
-        direccion = DAddressTextBox.Text
-        capacidad = CType(DCapacityTextBox.Text, Integer)
-        cuarto = CType(DFare4TextBox.Text, Decimal)
-        Media = CType(DFare2TextBox.Text, Decimal)
-        total = CType(DFare1TextBox.Text, Decimal)
+        parks.Name = DNameTextBox.Text
+        parks.Address = DAddressTextBox.Text
+        parks.Capacity = CType(DCapacityTextBox.Text, Integer)
+        parks.QuarterHourRate = CType(DFare4TextBox.Text, Decimal)
+        parks.HalfHourRate = CType(DFare2TextBox.Text, Decimal)
+        parks.HourRate = CType(DFare1TextBox.Text, Decimal)
 
-        parks = New ParkingControlClasses.ParkingSpot(1, nombre, direccion, capacidad, cuarto, Media, total)
+
+
+        Parqueadero.AvailableSpotsLabel.Text = "Disponibles: " + DCapacityTextBox.Text
 
         Me.Hide()
         Parqueadero.Show()

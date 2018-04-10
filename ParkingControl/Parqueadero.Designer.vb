@@ -38,7 +38,6 @@ Partial Class Parqueadero
         Me.CTotalCobrarLabel = New System.Windows.Forms.Label()
         Me.CTotalTimeLabel = New System.Windows.Forms.Label()
         Me.CPrintButton = New System.Windows.Forms.Button()
-        Me.CIngresarButton = New System.Windows.Forms.Button()
         Me.CPlateTextBox = New System.Windows.Forms.TextBox()
         Me.CChargeButton = New System.Windows.Forms.Button()
         Me.CPlateLabel = New System.Windows.Forms.Label()
@@ -64,6 +63,7 @@ Partial Class Parqueadero
         Me.OccupiedSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.CalculateDateButton = New System.Windows.Forms.Button()
+        Me.CConsultButton = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.ParkingTab.SuspendLayout()
         Me.Check_inTab.SuspendLayout()
@@ -122,11 +122,11 @@ Partial Class Parqueadero
         '
         'Check_inTab
         '
+        Me.Check_inTab.Controls.Add(Me.CConsultButton)
         Me.Check_inTab.Controls.Add(Me.DataGridView1)
         Me.Check_inTab.Controls.Add(Me.CTotalCobrarLabel)
         Me.Check_inTab.Controls.Add(Me.CTotalTimeLabel)
         Me.Check_inTab.Controls.Add(Me.CPrintButton)
-        Me.Check_inTab.Controls.Add(Me.CIngresarButton)
         Me.Check_inTab.Controls.Add(Me.CPlateTextBox)
         Me.Check_inTab.Controls.Add(Me.CChargeButton)
         Me.Check_inTab.Controls.Add(Me.CPlateLabel)
@@ -208,7 +208,6 @@ Partial Class Parqueadero
         '
         'CPrintButton
         '
-        Me.CPrintButton.Enabled = False
         Me.CPrintButton.Location = New System.Drawing.Point(345, 271)
         Me.CPrintButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CPrintButton.Name = "CPrintButton"
@@ -216,16 +215,6 @@ Partial Class Parqueadero
         Me.CPrintButton.TabIndex = 10
         Me.CPrintButton.Text = "Imprimir"
         Me.CPrintButton.UseVisualStyleBackColor = True
-        '
-        'CIngresarButton
-        '
-        Me.CIngresarButton.Location = New System.Drawing.Point(345, 28)
-        Me.CIngresarButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.CIngresarButton.Name = "CIngresarButton"
-        Me.CIngresarButton.Size = New System.Drawing.Size(84, 32)
-        Me.CIngresarButton.TabIndex = 9
-        Me.CIngresarButton.Text = "Ingresar"
-        Me.CIngresarButton.UseVisualStyleBackColor = True
         '
         'CPlateTextBox
         '
@@ -439,18 +428,18 @@ Partial Class Parqueadero
         Me.AvailableSpotsLabel.AutoSize = True
         Me.AvailableSpotsLabel.Location = New System.Drawing.Point(181, 46)
         Me.AvailableSpotsLabel.Name = "AvailableSpotsLabel"
-        Me.AvailableSpotsLabel.Size = New System.Drawing.Size(105, 17)
+        Me.AvailableSpotsLabel.Size = New System.Drawing.Size(89, 17)
         Me.AvailableSpotsLabel.TabIndex = 2
-        Me.AvailableSpotsLabel.Text = "Disponibles: 45"
+        Me.AvailableSpotsLabel.Text = "Disponibles: "
         '
         'OccupiedSpotsLabel
         '
         Me.OccupiedSpotsLabel.AutoSize = True
         Me.OccupiedSpotsLabel.Location = New System.Drawing.Point(451, 46)
         Me.OccupiedSpotsLabel.Name = "OccupiedSpotsLabel"
-        Me.OccupiedSpotsLabel.Size = New System.Drawing.Size(97, 17)
+        Me.OccupiedSpotsLabel.Size = New System.Drawing.Size(89, 17)
         Me.OccupiedSpotsLabel.TabIndex = 4
-        Me.OccupiedSpotsLabel.Text = "Ocupados: 15"
+        Me.OccupiedSpotsLabel.Text = "Ocupados: 0"
         '
         'CalculateDateButton
         '
@@ -459,6 +448,16 @@ Partial Class Parqueadero
         Me.CalculateDateButton.Size = New System.Drawing.Size(19, 19)
         Me.CalculateDateButton.TabIndex = 19
         Me.CalculateDateButton.UseVisualStyleBackColor = True
+        '
+        'CConsultButton
+        '
+        Me.CConsultButton.Location = New System.Drawing.Point(339, 28)
+        Me.CConsultButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CConsultButton.Name = "CConsultButton"
+        Me.CConsultButton.Size = New System.Drawing.Size(97, 32)
+        Me.CConsultButton.TabIndex = 14
+        Me.CConsultButton.Text = "Consultar"
+        Me.CConsultButton.UseVisualStyleBackColor = True
         '
         'Parqueadero
         '
@@ -515,7 +514,6 @@ Partial Class Parqueadero
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents CChargeButton As Button
     Friend WithEvents CPlateTextBox As TextBox
-    Friend WithEvents CIngresarButton As Button
     Friend WithEvents CPrintButton As Button
     Friend WithEvents CTotalTimeLabel As Label
     Friend WithEvents BFCButton As Button
@@ -528,4 +526,5 @@ Partial Class Parqueadero
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents LeavingColumn As DataGridViewCheckBoxColumn
     Friend WithEvents CalculateDateButton As Button
+    Friend WithEvents CConsultButton As Button
 End Class
