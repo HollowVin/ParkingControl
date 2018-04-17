@@ -97,7 +97,7 @@ Partial Class Datos_Parqueadero
         Me.DAddressLabel.Name = "DAddressLabel"
         Me.DAddressLabel.Size = New System.Drawing.Size(71, 17)
         Me.DAddressLabel.TabIndex = 8
-        Me.DAddressLabel.Text = "Direccion:"
+        Me.DAddressLabel.Text = "Dirección:"
         '
         'DNameTextBox
         '
@@ -162,9 +162,9 @@ Partial Class Datos_Parqueadero
         Me.DOpeningTimeLabel.AutoSize = True
         Me.DOpeningTimeLabel.Location = New System.Drawing.Point(43, 329)
         Me.DOpeningTimeLabel.Name = "DOpeningTimeLabel"
-        Me.DOpeningTimeLabel.Size = New System.Drawing.Size(96, 17)
+        Me.DOpeningTimeLabel.Size = New System.Drawing.Size(122, 17)
         Me.DOpeningTimeLabel.TabIndex = 19
-        Me.DOpeningTimeLabel.Text = "Hora_Abierto:"
+        Me.DOpeningTimeLabel.Text = "Hora de Apertura:"
         '
         'DScheduleLabel
         '
@@ -180,9 +180,9 @@ Partial Class Datos_Parqueadero
         Me.DClosingHourLabel.AutoSize = True
         Me.DClosingHourLabel.Location = New System.Drawing.Point(432, 329)
         Me.DClosingHourLabel.Name = "DClosingHourLabel"
-        Me.DClosingHourLabel.Size = New System.Drawing.Size(102, 17)
+        Me.DClosingHourLabel.Size = New System.Drawing.Size(118, 17)
         Me.DClosingHourLabel.TabIndex = 24
-        Me.DClosingHourLabel.Text = "Hora_Cerrado:"
+        Me.DClosingHourLabel.Text = "Hora de Cerrado:"
         '
         'DDaysComboBox
         '
@@ -217,7 +217,7 @@ Partial Class Datos_Parqueadero
         '
         Me.DOpenHourComboBox.FormattingEnabled = True
         Me.DOpenHourComboBox.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"})
-        Me.DOpenHourComboBox.Location = New System.Drawing.Point(144, 326)
+        Me.DOpenHourComboBox.Location = New System.Drawing.Point(239, 326)
         Me.DOpenHourComboBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DOpenHourComboBox.Name = "DOpenHourComboBox"
         Me.DOpenHourComboBox.Size = New System.Drawing.Size(55, 24)
@@ -261,7 +261,7 @@ Partial Class Datos_Parqueadero
         Me.Controls.Add(Me.DNameLabel)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Datos_Parqueadero"
-        Me.Text = "Datos_Parqueadero"
+        Me.Text = "Información del Parqueadero"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

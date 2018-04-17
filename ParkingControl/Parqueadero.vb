@@ -1,5 +1,5 @@
 ﻿Public Class Parqueadero
-    Dim counter, available As Integer
+    Dim counter, available, numero As Integer
     Dim bill As ParkingControlClasses.Factura
 
 
@@ -129,7 +129,7 @@
 
     Private Sub BPrintButton_Click(sender As Object, e As EventArgs) Handles BPrintButton.Click
         bill = New ParkingControlClasses.Factura(1, "", "", "", "", 0.00)
-        Dim numero As Integer
+
 
         If (BNameTextBox.Text = "" Or BLastNameTextBox.Text = "" Or BCI_RUCTextBox.Text = "" Or BTotalTextBox.Text = "") Then
             MessageBox.Show("Los campos Nombre, Apellido, CI y Total son obligatorios")
@@ -161,7 +161,7 @@
 
             Ventana_Facturas.TablaFacturas.Rows.Add(numero.ToString,
                                                     Datos_Parqueadero.parks.FacturasEntered.Last().CI.ToString,
-                                                    Datos_Parqueadero.parks.FacturasEntered.Last().EmissionDate.ToString,
+                                                    Datos_Parqueadero.parks.FacturasEntered.Last().EmissionDate.ToString("d"),
                                                     Datos_Parqueadero.parks.FacturasEntered.Last().Total.ToString)
         End If
     End Sub
@@ -171,8 +171,6 @@
     End Sub
 
     Private Sub DataGridView1_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles DataGridView1.RowsAdded
-        CChargeButton.Enabled = True
-        CPrintButton.Enabled = True
     End Sub
 
     Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
@@ -195,7 +193,7 @@
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
+        CChargeButton.Enabled = True
     End Sub
 
     Private Sub RegistroFacturasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroFacturasToolStripMenuItem.Click

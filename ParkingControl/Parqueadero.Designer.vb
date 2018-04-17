@@ -27,6 +27,7 @@ Partial Class Parqueadero
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParqueaderoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParkingTab = New System.Windows.Forms.TabControl()
         Me.Check_inTab = New System.Windows.Forms.TabPage()
@@ -66,7 +67,6 @@ Partial Class Parqueadero
         Me.OccupiedSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.RegistroFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ParkingTab.SuspendLayout()
         Me.Check_inTab.SuspendLayout()
@@ -104,6 +104,12 @@ Partial Class Parqueadero
         Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
         Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(123, 26)
         Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'RegistroFacturasToolStripMenuItem
+        '
+        Me.RegistroFacturasToolStripMenuItem.Name = "RegistroFacturasToolStripMenuItem"
+        Me.RegistroFacturasToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.RegistroFacturasToolStripMenuItem.Text = "Registro Facturas"
         '
         'AyudaToolStripMenuItem
         '
@@ -416,7 +422,7 @@ Partial Class Parqueadero
         Me.BPhoneLabel.Name = "BPhoneLabel"
         Me.BPhoneLabel.Size = New System.Drawing.Size(68, 17)
         Me.BPhoneLabel.TabIndex = 3
-        Me.BPhoneLabel.Text = "Telefono:"
+        Me.BPhoneLabel.Text = "Teléfono:"
         '
         'BTotalLabel
         '
@@ -434,7 +440,7 @@ Partial Class Parqueadero
         Me.BAddressLabel.Name = "BAddressLabel"
         Me.BAddressLabel.Size = New System.Drawing.Size(71, 17)
         Me.BAddressLabel.TabIndex = 1
-        Me.BAddressLabel.Text = "Direccion:"
+        Me.BAddressLabel.Text = "Dirección:"
         '
         'BNameLabel
         '
@@ -468,12 +474,6 @@ Partial Class Parqueadero
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
-        '
-        'RegistroFacturasToolStripMenuItem
-        '
-        Me.RegistroFacturasToolStripMenuItem.Name = "RegistroFacturasToolStripMenuItem"
-        Me.RegistroFacturasToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
-        Me.RegistroFacturasToolStripMenuItem.Text = "Registro Facturas"
         '
         'Parqueadero
         '
