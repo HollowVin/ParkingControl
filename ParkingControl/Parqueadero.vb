@@ -2,7 +2,6 @@
     Dim counter, available, numero As Integer
     Dim bill As ParkingControlClasses.Factura
 
-
     Private Sub Ingreso_Click(sender As Object, e As EventArgs) Handles Check_inTab.Click
 
     End Sub
@@ -32,18 +31,17 @@
     End Sub
 
     Private Sub CChargeButton_Click(sender As Object, e As EventArgs) Handles CChargeButton.Click
-        Dim SelectedRow As DataGridViewRow = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index)
+        Dim SelectedRow As DataGridViewRow = TablaIngresoPlaca.Rows.Item(TablaIngresoPlaca.SelectedRows.Item(0).Index)
 
         If Not SelectedRow.Cells.Item(4).Value Then
-
-            DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(2).Value = DateTime.Now.ToString("HH:mm:ss")
+            TablaIngresoPlaca.Rows.Item(TablaIngresoPlaca.SelectedRows.Item(0).Index).Cells.Item(2).Value = DateTime.Now.ToString("HH:mm:ss")
             Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
-            Dim placa As String = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(0).Value
+            Dim placa As String = TablaIngresoPlaca.Rows.Item(TablaIngresoPlaca.SelectedRows.Item(0).Index).Cells.Item(0).Value
             Dim ChargeAmount As Decimal = Datos_Parqueadero.parks.CarExits(placa)
-            DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value = ChargeAmount
-            DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(4).Value = True
+            TablaIngresoPlaca.Rows.Item(TablaIngresoPlaca.SelectedRows.Item(0).Index).Cells.Item(3).Value = ChargeAmount
+            TablaIngresoPlaca.Rows.Item(TablaIngresoPlaca.SelectedRows.Item(0).Index).Cells.Item(4).Value = True
             ParkingTab.SelectTab(1)
-            BTotalTextBox.Text = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value
+            BTotalTextBox.Text = TablaIngresoPlaca.Rows.Item(TablaIngresoPlaca.SelectedRows.Item(0).Index).Cells.Item(3).Value
         Else
             MessageBox.Show("El vehículo ya ha sido cobrado")
         End If
@@ -97,8 +95,8 @@
                 CConsultButton.Enabled = True
                 counter += 1
 
-                DataGridView1.Rows.Add(Datos_Parqueadero.parks.CarsEntered.Last().PlateNumber.ToString,
-                                       Datos_Parqueadero.parks.CarsEntered.Last().EnterTime.ToString("HH:mm:ss"))
+                TablaIngresoPlaca.Rows.Add(Datos_Parqueadero.parks.CarsEntered.Last().PlateNumber.ToString,
+                                        Datos_Parqueadero.parks.CarsEntered.Last().EnterTime.ToString("HH:mm:ss"))
                 available = CType(Datos_Parqueadero.DCapacityTextBox.Text, Integer) - counter
                 AvailableSpotsLabel.Text = "Disponibles: " + available.ToString
                 OccupiedSpotsLabel.Text = "Ocupados: " + counter.ToString
@@ -129,6 +127,7 @@
 
     Private Sub BPrintButton_Click(sender As Object, e As EventArgs) Handles BPrintButton.Click
         bill = New ParkingControlClasses.Factura(1, "", "", "", "", 0.00)
+        Dim SelectedRow As DataGridViewRow = TablaIngresoPlaca.Rows.Item(TablaIngresoPlaca.SelectedRows.Item(0).Index)
 
 
         If (BNameTextBox.Text = "" Or BLastNameTextBox.Text = "" Or BCI_RUCTextBox.Text = "" Or BTotalTextBox.Text = "") Then
@@ -160,9 +159,9 @@
             BTotalTextBox.Clear()
 
             Ventana_Facturas.TablaFacturas.Rows.Add(numero.ToString,
-                                                    Datos_Parqueadero.parks.FacturasEntered.Last().CI.ToString,
-                                                    Datos_Parqueadero.parks.FacturasEntered.Last().EmissionDate.ToString("d"),
-                                                    Datos_Parqueadero.parks.FacturasEntered.Last().Total.ToString)
+                                            Datos_Parqueadero.parks.FacturasEntered.Last().CI.ToString,
+                                            Datos_Parqueadero.parks.FacturasEntered.Last().EmissionDate.ToString("d"),
+                                            Datos_Parqueadero.parks.FacturasEntered.Last().Total.ToString)
         End If
     End Sub
 
@@ -170,7 +169,7 @@
         Application.Exit()
     End Sub
 
-    Private Sub DataGridView1_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles DataGridView1.RowsAdded
+    Private Sub DataGridView1_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles TablaIngresoPlaca.RowsAdded
     End Sub
 
     Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
@@ -185,14 +184,10 @@
 
     End Sub
 
-    Private Sub Parqueadero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub OccupiedSpotsLabel_Click(sender As Object, e As EventArgs) Handles OccupiedSpotsLabel.Click
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles TablaIngresoPlaca.CellContentClick
         CChargeButton.Enabled = True
     End Sub
 
@@ -202,12 +197,12 @@
 
     Private Sub CConsultButton_Click(sender As Object, e As EventArgs) Handles CConsultButton.Click
 
-        Dim SelectedRow As DataGridViewRow = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index)
+        Dim SelectedRow As DataGridViewRow = TablaIngresoPlaca.Rows.Item(TablaIngresoPlaca.SelectedRows.Item(0).Index)
 
-        DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(2).Value = DateTime.Now.ToString("HH:mm:ss")
+        TablaIngresoPlaca.Rows.Item(TablaIngresoPlaca.SelectedRows.Item(0).Index).Cells.Item(2).Value = DateTime.Now.ToString("HH:mm:ss")
         Dim Departure_Hour As String = DateTime.Now.ToString("HH:mm:ss")
-        Dim placa As String = DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(0).Value
-        Dim ChargeAmount As Decimal = Datos_Parqueadero.parks.CarExits(placa)
-        DataGridView1.Rows.Item(DataGridView1.SelectedRows.Item(0).Index).Cells.Item(3).Value = ChargeAmount
+        Dim placa As String = TablaIngresoPlaca.Rows.Item(TablaIngresoPlaca.SelectedRows.Item(0).Index).Cells.Item(0).Value
+        Dim ChargeAmount As Decimal = Datos_Parqueadero.parks.ConsultPrice(placa)
+        TablaIngresoPlaca.Rows.Item(TablaIngresoPlaca.SelectedRows.Item(0).Index).Cells.Item(3).Value = ChargeAmount
     End Sub
 End Class

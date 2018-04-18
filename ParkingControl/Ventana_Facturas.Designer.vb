@@ -35,7 +35,7 @@ Partial Class Ventana_Facturas
         '
         Me.Comebackbutton.Location = New System.Drawing.Point(356, 392)
         Me.Comebackbutton.Name = "Comebackbutton"
-        Me.Comebackbutton.Size = New System.Drawing.Size(75, 23)
+        Me.Comebackbutton.Size = New System.Drawing.Size(80, 26)
         Me.Comebackbutton.TabIndex = 15
         Me.Comebackbutton.Text = "Regresar"
         Me.Comebackbutton.UseVisualStyleBackColor = True
@@ -47,13 +47,13 @@ Partial Class Ventana_Facturas
         Me.TablaFacturas.AllowUserToOrderColumns = True
         Me.TablaFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.TablaFacturas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4})
-        Me.TablaFacturas.Location = New System.Drawing.Point(-3, -1)
+        Me.TablaFacturas.Location = New System.Drawing.Point(-3, 0)
         Me.TablaFacturas.Margin = New System.Windows.Forms.Padding(4)
         Me.TablaFacturas.MultiSelect = False
         Me.TablaFacturas.Name = "TablaFacturas"
         Me.TablaFacturas.ReadOnly = True
         Me.TablaFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.TablaFacturas.Size = New System.Drawing.Size(804, 330)
+        Me.TablaFacturas.Size = New System.Drawing.Size(807, 330)
         Me.TablaFacturas.TabIndex = 16
         '
         'Column1
@@ -61,28 +61,28 @@ Partial Class Ventana_Facturas
         Me.Column1.HeaderText = "Numero"
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
-        Me.Column1.Width = 190
+        Me.Column1.Width = 140
         '
         'Column2
         '
         Me.Column2.HeaderText = "CI"
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
-        Me.Column2.Width = 191
+        Me.Column2.Width = 140
         '
         'Column3
         '
         Me.Column3.HeaderText = "Fecha"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 190
+        Me.Column3.Width = 140
         '
         'Column4
         '
         Me.Column4.HeaderText = "Total"
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
-        Me.Column4.Width = 190
+        Me.Column4.Width = 140
         '
         'Ventana_Facturas
         '
