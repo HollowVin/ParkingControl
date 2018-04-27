@@ -46,6 +46,33 @@
         Return Nothing
     End Function
 
+    Public Function ConsultPrice(PlateNumber As String) As Decimal
+        Dim CarInside As Car = GetCarByPlateNumber(PlateNumber)
+
+        If Not CarInside Is Nothing Then
+            Dim ExitTime As DateTime = DateTime.Now
+            Dim TimeDifference As TimeSpan = ExitTime - CarInside.EnterTime
+
+            Dim Hours As Integer = TimeDifference.Hours
+            Dim Minutes As Integer = TimeDifference.Minutes
+
+            Dim ChargeAmount As Decimal
+            ChargeAmount = Hours * HourRate
+
+            If Minutes <= 15 Then
+                ChargeAmount = ChargeAmount + QuarterHourRate
+            ElseIf Minutes <= 30 Then
+                ChargeAmount = ChargeAmount + HalfHourRate
+            Else
+                ChargeAmount = ChargeAmount + HourRate
+            End If
+
+            Return ChargeAmount
+        Else
+            Return 0
+        End If
+    End Function
+
     Public Function CarExits(PlateNumber As String) As Decimal
         Dim CarInside As Car = GetCarByPlateNumber(PlateNumber)
 

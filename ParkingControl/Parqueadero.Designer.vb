@@ -27,11 +27,12 @@ Partial Class Parqueadero
         Me.ArchivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParqueaderoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ParkingTab = New System.Windows.Forms.TabControl()
         Me.Check_inTab = New System.Windows.Forms.TabPage()
         Me.CConsultButton = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.TablaIngresoPlaca = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -66,11 +67,10 @@ Partial Class Parqueadero
         Me.OccupiedSpotsLabel = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.RegistroFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ParkingTab.SuspendLayout()
         Me.Check_inTab.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TablaIngresoPlaca, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BillTab.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -96,7 +96,7 @@ Partial Class Parqueadero
         '
         Me.ParqueaderoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditarToolStripMenuItem})
         Me.ParqueaderoToolStripMenuItem.Name = "ParqueaderoToolStripMenuItem"
-        Me.ParqueaderoToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
+        Me.ParqueaderoToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
         Me.ParqueaderoToolStripMenuItem.Text = "Parqueadero"
         '
         'EditarToolStripMenuItem
@@ -104,6 +104,12 @@ Partial Class Parqueadero
         Me.EditarToolStripMenuItem.Name = "EditarToolStripMenuItem"
         Me.EditarToolStripMenuItem.Size = New System.Drawing.Size(123, 26)
         Me.EditarToolStripMenuItem.Text = "Editar"
+        '
+        'RegistroFacturasToolStripMenuItem
+        '
+        Me.RegistroFacturasToolStripMenuItem.Name = "RegistroFacturasToolStripMenuItem"
+        Me.RegistroFacturasToolStripMenuItem.Size = New System.Drawing.Size(196, 26)
+        Me.RegistroFacturasToolStripMenuItem.Text = "Registro Facturas"
         '
         'AyudaToolStripMenuItem
         '
@@ -126,7 +132,7 @@ Partial Class Parqueadero
         'Check_inTab
         '
         Me.Check_inTab.Controls.Add(Me.CConsultButton)
-        Me.Check_inTab.Controls.Add(Me.DataGridView1)
+        Me.Check_inTab.Controls.Add(Me.TablaIngresoPlaca)
         Me.Check_inTab.Controls.Add(Me.CTotalCobrarLabel)
         Me.Check_inTab.Controls.Add(Me.CTotalTimeLabel)
         Me.Check_inTab.Controls.Add(Me.CPrintButton)
@@ -153,21 +159,21 @@ Partial Class Parqueadero
         Me.CConsultButton.Text = "Consultar"
         Me.CConsultButton.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'TablaIngresoPlaca
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToOrderColumns = True
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.LeavingColumn})
-        Me.DataGridView1.Location = New System.Drawing.Point(76, 80)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
-        Me.DataGridView1.MultiSelect = False
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(632, 174)
-        Me.DataGridView1.TabIndex = 13
+        Me.TablaIngresoPlaca.AllowUserToAddRows = False
+        Me.TablaIngresoPlaca.AllowUserToDeleteRows = False
+        Me.TablaIngresoPlaca.AllowUserToOrderColumns = True
+        Me.TablaIngresoPlaca.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.TablaIngresoPlaca.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.LeavingColumn})
+        Me.TablaIngresoPlaca.Location = New System.Drawing.Point(76, 80)
+        Me.TablaIngresoPlaca.Margin = New System.Windows.Forms.Padding(4)
+        Me.TablaIngresoPlaca.MultiSelect = False
+        Me.TablaIngresoPlaca.Name = "TablaIngresoPlaca"
+        Me.TablaIngresoPlaca.ReadOnly = True
+        Me.TablaIngresoPlaca.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.TablaIngresoPlaca.Size = New System.Drawing.Size(632, 174)
+        Me.TablaIngresoPlaca.TabIndex = 13
         '
         'Column1
         '
@@ -416,7 +422,7 @@ Partial Class Parqueadero
         Me.BPhoneLabel.Name = "BPhoneLabel"
         Me.BPhoneLabel.Size = New System.Drawing.Size(68, 17)
         Me.BPhoneLabel.TabIndex = 3
-        Me.BPhoneLabel.Text = "Telefono:"
+        Me.BPhoneLabel.Text = "Teléfono:"
         '
         'BTotalLabel
         '
@@ -434,7 +440,7 @@ Partial Class Parqueadero
         Me.BAddressLabel.Name = "BAddressLabel"
         Me.BAddressLabel.Size = New System.Drawing.Size(71, 17)
         Me.BAddressLabel.TabIndex = 1
-        Me.BAddressLabel.Text = "Direccion:"
+        Me.BAddressLabel.Text = "Dirección:"
         '
         'BNameLabel
         '
@@ -469,12 +475,6 @@ Partial Class Parqueadero
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
-        'RegistroFacturasToolStripMenuItem
-        '
-        Me.RegistroFacturasToolStripMenuItem.Name = "RegistroFacturasToolStripMenuItem"
-        Me.RegistroFacturasToolStripMenuItem.Size = New System.Drawing.Size(216, 26)
-        Me.RegistroFacturasToolStripMenuItem.Text = "Registro Facturas"
-        '
         'Parqueadero
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -493,7 +493,7 @@ Partial Class Parqueadero
         Me.ParkingTab.ResumeLayout(False)
         Me.Check_inTab.ResumeLayout(False)
         Me.Check_inTab.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TablaIngresoPlaca, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BillTab.ResumeLayout(False)
         Me.BillTab.PerformLayout()
         Me.ResumeLayout(False)
@@ -535,7 +535,7 @@ Partial Class Parqueadero
     Friend WithEvents BFCButton As Button
     Friend WithEvents BCleanAllButton As Button
     Friend WithEvents CTotalCobrarLabel As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents TablaIngresoPlaca As DataGridView
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
