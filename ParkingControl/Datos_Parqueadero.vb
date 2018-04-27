@@ -1,7 +1,10 @@
-﻿Public Class Datos_Parqueadero
+﻿Imports System.Globalization
+Public Class Datos_Parqueadero
     Public parks As ParkingControlClasses.ParkingSpot
+    Public opt As ParkingControlClasses.OpenTimes
 
     Private Sub DSaveButton_Click(sender As Object, e As EventArgs) Handles DSaveButton.Click
+
         parks = New ParkingControlClasses.ParkingSpot(1, "", "", 0, 0.00, 0.00, 0.00)
 
         parks.Name = DNameTextBox.Text
@@ -10,8 +13,12 @@
         parks.QuarterHourRate = CType(DFare4TextBox.Text, Decimal)
         parks.HalfHourRate = CType(DFare2TextBox.Text, Decimal)
         parks.HourRate = CType(DFare1TextBox.Text, Decimal)
-
         Parqueadero.AvailableSpotsLabel.Text = "Disponibles: " + DCapacityTextBox.Text
+
+        Dim fecha As DateTime
+
+        fecha = Convert.ToDateTime("Monday/04/1992 08:00:00")
+        MessageBox.Show(fecha)
 
         Me.Hide()
         Parqueadero.Show()

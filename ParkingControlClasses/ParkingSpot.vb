@@ -6,8 +6,8 @@
     Public Property QuarterHourRate As Decimal
     Public Property HalfHourRate As Decimal
     Public Property HourRate As Decimal
-    Public Property WorkDaysOpenTimes As OpenTimes
-    Public Property WeekendsOpenTimes As OpenTimes
+    'Public Property WorkDaysOpenTimes As OpenTimes
+    'Public Property WeekendsOpenTimes As OpenTimes
     Public Property CarsEntered As List(Of Car)
     Public Property FacturasEntered As List(Of Factura)
     Public Property NumberOfCars As Integer

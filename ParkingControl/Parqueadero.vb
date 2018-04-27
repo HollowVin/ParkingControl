@@ -191,6 +191,10 @@
         CChargeButton.Enabled = True
     End Sub
 
+    Private Sub Parqueadero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
     Private Sub RegistroFacturasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroFacturasToolStripMenuItem.Click
         Ventana_Facturas.Show()
     End Sub
