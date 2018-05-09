@@ -1,13 +1,13 @@
 ﻿Public Class OpenTime
 
     Enum Weekday
-        Sunday
         Monday
         Tuesday
         Wednesday
         Thursday
         Friday
         Saturday
+        Sunday
     End Enum
 
     Public Property FromDay As Weekday
