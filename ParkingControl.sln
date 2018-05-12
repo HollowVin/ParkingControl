@@ -5,7 +5,29 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ParkingControl", "ParkingControl\ParkingControl.vbproj", "{AF02D719-21CA-4896-AD1B-342ED089A488}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ParkingControlClasses", "ParkingControlClasses\ParkingControlClasses.vbproj", "{072A5A58-5F18-46C8-8080-8132A6149603}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "ParkingControlClasses", "ParkingControlClasses\ParkingControlClasses.vbproj", "{072A5A58-5F18-46C8-8080-8132A6149603}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ParkingControlWebSite", "ParkingControlWebSite\", "{58B492A2-3773-4928-86A9-668FC215DA08}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_61828"
+		Debug.AspNetCompiler.PhysicalPath = "ParkingControlWebSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61828\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_61828"
+		Release.AspNetCompiler.PhysicalPath = "ParkingControlWebSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61828\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "61828"
+		SlnRelativePath = "ParkingControlWebSite\"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +43,10 @@ Global
 		{072A5A58-5F18-46C8-8080-8132A6149603}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{072A5A58-5F18-46C8-8080-8132A6149603}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{072A5A58-5F18-46C8-8080-8132A6149603}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B492A2-3773-4928-86A9-668FC215DA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B492A2-3773-4928-86A9-668FC215DA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B492A2-3773-4928-86A9-668FC215DA08}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B492A2-3773-4928-86A9-668FC215DA08}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
