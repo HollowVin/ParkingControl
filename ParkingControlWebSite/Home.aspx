@@ -15,7 +15,7 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
-                <asp:BoundField HeaderText="Parqueaderos Disponibles" />
+                <asp:BoundField DataField="par_name" HeaderText="Parqueaderos Disponibles" />
             </Columns>
         </asp:GridView>
     </div>
