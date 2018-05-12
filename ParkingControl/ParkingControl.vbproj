@@ -79,6 +79,7 @@
     <Compile Include="Datos_Parqueadero.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ParkingSpotsDBConnection.vb" />
     <Compile Include="Parqueadero.vb">
       <SubType>Form</SubType>
     </Compile>
