@@ -13,7 +13,7 @@
     Public Property NumberOfCars As Integer
 
     Public Sub New(Code As Integer, Name As String, Address As String, Capacity As Integer, QuarterHourRate As Decimal,
-            HalfHourRate As Decimal, HourRate As Decimal)
+            HalfHourRate As Decimal, HourRate As Decimal, WorkDaysOpenTimes As OpenTime)
         Me.Code = Code
         Me.Name = Name
         Me.Address = Address
@@ -21,7 +21,7 @@
         Me.QuarterHourRate = QuarterHourRate
         Me.HalfHourRate = HalfHourRate
         Me.HourRate = HourRate
-        'Me.WorkDaysOpenTimes = WorkDaysOpenTimes
+        Me.WorkDaysOpenTimes = WorkDaysOpenTimes
         'Me.WeekendsOpenTimes = WeekendsOpenTimes
         CarsEntered = New List(Of Car)
         FacturasEntered = New List(Of Factura)

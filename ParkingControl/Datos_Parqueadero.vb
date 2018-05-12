@@ -1,11 +1,13 @@
 ﻿Imports System.Globalization
 Public Class Datos_Parqueadero
     Public parks As ParkingControlClasses.ParkingSpot
-    Public opt As ParkingControlClasses.OpenTimes
+    Public opt As ParkingControlClasses.OpenTime
 
     Private Sub DSaveButton_Click(sender As Object, e As EventArgs) Handles DSaveButton.Click
 
-        parks = New ParkingControlClasses.ParkingSpot(1, "", "", 0, 0.00, 0.00, 0.00)
+        Dim Ot As ParkingControlClasses.OpenTime
+        Ot = New ParkingControlClasses.OpenTime(DDaysComboBox.SelectedIndex, DDaysComboBox2.SelectedIndex, DOpenHourComboBox.SelectedIndex, DCloseHourComboBox.SelectedIndex)
+        parks = New ParkingControlClasses.ParkingSpot(1, "", "", 0, 0.00, 0.00, 0.00, Ot)
 
         parks.Name = DNameTextBox.Text
         parks.Address = DAddressTextBox.Text
@@ -14,11 +16,6 @@ Public Class Datos_Parqueadero
         parks.HalfHourRate = CType(DFare2TextBox.Text, Decimal)
         parks.HourRate = CType(DFare1TextBox.Text, Decimal)
         Parqueadero.AvailableSpotsLabel.Text = "Disponibles: " + DCapacityTextBox.Text
-
-        Dim fecha As DateTime
-
-        fecha = Convert.ToDateTime("Monday/04/1992 08:00:00")
-        MessageBox.Show(fecha)
 
         Me.Hide()
         Parqueadero.Show()
@@ -33,6 +30,10 @@ Public Class Datos_Parqueadero
     End Sub
 
     Private Sub Datos_Parqueadero_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub DDaysComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DDaysComboBox.SelectedIndexChanged
 
     End Sub
 End Class
