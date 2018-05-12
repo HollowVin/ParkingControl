@@ -1,4 +1,6 @@
-﻿Partial Class Home
+﻿Imports System.Data
+
+Partial Class Home
     Inherits System.Web.UI.Page
     Public datasetparkingspots As DataSet
 
