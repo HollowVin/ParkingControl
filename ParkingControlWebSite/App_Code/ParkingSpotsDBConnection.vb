@@ -9,7 +9,7 @@ Public Class ParkingSpotsDBConnection
     End Sub
 
     Public Function GetNames() As DataSet
-        Dim sentence As String = "Select par_name From par_parkingspots Order by ID"
+        Dim sentence As String = "Select par_name From par_parkingspots Order by par_id"
         Dim command As New Data.OleDb.OleDbCommand(sentence, connection)
         Dim adapter As New Data.OleDb.OleDbDataAdapter(command)
         Dim Data As New DataSet

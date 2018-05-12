@@ -6,9 +6,9 @@ Partial Class Home
 
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
-            Dim PS As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\par_parkingspots.mdb")
+            Dim PS As New ParkingSpotsDBConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\corra\source\repos\ParkingControl\ParkingControlWebSite\db_parkingspots.accdb")
             DataSetParkingSpots = PS.GetNames()
-            GridViewPS.DataSource = DataSetParkingSpots.Tables(1)
+            GridViewPS.DataSource = DataSetParkingSpots.Tables(0)
             GridViewPS.DataBind()
         End If
     End Sub
