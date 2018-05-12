@@ -58,7 +58,6 @@ Public Class ParkingSpotsDBConnection
         End Try
 
         Return Data
-
     End Function
 
     Protected Overrides Sub Finalize()
