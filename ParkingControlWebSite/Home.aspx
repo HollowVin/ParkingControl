@@ -12,7 +12,7 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">
     <div id="parkingspots" Style="height:500px;">
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+        <asp:GridView ID="GridViewPS" runat="server" AutoGenerateColumns="False">
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="par_name" HeaderText="Parqueaderos Disponibles" />
