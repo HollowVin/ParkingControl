@@ -24,7 +24,7 @@
     </p>
     <p>
             Atencion:</p>
-    <p class="auto-style5">
+    <p>
             De:&nbsp;&nbsp;&nbsp;
             <asp:Label ID="FromLbl" runat="server" Text="Label"></asp:Label>
     &nbsp;&nbsp;&nbsp; a&nbsp;&nbsp;&nbsp;
@@ -39,15 +39,15 @@
     </p>
     <p>
             Tarifas:</p>
-    <p class="auto-style5">
+    <p>
             15 min:&nbsp;&nbsp;&nbsp;&nbsp; 
             <asp:Label ID="QuarterLbl" runat="server" Text="Label"></asp:Label>
     </p>
-    <p class="auto-style5">
+    <p>
             30 min:&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="HalfLbl" runat="server" Text="Label"></asp:Label>
     </p>
-    <p class="auto-style5">
+    <p>
             1 hora:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Label ID="HourLbl" runat="server" Text="Label"></asp:Label>
     </p>
