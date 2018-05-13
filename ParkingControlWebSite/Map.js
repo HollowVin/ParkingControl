@@ -1,9 +1,14 @@
-﻿var map, infoWindow;
+﻿var map, infoWindow, pos;
+var cuenca = { lat: -2.897409, lng: -79.004473 };
+var azogues = { lat: -2.744761, lng: -78.847598 };
 function initMap()
 {
+    //Mapa centrado en Cuenca
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    var directionsService = new google.maps.DirectionsService;
     map = new google.maps.Map(document.getElementById('map_populate'),
     {
-        center: { lat: -2.897409, lng: -79.004473 },
+        center: cuenca,
         zoom: 17,
         mapTypeId:'roadmap',
             styles: [
@@ -89,8 +94,9 @@ function initMap()
         });
 
     infoWindow = new google.maps.InfoWindow;
+    directionsDisplay.setMap(map);
 
-    // Try HTML5 geolocation.
+    // Ubicacion del Usuario
     if (navigator.geolocation)
     {
         navigator.geolocation.getCurrentPosition(function (position)
@@ -100,6 +106,9 @@ function initMap()
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
+
+            //Llama al metodo que calcula la ruta
+            calculateAndDisplayRoute(directionsService, directionsDisplay);
 
             var marker = new google.maps.Marker
             ({
@@ -119,11 +128,33 @@ function initMap()
     }
     else
     {
-        // Browser doesn't support Geolocation
+        //En caso de que le navegador no soporte la geolocalizacion, lanza este error
         handleLocationError(false, infoWindow, map.getCenter());
     }
 }
 
+function calculateAndDisplayRoute(directionsService, directionsDisplay)
+{
+    directionsService.route
+        ({
+            origin: pos,
+            destination: azogues,
+            travelMode: 'DRIVING'
+        },
+        function (response, status)
+        {
+            if (status == 'OK')
+            {
+                directionsDisplay.setDirections(response);
+            }
+            else
+            {
+                window.alert('Directions request failed due to ' + status);
+            }
+        });
+}
+
+//HandleLocationError Ubicacion del Usuario
 function handleLocationError(browserHasGeolocation, infoWindow, pos)
 {
     infoWindow.setPosition(pos);
