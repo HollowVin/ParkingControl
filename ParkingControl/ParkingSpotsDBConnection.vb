@@ -24,7 +24,7 @@ Public Class ParkingSpotsDBConnection
     End Function
 
     Public Function InsertParkingSpot(P As ParkingControlClasses.ParkingSpot) As String
-        Dim InsertSentence As String = "INSERT INTO par_parkingspots VALUES (, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, )"
+        Dim InsertSentence As String = "INSERT INTO par_parkingspots (par_name, par_address, par_capacity, par_quarter_hour_rate, par_half_hour_rate, par_hour_rate, par_open_from_day, par_open_to_day, par_open_from_hour, par_open_to_hour) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         Dim Command As New Data.OleDb.OleDbCommand(InsertSentence, connection)
 
         Command.Parameters.AddWithValue("Name", P.Name)
@@ -86,6 +86,7 @@ Public Class ParkingSpotsDBConnection
     End Function
 
     Protected Overrides Sub Finalize()
+        connection.Close()
         MyBase.Finalize()
     End Sub
 
