@@ -27,8 +27,9 @@
     <p class="auto-style5">
             De:&nbsp;&nbsp;&nbsp;
             <asp:Label ID="FromLbl" runat="server" Text="Label"></asp:Label>
-                 &nbsp;&nbsp;&nbsp;&nbsp; a&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp; a&nbsp;&nbsp;&nbsp;
             <asp:Label ID="ToLbl" runat="server" Text="Label"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
     </p>
     <p>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hora de Apertura:&nbsp;&nbsp;&nbsp;

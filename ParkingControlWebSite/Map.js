@@ -132,8 +132,39 @@ function initMap()
         //En caso de que le navegador no soporte la geolocalizacion, lanza este error
         handleLocationError(false, infoWindow, map.getCenter());
     }
+
+    //Obtiene las imagenes para los marcadores personalizados
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    var icons =
+    {
+        parking:
+        {
+            icon: iconBase + 'parking_lot_maps.png'
+        }
+    };
+
+    //Ingresa las coordenadas para los marcadores
+    var features =
+    [
+        {
+            position: new google.maps.LatLng(-2.897409, -79.004473),
+            type: 'parking'
+        }
+    ];
+
+    // Crea los marcadores de parqueaderos.
+    features.forEach(function (feature)
+    {
+        var marker = new google.maps.Marker
+        ({
+            position: feature.position,
+            icon: icons[feature.type].icon,
+            map: map
+        });
+    });
 }
 
+//Metodo encargado de calcular la ruta del currentLocation al parkeadero
 function calculateAndDisplayRoute(directionsService, directionsDisplay)
 {
     //document.write(cuenca);
