@@ -8,11 +8,10 @@ Partial Class Home
             Dim ID As Integer = Request.QueryString.Item("par_id")
             Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
 
-            If Not ID.Equals(0) Then
-                datasetparkingspots = ps.GetAddress(ID)
-                address = datasetparkingspots.Tables(0).Rows(0).Item("par_address")
-            End If
-            ScriptManager.RegisterStartupScript(Me, Page.GetType, "Script", "getmap(" + address + ");", True)
+            'If Not ID.Equals(0) Then
+            '    datasetparkingspots = ps.GetAddress(ID)
+            '    address = datasetparkingspots.Tables(0).Rows(0).Item("par_address")
+            'End If
         End If
     End Sub
 End Class
