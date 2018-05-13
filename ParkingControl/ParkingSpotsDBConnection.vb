@@ -24,7 +24,27 @@ Public Class ParkingSpotsDBConnection
     End Function
 
     Public Function InsertParkingSpot(P As ParkingControlClasses.ParkingSpot) As String
-        Dim InsertSentence As String = "INSERT INTO par_parkingspots VALUES (, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        Dim InsertSentence As String = "INSERT INTO par_parkingspots VALUES (, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, )"
+        Dim Command As New Data.OleDb.OleDbCommand(InsertSentence, connection)
+
+        Command.Parameters.AddWithValue("Name", P.Name)
+        Command.Parameters.AddWithValue("Address", P.Address)
+        Command.Parameters.AddWithValue("Capacity", P.Capacity)
+        Command.Parameters.AddWithValue("QuarterHourRate", P.QuarterHourRate)
+        Command.Parameters.AddWithValue("HalfHourRate", P.HalfHourRate)
+        Command.Parameters.AddWithValue("HourRate", P.HourRate)
+        Command.Parameters.AddWithValue("OpenFromDay", P.WorkDaysOpenTimes.FromDay.ToString)
+        Command.Parameters.AddWithValue("OpenToDay", P.WorkDaysOpenTimes.ToDay.ToString)
+        Command.Parameters.AddWithValue("OpenFromHour", P.WorkDaysOpenTimes.OpeningHour)
+        Command.Parameters.AddWithValue("OpenToHour", P.WorkDaysOpenTimes.ClosingHour)
+
+        Try
+            Command.ExecuteNonQuery()
+        Catch ex As Exception
+            Return ex.Message
+        End Try
+
+        Return Nothing
 
     End Function
 
