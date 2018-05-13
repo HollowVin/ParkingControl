@@ -24,7 +24,7 @@ Public Class ParkingSpotsDBConnection
     End Function
 
     Public Function InsertParkingSpot(P As ParkingControlClasses.ParkingSpot) As String
-        'Dim InsertSentence As String = "INSERT INTO par_parkingspots VALUES (, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, )"
+        Dim InsertSentence As String = "INSERT INTO par_parkingspots VALUES (, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, )"
         Dim Command As New Data.OleDb.OleDbCommand(InsertSentence, connection)
 
         Command.Parameters.AddWithValue("Name", P.Name)
