@@ -23,7 +23,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div>
+            <div style="background-color: #282828">
             </div>
             <table class="auto-style4">
                 <tr>
