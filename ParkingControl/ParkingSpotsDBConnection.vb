@@ -24,7 +24,7 @@ Public Class ParkingSpotsDBConnection
     End Function
 
     Public Function InsertParkingSpot(P As ParkingControlClasses.ParkingSpot) As String
-        Dim InsertSentence As String = "INSERT INTO par_parkingspots (par_name, par_address, par_capacity, par_quarter_hour_rate, par_half_hour_rate, par_hour_rate, par_open_from_day, par_open_to_day, par_open_from_hour, par_open_to_hour) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+        Dim InsertSentence As String = "INSERT INTO par_parkingspots (par_name, par_address, par_capacity, par_quarter_hour_rate, par_half_hour_rate, par_hour_rate, par_open_from_day, par_open_to_day, par_open_from_hour, par_open_to_hour, par_latitude, par_longitude) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
         Dim Command As New Data.OleDb.OleDbCommand(InsertSentence, connection)
 
         Command.Parameters.AddWithValue("Name", P.Name)
@@ -37,6 +37,8 @@ Public Class ParkingSpotsDBConnection
         Command.Parameters.AddWithValue("OpenToDay", P.WorkDaysOpenTimes.ToDay.ToString)
         Command.Parameters.AddWithValue("OpenFromHour", P.WorkDaysOpenTimes.OpeningHour)
         Command.Parameters.AddWithValue("OpenToHour", P.WorkDaysOpenTimes.ClosingHour)
+        Command.Parameters.AddWithValue("Latitude", P.Coordinates.Latitude)
+        Command.Parameters.AddWithValue("Longitude", P.Coordinates.Longitude)
 
         Try
             Command.ExecuteNonQuery()
