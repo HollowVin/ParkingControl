@@ -17,8 +17,8 @@ Public Class Datos_Parqueadero
         parks.HourRate = CType(DFare1TextBox.Text, Decimal)
         Parqueadero.AvailableSpotsLabel.Text = "Disponibles: " + DCapacityTextBox.Text
 
-        Dim Connection As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
-        'Dim Connection As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\corra\source\repos\ParkingControl\ParkingControlWebSite\App_Data\db_parkingspots.mdb")
+        'Dim Connection As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\ParkingControl\ParkingControlWebSite\App_Data\db_parkingspots.mdb")
+        Dim Connection As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Sergio\Source\Repos\ParkingControl\ParkingControlWebSite\App_Data\db_parkingspots.mdb")
         Connection.InsertParkingSpot(parks)
 
         Me.Hide()
