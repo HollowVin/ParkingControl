@@ -10,10 +10,11 @@
     Public Property WeekendsOpenTimes As OpenTime
     Public Property CarsEntered As List(Of Car)
     Public Property FacturasEntered As List(Of Factura)
+    Public Property Coordinates As Coordinates
     Public Property NumberOfCars As Integer
 
     Public Sub New(Code As Integer, Name As String, Address As String, Capacity As Integer, QuarterHourRate As Decimal,
-            HalfHourRate As Decimal, HourRate As Decimal, WorkDaysOpenTimes As OpenTime)
+            HalfHourRate As Decimal, HourRate As Decimal, WorkDaysOpenTimes As OpenTime, Coordinates As Coordinates)
         Me.Code = Code
         Me.Name = Name
         Me.Address = Address
@@ -23,9 +24,10 @@
         Me.HourRate = HourRate
         Me.WorkDaysOpenTimes = WorkDaysOpenTimes
         'Me.WeekendsOpenTimes = WeekendsOpenTimes
-        CarsEntered = New List(Of Car)
-        FacturasEntered = New List(Of Factura)
-        NumberOfCars = 0
+        Me.CarsEntered = New List(Of Car)
+        Me.FacturasEntered = New List(Of Factura)
+        Me.Coordinates = Coordinates
+        Me.NumberOfCars = 0
     End Sub
 
     Public Function CarEnters(PlateNumber As String) As Boolean

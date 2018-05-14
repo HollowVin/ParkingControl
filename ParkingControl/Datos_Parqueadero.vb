@@ -5,9 +5,9 @@ Public Class Datos_Parqueadero
 
     Private Sub DSaveButton_Click(sender As Object, e As EventArgs) Handles DSaveButton.Click
 
-        Dim Ot As ParkingControlClasses.OpenTime
-        Ot = New ParkingControlClasses.OpenTime(DDaysComboBox.SelectedIndex, DDaysComboBox2.SelectedIndex, DOpenHourComboBox.SelectedIndex, DCloseHourComboBox.SelectedIndex)
-        parks = New ParkingControlClasses.ParkingSpot(1, "", "", 0, 0.00, 0.00, 0.00, Ot)
+        Dim Ot As New ParkingControlClasses.OpenTime(DDaysComboBox.SelectedIndex, DDaysComboBox2.SelectedIndex, DOpenHourComboBox.SelectedIndex, DCloseHourComboBox.SelectedIndex)
+        Dim Coords As New ParkingControlClasses.Coordinates(0, 0)
+        parks = New ParkingControlClasses.ParkingSpot(1, "", "", 0, 0.00, 0.00, 0.00, Ot, Coords)
 
         parks.Name = DNameTextBox.Text
         parks.Address = DAddressTextBox.Text
