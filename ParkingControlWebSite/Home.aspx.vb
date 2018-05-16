@@ -2,6 +2,7 @@
 Partial Class Home
     Inherits System.Web.UI.Page
     Dim datasetparkingspots As DataSet
+
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             Dim id = Request.QueryString.Item("par_id")

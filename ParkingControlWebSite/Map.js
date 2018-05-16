@@ -1,10 +1,14 @@
 ﻿var map, infoWindow, pos;
 var cuenca = { lat: -2.897409, lng: -79.004473 };
 var objeto = getAllUrlParams();
-var lati = objeto.par_lat;
-var longi = objeto.par_long;
-var azogues = { lat: parseFloat(lati), lng: parseFloat(longi)};
+if (objeto.par_id !== undefined)
+{
+    var lati = objeto.par_lat;
+    var longi = objeto.par_long;
+    var azogues = { lat: parseFloat(lati), lng: parseFloat(longi) };
+}
 
+//Funcion para pasar parametros mediante la URL
 function getAllUrlParams(url) {
 
     // get query string from url (optional) or window
@@ -67,6 +71,7 @@ function getAllUrlParams(url) {
     return obj;
 }
 
+//Metodo encargado de mostrar el mapa
 function initMap()
 {
 
@@ -215,6 +220,10 @@ function initMap()
     [
         {
             position: new google.maps.LatLng(-2.897409, -79.004473),
+            type: 'parking'
+        },
+        {
+            position: new google.maps.LatLng(-2.917544, -79.000338),
             type: 'parking'
         }
     ];

@@ -15,8 +15,6 @@
     <p>
             Nombre:
             <asp:Label ID="NameLbl" runat="server" Text="Label"></asp:Label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ID:
-            <asp:Label ID="IDLbl" runat="server" Text="Label"></asp:Label>
     </p>
     <p>
             Capacidad:&nbsp;
