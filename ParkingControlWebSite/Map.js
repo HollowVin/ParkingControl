@@ -225,6 +225,14 @@ function initMap()
         {
             position: new google.maps.LatLng(-2.917544, -79.000338),
             type: 'parking'
+        },
+        {
+            position: new google.maps.LatLng(-2.904768, -79.004003),
+            type: 'parking'
+        },
+        {
+            position: new google.maps.LatLng(-2.898703, -78.998585),
+            type: 'parking'
         }
     ];
 

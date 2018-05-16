@@ -28,4 +28,3 @@ Partial Class MasterPage
         Response.Redirect("DataParking.aspx?par_id=" & idhome)
     End Sub
 End Class
-
