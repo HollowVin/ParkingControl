@@ -9,6 +9,21 @@ Public Class ParkingSpotsDBConnection
     End Sub
 
     Public Function GetNames() As DataSet
+        Dim sentence As String = "Select par_id, par_name, par_address, par_latitude, par_longitude From par_parkingspots"
+        Dim command As New Data.OleDb.OleDbCommand(sentence, connection)
+        Dim adapter As New Data.OleDb.OleDbDataAdapter(command)
+        Dim Data As New DataSet
+
+        Try
+            adapter.Fill(Data, "par_parkingspots")
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
+        Return Data
+    End Function
+
+    Public Function GetFrontValues() As DataSet
         Dim sentence As String = "SELECT par_id, par_name, par_address, (par_capacity - par_cars_entered) AS par_spaces FROM par_parkingspots"
         Dim command As New Data.OleDb.OleDbCommand(sentence, connection)
         Dim adapter As New Data.OleDb.OleDbDataAdapter(command)

@@ -29,9 +29,9 @@ Partial Class ModifyCostumerData
             MsgBox(descripcionerror)
         End If
 
-        Response.Redirect("CostumerData.aspx")
+        Response.Redirect("CustomerData.aspx")
     End Sub
     Protected Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
-        Response.Redirect("CostumerData.aspx")
+        Response.Redirect("CustomerData.aspx")
     End Sub
 End Class

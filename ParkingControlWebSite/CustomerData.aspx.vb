@@ -13,6 +13,6 @@ Partial Class CostumerData
     End Sub
 
     Protected Sub ModifyBtn_Click(sender As Object, e As EventArgs) Handles ModifyBtn.Click
-        Response.Redirect("ModifyCostumerData.aspx?par_id=" & GridView1.Rows.Item(GridView1.SelectedIndex).Cells(1).Text)
+        Response.Redirect("ModifyCustomerData.aspx?par_id=" & GridView1.Rows.Item(GridView1.SelectedIndex).Cells(1).Text)
     End Sub
 End Class

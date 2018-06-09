@@ -1,4 +1,4 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="ModifyCostumerData.aspx.vb" Inherits="ModifyCostumerData" %>
+﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="ModifyCustomerData.aspx.vb" Inherits="ModifyCostumerData" %>
 
 <!DOCTYPE html>
 
