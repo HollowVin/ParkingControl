@@ -2,7 +2,7 @@
 Partial Class DataParking
     Inherits System.Web.UI.Page
     Public datasetparkingspots As DataSet
-    Public shared latitud, longitud As String
+    Public Shared latitud, longitud As String
 
     Private Sub DataParking_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
