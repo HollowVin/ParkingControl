@@ -21,10 +21,13 @@ Partial Class MasterPage
         End Sub
     End Class
     Protected Sub getAddress_Click(sender As Object, e As EventArgs) Handles getAddress.Click
-        Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
-        Dim idhome As Integer
-        datasetparkingspots = ps.GetID(GridView1.Rows.Item(GridView1.SelectedIndex).Cells(1).Text)
-        idhome = datasetparkingspots.Tables(0).Rows(0).Item("par_id")
-        Response.Redirect("DataParking.aspx?par_id=" & idhome)
+        Response.Redirect("DataParking.aspx?par_id=" & GridView1.Rows.Item(GridView1.SelectedIndex).Cells(1).Text)
+    End Sub
+
+    Private Sub GridView1_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles GridView1.RowCommand
+        Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+        Dim ID = GridView1.Rows(index).Cells(0).Text
+        Response.Redirect("DataParking.aspx?par_id=" & ID)
     End Sub
 End Class
+

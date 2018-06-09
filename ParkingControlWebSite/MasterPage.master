@@ -35,6 +35,7 @@
             padding-right: 20px;
         }
     </style>
+    <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -50,13 +51,19 @@
                 </tr>
                 <tr>
                     <td class="auto-style2">
-                        <div id="GGN00b" style="height:500px;">
+                        <div id="GGN00b" class="sideBar">
                             <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderStyle="None" GridLines="Horizontal" Caption="Parqueaderos abiertos" CaptionAlign="Top">
                                     <Columns>
-                                        <asp:CommandField ShowSelectButton="True" />
-                                        <asp:BoundField DataField="par_name" HeaderText="Parqueaderos Disponibles" />
+                                        <asp:BoundField DataField="par_id" HeaderText="ID" />
+                                        <asp:BoundField DataField="par_name" HeaderText="Nombre" />
+                                        <asp:BoundField DataField="par_address" ReadOnly="True" HeaderText="Dirección" />
+                                        <asp:BoundField DataField="par_spaces" HeaderText="Espacios Disponibles" >
+                                        <HeaderStyle Font-Size="Smaller" />
+                                        </asp:BoundField>
+                                        <asp:ButtonField ButtonType="Image" HeaderText="Ruta" ImageUrl="~/Resources/right-arrow.png" Text="Detalles" />
                                     </Columns>
+                                    <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                                 </asp:GridView>
                                 <br />
                                 <asp:Button ID="getAddress" runat="server" Text="Ver" />
