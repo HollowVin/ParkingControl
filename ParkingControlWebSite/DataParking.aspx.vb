@@ -9,7 +9,7 @@ Partial Class DataParking
             IDLbl.Text = Request.QueryString.Item("par_id")
             Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
             'Dim coo As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
-            datasetparkingspots = ps.GetID(IDLbl.Text)
+            datasetparkingspots = ps.GetValues(IDLbl.Text)
             'datasetparkingspots = coo.GetCoordinates(IDLbl.Text)
 
             NameLbl.Text = datasetparkingspots.Tables(0).Rows(0).Item("par_name")

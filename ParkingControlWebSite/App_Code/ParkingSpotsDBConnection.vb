@@ -23,7 +23,7 @@ Public Class ParkingSpotsDBConnection
         Return Data
     End Function
 
-    Public Function GetID(ByVal id As Integer) As DataSet
+    Public Function GetValues(ByVal id As Integer) As DataSet
 
         Dim sentence As String = "Select par_name, par_capacity, par_quarter_hour_rate, par_half_hour_rate, par_hour_rate, par_open_from_day, par_open_to_day, par_open_from_hour, par_open_to_hour, par_latitude, par_longitude From par_parkingspots where par_id  = ?"
         Dim command As New Data.OleDb.OleDbCommand(sentence, connection)
