@@ -23,5 +23,11 @@ Partial Class MasterPage
     Protected Sub getAddress_Click(sender As Object, e As EventArgs) Handles getAddress.Click
         Response.Redirect("DataParking.aspx?par_id=" & GridView1.Rows.Item(GridView1.SelectedIndex).Cells(1).Text)
     End Sub
+
+    Private Sub GridView1_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles GridView1.RowCommand
+        Dim index As Integer = Convert.ToInt32(e.CommandArgument)
+        Dim ID = GridView1.Rows(index).Cells(0).Text
+        Response.Redirect("DataParking.aspx?par_id=" & ID)
+    End Sub
 End Class
 
