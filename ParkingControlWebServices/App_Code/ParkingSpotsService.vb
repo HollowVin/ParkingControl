@@ -1,6 +1,7 @@
 ﻿Imports System.Web
 Imports System.Web.Services
 Imports System.Web.Services.Protocols
+Imports System.Web.Configuration
 
 ' To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line.
 ' <System.Web.Script.Services.ScriptService()> _
@@ -10,9 +11,14 @@ Imports System.Web.Services.Protocols
 Public Class ParkingSpotsService
     Inherits System.Web.Services.WebService
 
-    <WebMethod()> _
+    <WebMethod()>
     Public Function HelloWorld() As String
         Return "Hello World"
+    End Function
+
+    <WebMethod()>
+    Public Function TestDatabase() As String
+        Return WebConfigurationManager.ConnectionStrings.Item("DBConnectionString").ToString
     End Function
 
 End Class

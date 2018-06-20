@@ -29,6 +29,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ParkingControlWebSite", "Pa
 		SlnRelativePath = "ParkingControlWebSite\"
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{2977A137-0F90-4C83-9358-162A87FA8D6E} = {2977A137-0F90-4C83-9358-162A87FA8D6E}
+	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ParkingControlWebServices", "ParkingControlWebServices\", "{2977A137-0F90-4C83-9358-162A87FA8D6E}"
 	ProjectSection(WebsiteProperties) = preProject
