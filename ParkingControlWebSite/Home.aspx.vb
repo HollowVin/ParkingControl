@@ -7,6 +7,8 @@ Partial Class Home
         If Not Page.IsPostBack Then
             Dim id = Request.QueryString.Item("par_id")
             If Not id = 0 Then
+                'Dim ServiceClient As New ServiceReference1.ParkingSpotsServiceSoapClient
+                'ServiceClient.HelloWorld()
                 Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
                 datasetparkingspots = ps.GetCoordinates(id)
 
