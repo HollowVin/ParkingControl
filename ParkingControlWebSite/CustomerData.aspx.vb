@@ -5,8 +5,10 @@ Partial Class CostumerData
 
     Private Sub CostumerData_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
-            Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
-            datasetparkingspots = ps.GetNames()
+            Dim ServiceClient As New ServiceReferenceParking.ParkingSpotsServiceSoapClient
+            datasetparkingspots = ServiceClient.GetNames()
+            'Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
+            'datasetparkingspots = ps.GetNames()
             GridView1.DataSource = datasetparkingspots.Tables(0)
             GridView1.DataBind()
         End If

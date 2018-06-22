@@ -24,4 +24,21 @@ Public Class ParkingSpotsService
         Return ps.GetCoordinates(id)
     End Function
 
+    <WebMethod()>
+    Public Function GetValues(id As String) As DataSet
+        Dim ps As New ParkingSpotsDBConnection(WebConfigurationManager.ConnectionStrings.Item("DBConnectionString").ToString)
+        Return ps.GetValues(id)
+    End Function
+
+    <WebMethod()>
+    Public Function GetNames() As DataSet
+        Dim ps As New ParkingSpotsDBConnection(WebConfigurationManager.ConnectionStrings.Item("DBConnectionString").ToString)
+        Return ps.GetNames()
+    End Function
+
+    <WebMethod()>
+    Public Function Modify(ByVal id As String, ByVal latitud As String, ByVal longitud As String) As String
+        Dim ps As New ParkingSpotsDBConnection(WebConfigurationManager.ConnectionStrings.Item("DBConnectionString").ToString)
+        Return ps.Modify(id, latitud, longitud)
+    End Function
 End Class
