@@ -12,13 +12,24 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="TestDatabase">
-        <s:complexType />
-      </s:element>
-      <s:element name="TestDatabaseResponse">
+      <s:element name="GetCoordinates">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="TestDatabaseResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoordinatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCoordinatesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -30,20 +41,20 @@
   <wsdl:message name="HelloWorldSoapOut">
     <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
   </wsdl:message>
-  <wsdl:message name="TestDatabaseSoapIn">
-    <wsdl:part name="parameters" element="tns:TestDatabase" />
+  <wsdl:message name="GetCoordinatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCoordinates" />
   </wsdl:message>
-  <wsdl:message name="TestDatabaseSoapOut">
-    <wsdl:part name="parameters" element="tns:TestDatabaseResponse" />
+  <wsdl:message name="GetCoordinatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCoordinatesResponse" />
   </wsdl:message>
   <wsdl:portType name="ParkingSpotsServiceSoap">
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="TestDatabase">
-      <wsdl:input message="tns:TestDatabaseSoapIn" />
-      <wsdl:output message="tns:TestDatabaseSoapOut" />
+    <wsdl:operation name="GetCoordinates">
+      <wsdl:input message="tns:GetCoordinatesSoapIn" />
+      <wsdl:output message="tns:GetCoordinatesSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ParkingSpotsServiceSoap" type="tns:ParkingSpotsServiceSoap">
@@ -57,8 +68,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="TestDatabase">
-      <soap:operation soapAction="http://tempuri.org/TestDatabase" style="document" />
+    <wsdl:operation name="GetCoordinates">
+      <soap:operation soapAction="http://tempuri.org/GetCoordinates" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -78,8 +89,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="TestDatabase">
-      <soap12:operation soapAction="http://tempuri.org/TestDatabase" style="document" />
+    <wsdl:operation name="GetCoordinates">
+      <soap12:operation soapAction="http://tempuri.org/GetCoordinates" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

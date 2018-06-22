@@ -2,6 +2,8 @@
 Imports System.Web.Services
 Imports System.Web.Services.Protocols
 Imports System.Web.Configuration
+Imports ParkingControlClasses
+Imports System.Data
 
 ' To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line.
 ' <System.Web.Script.Services.ScriptService()> _
@@ -17,8 +19,9 @@ Public Class ParkingSpotsService
     End Function
 
     <WebMethod()>
-    Public Function TestDatabase() As String
-        Return WebConfigurationManager.ConnectionStrings.Item("DBConnectionString").ToString
+    Public Function GetCoordinates(id As String) As DataSet
+        Dim ps As New ParkingSpotsDBConnection(WebConfigurationManager.ConnectionStrings.Item("DBConnectionString").ToString)
+        Return ps.GetCoordinates(id)
     End Function
 
 End Class

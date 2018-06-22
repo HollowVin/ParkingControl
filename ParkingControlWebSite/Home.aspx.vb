@@ -7,13 +7,10 @@ Partial Class Home
         If Not Page.IsPostBack Then
             Dim id = Request.QueryString.Item("par_id")
             If Not id = 0 Then
-                'Dim ServiceClient As New ServiceReference1.ParkingSpotsServiceSoapClient
-                'ServiceClient.HelloWorld()
-                Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
-                datasetparkingspots = ps.GetCoordinates(id)
-
-                'HiddenLat.Value = datasetparkingspots.Tables(0).Rows(0).Item("par_latitude")
-                'HiddenLong.Value = datasetparkingspots.Tables(0).Rows(0).Item("par_longitude")
+                Dim ServiceClient As New ServiceReferenceParking.ParkingSpotsServiceSoapClient
+                datasetparkingspots = ServiceClient.GetCoordinates(id)
+                'Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
+                'datasetparkingspots = ps.GetCoordinates(id)
             End If
         End If
     End Sub
