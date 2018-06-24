@@ -17,8 +17,21 @@ namespace ParkingControlAndroidApp
             SetContentView(Resource.Layout.activity_main);
 
             Spinner parkingSpotsSpinner = FindViewById<Spinner>(Resource.Id.spinner1);
-            'ServiceReferenceParking.ParkingSpotsServiceSoapClient ServiceClient = New ServiceReferenceParking.ParkingSpotsServiceSoapClient
-            'DataSet ParkingSpots = ServiceClient.GetAllValues();
+
+            var ServiceClient = new ParkingSpotsWebReference.ParkingSpotsService();
+            DataSet ParkingSpots = ServiceClient.GetAllValues();
+            DataRowCollection Rows = ParkingSpots.Tables[0].Rows;
+            string[] parkingSpotNames = new string[Rows.Count];
+
+            for (int i = 0; i < Rows.Count; i++)
+            {
+                parkingSpotNames[i] = Rows[i].ItemArray[1].ToString();
+                parkingSpotNames[i] += " - " + Rows[i].ItemArray[2].ToString();
+                parkingSpotNames[i] += " - " + Rows[i].ItemArray[3].ToString();
+            }
+
+            ArrayAdapter<string> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerDropDownItem, parkingSpotNames);
+            parkingSpotsSpinner.Adapter = adapter;
         }
     }
 }

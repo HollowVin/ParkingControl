@@ -31,9 +31,9 @@ Public Class ParkingSpotsService
     End Function
 
     <WebMethod()>
-    Public Function GetValuesAsArray() As DataSet
+    Public Function GetAllValues() As DataSet
         Dim ps As New ParkingSpotsDBConnection(WebConfigurationManager.ConnectionStrings.Item("DBConnectionString").ToString)
-        Dim Data As DataSet = ps.GetAllValues()
+        Return ps.GetAllValues()
     End Function
 
     <WebMethod()>
