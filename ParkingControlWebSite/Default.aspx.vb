@@ -5,8 +5,10 @@ Partial Class _Default
     Public Shared latitud, longitud As String
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         If Not Me.IsPostBack Then
-            Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
-            datasetparkingspots = ps.GetFrontValues()
+            Dim ServiceClient As New ServiceReferenceParking.ParkingSpotsServiceSoapClient
+            datasetparkingspots = ServiceClient.GetFrontValues()
+            'Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
+            'datasetparkingspots = ps.GetFrontValues()
             GridView1.DataSource = datasetparkingspots.Tables(0)
             GridView1.DataBind()
         End If
@@ -27,8 +29,10 @@ Partial Class _Default
     End Sub
 
     Private Sub UpdateStatus(ByVal ID As Integer)
-        Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
-        datasetparkingspots = ps.GetValues(ID)
+        Dim ServiceClient As New ServiceReferenceParking.ParkingSpotsServiceSoapClient
+        datasetparkingspots = ServiceClient.GetValues(ID)
+        'Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
+        'datasetparkingspots = ps.GetValues(ID)
 
         NameLbl.Text = datasetparkingspots.Tables(0).Rows(0).Item("par_name")
         CapacityLbl.Text = datasetparkingspots.Tables(0).Rows(0).Item("par_capacity")

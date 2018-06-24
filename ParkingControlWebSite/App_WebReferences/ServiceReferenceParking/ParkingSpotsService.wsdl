@@ -54,6 +54,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetFrontValues">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFrontValuesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFrontValuesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetNames">
         <s:complexType />
       </s:element>
@@ -107,6 +124,12 @@
   <wsdl:message name="GetValuesSoapOut">
     <wsdl:part name="parameters" element="tns:GetValuesResponse" />
   </wsdl:message>
+  <wsdl:message name="GetFrontValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFrontValues" />
+  </wsdl:message>
+  <wsdl:message name="GetFrontValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFrontValuesResponse" />
+  </wsdl:message>
   <wsdl:message name="GetNamesSoapIn">
     <wsdl:part name="parameters" element="tns:GetNames" />
   </wsdl:message>
@@ -131,6 +154,10 @@
     <wsdl:operation name="GetValues">
       <wsdl:input message="tns:GetValuesSoapIn" />
       <wsdl:output message="tns:GetValuesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFrontValues">
+      <wsdl:input message="tns:GetFrontValuesSoapIn" />
+      <wsdl:output message="tns:GetFrontValuesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetNames">
       <wsdl:input message="tns:GetNamesSoapIn" />
@@ -163,6 +190,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetValues">
       <soap:operation soapAction="http://tempuri.org/GetValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFrontValues">
+      <soap:operation soapAction="http://tempuri.org/GetFrontValues" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -211,6 +247,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetValues">
       <soap12:operation soapAction="http://tempuri.org/GetValues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFrontValues">
+      <soap12:operation soapAction="http://tempuri.org/GetFrontValues" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
