@@ -2,6 +2,7 @@
 using Android.Widget;
 using Android.OS;
 using Android.Support.V7.App;
+using System.Data;
 
 namespace ParkingControlAndroidApp
 {
@@ -14,6 +15,10 @@ namespace ParkingControlAndroidApp
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+
+            Spinner parkingSpotsSpinner = FindViewById<Spinner>(Resource.Id.spinner1);
+            'ServiceReferenceParking.ParkingSpotsServiceSoapClient ServiceClient = New ServiceReferenceParking.ParkingSpotsServiceSoapClient
+            'DataSet ParkingSpots = ServiceClient.GetAllValues();
         }
     }
 }
