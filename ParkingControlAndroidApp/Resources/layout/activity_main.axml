@@ -7,7 +7,102 @@
     android:minWidth="25px"
     android:minHeight="25px">
     <Spinner
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/spinner1" />
+    <TextView
+        android:id="@+id/quarterHourLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tarifa 1/4 hora:"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="50px"
+        android:layout_below="@id/spinner1"
+        android:textSize="18dp" />
+    <TextView
+        android:id="@+id/quarterHourValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Show"
+        android:layout_below="@id/spinner1"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="10px"
+        android:layout_toRightOf="@id/quarterHourLabel" />
+    <TextView
+        android:id="@+id/halfHourLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tarifa 1/2 hora:"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="30px"
+        android:layout_below="@id/quarterHourLabel"
+        android:textSize="18dp" />
+    <TextView
+        android:id="@+id/halfHourValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Show"
+        android:layout_below="@id/quarterHourValue"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="10px"
+        android:layout_toRightOf="@id/halfHourLabel" />
+    <TextView
+        android:id="@+id/hourLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tarifa hora:"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="30px"
+        android:layout_below="@id/halfHourLabel"
+        android:textSize="18dp" />
+    <TextView
+        android:id="@+id/hourValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Show"
+        android:layout_below="@id/halfHourValue"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="10px"
+        android:layout_toRightOf="@id/hourLabel" />
+    <TextView
+        android:id="@+id/openDaysLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abierto los días:"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="30px"
+        android:layout_below="@id/hourLabel"
+        android:textSize="18dp" />
+    <TextView
+        android:id="@+id/openDaysValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Show"
+        android:layout_below="@id/hourValue"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="10px"
+        android:layout_toRightOf="@id/openDaysLabel" />
+    <TextView
+        android:id="@+id/openHoursLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abierto a las horas:"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="30px"
+        android:layout_below="@id/openDaysLabel"
+        android:textSize="18dp" />
+    <TextView
+        android:id="@+id/openHoursValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Show"
+        android:layout_below="@id/openDaysValue"
+        android:layout_marginTop="30px"
+        android:layout_marginLeft="10px"
+        android:layout_toRightOf="@id/openHoursLabel" />
 </RelativeLayout>
