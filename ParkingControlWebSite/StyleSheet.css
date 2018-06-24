@@ -1,6 +1,153 @@
-﻿body {
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
-.sideBar {
-    overflow: auto;
-    height: 100%;
+
+.icon-menu{
+    cursor:pointer;
+}
+
+#check{
+    display: none;
+}
+
+#check:checked ~ .menu{
+    width: 420px;
+}
+
+#check:checked ~ .auto-style4 {
+    width: 72%;
+    margin-left: 28%;
+    transition: all 500ms cubic-bezier(1,0,0,1);
+    transition-timing-function: cubic-bezier(1,0,0,1);
+    overflow: hidden;
+}
+
+#check2 {
+    display: none;
+}
+
+#check2:checked ~ .auto-style4 {
+    width: 42%;
+    margin-left: 58%;
+    transition: all 500ms cubic-bezier(1,0,0,1);
+    transition-timing-function: cubic-bezier(1,0,0,1);
+    overflow: hidden;
+}
+
+.menu{
+    position: fixed;
+    top: 131px;
+    width: 0px;
+    height: 100vh;
+    background: #2D3E50;
+    transition: all 500ms cubic-bezier(1,0,0,1);
+    transition-timing-function: cubic-bezier(1,0,0,1);
+    overflow: hidden;
+}
+
+.menu li{
+    padding: 16px;
+    color: white;
+    display: block;
+    width: 450px;
+}
+
+.menu li:hover{
+    background: rgba(0,0,0,0);
+}
+
+.menu ul {
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 300px;
+}
+
+.menu a {
+    display: flex;
+    padding: 2em;
+    background-color: #2D3E50;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.menu a:hover {
+    background-color: #2D3E50;
+}
+
+.menu ul li ul {
+    display: none;
+    width: 400px;
+}
+
+.menu ul li a + ul, .menu ul li ul {
+    display:none;
+}
+
+#check2:checked ~ .menu ul li a + ul, .menu ul li ul {
+    display: block;
+    position: fixed;
+    top: 131px;
+    width: 30%;
+    margin-left: 26%;
+    height: 100vh;
+    background: #2D3E50;
+    transition: all 500ms cubic-bezier(1,0,0,1);
+    transition-timing-function: cubic-bezier(1,0,0,1);
+    overflow: hidden;
+}
+
+
+/*body*/
+#body {
+    position: absolute;
+    right: 0px;
+    min-height: 300px;
+    left: 170px;
+}
+
+.auto-style2 {
+    width: 250px;
+    height: 458px;
+}
+
+.auto-style3 {    
+    height: 490px;
+    width: 100%; /* whichever width you want */
+}
+
+.auto-style4 {
+    width: 100%;
+    transition: all 500ms cubic-bezier(1,0,0,1);
+    transition-timing-function: cubic-bezier(1,0,0,1);
+}
+.auto-style5 {
+    text-align: center;
+    font-family: "OCR A Extended";
+    font-size: 48pt;
+    background-color: #17A086;
+}
+
+.auto-style6 {
+    text-align: center;
+    color: white;
+    font-family: "UD Digi Kyokasho NP-R";
+    background-color: #17A086;
+}
+
+.auto-style7 {
+    left: 31px;
+    top: 33px;
+}
+
+.auto-style8 {
+    margin-left: 80px;
+}
+
+#footerBar {
+    width:100%;
 }

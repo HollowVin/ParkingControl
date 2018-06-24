@@ -1,6 +1,7 @@
 ﻿var map, infoWindow, pos;
 var cuenca = { lat: -2.897409, lng: -79.004473 };
 var objeto = getAllUrlParams();
+
 if (objeto.par_id !== undefined)
 {
     var lati = objeto.par_lat;
