@@ -9,6 +9,8 @@ Partial Class _Default
             datasetparkingspots = ps.GetFrontValues()
             GridView1.DataSource = datasetparkingspots.Tables(0)
             GridView1.DataBind()
+        Else
+            UpdateCard
         End If
     End Sub
     Public Class parkspotscls
@@ -25,6 +27,11 @@ Partial Class _Default
         Dim ID = GridView1.Rows(index).Cells(0).Text
         UpdateStatus(ID)
     End Sub
+
+    Private Sub UpdateCard()
+        pnlCard.Visible = True
+    End Sub
+
 
     Private Sub UpdateStatus(ByVal ID As Integer)
         Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
