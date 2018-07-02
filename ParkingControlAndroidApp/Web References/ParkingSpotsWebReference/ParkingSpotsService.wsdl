@@ -54,6 +54,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetAllValues">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllValuesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllValuesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetFrontValues">
         <s:complexType />
       </s:element>
@@ -124,6 +141,12 @@
   <wsdl:message name="GetValuesSoapOut">
     <wsdl:part name="parameters" element="tns:GetValuesResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAllValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllValues" />
+  </wsdl:message>
+  <wsdl:message name="GetAllValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllValuesResponse" />
+  </wsdl:message>
   <wsdl:message name="GetFrontValuesSoapIn">
     <wsdl:part name="parameters" element="tns:GetFrontValues" />
   </wsdl:message>
@@ -154,6 +177,10 @@
     <wsdl:operation name="GetValues">
       <wsdl:input message="tns:GetValuesSoapIn" />
       <wsdl:output message="tns:GetValuesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllValues">
+      <wsdl:input message="tns:GetAllValuesSoapIn" />
+      <wsdl:output message="tns:GetAllValuesSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetFrontValues">
       <wsdl:input message="tns:GetFrontValuesSoapIn" />
@@ -190,6 +217,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetValues">
       <soap:operation soapAction="http://tempuri.org/GetValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllValues">
+      <soap:operation soapAction="http://tempuri.org/GetAllValues" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -254,6 +290,15 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllValues">
+      <soap12:operation soapAction="http://tempuri.org/GetAllValues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetFrontValues">
       <soap12:operation soapAction="http://tempuri.org/GetFrontValues" style="document" />
       <wsdl:input>
@@ -284,10 +329,10 @@
   </wsdl:binding>
   <wsdl:service name="ParkingSpotsService">
     <wsdl:port name="ParkingSpotsServiceSoap" binding="tns:ParkingSpotsServiceSoap">
-      <soap:address location="http://localhost:55802/ParkingSpotsService.asmx" />
+      <soap:address location="http://192.168.0.104:55802/ParkingSpotsService.asmx" />
     </wsdl:port>
     <wsdl:port name="ParkingSpotsServiceSoap12" binding="tns:ParkingSpotsServiceSoap12">
-      <soap12:address location="http://localhost:55802/ParkingSpotsService.asmx" />
+      <soap12:address location="http://192.168.0.104:55802/ParkingSpotsService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

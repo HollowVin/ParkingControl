@@ -10,7 +10,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ParkingControlWebSite", "ParkingControlWebSite\", "{58B492A2-3773-4928-86A9-668FC215DA08}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
-		ProjectReferences = "{072a5a58-5f18-46c8-8080-8132a6149603}|ParkingControlClasses.dll;"
+		ProjectReferences = ""
 		Debug.AspNetCompiler.VirtualPath = "/localhost_61828"
 		Debug.AspNetCompiler.PhysicalPath = "ParkingControlWebSite\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61828\"
@@ -36,7 +36,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ParkingControlWebServices", "ParkingControlWebServices\", "{2977A137-0F90-4C83-9358-162A87FA8D6E}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
-		ProjectReferences = "{072a5a58-5f18-46c8-8080-8132a6149603}|ParkingControlClasses.dll;"
+		ProjectReferences = ""
 		Debug.AspNetCompiler.VirtualPath = "/localhost_55802"
 		Debug.AspNetCompiler.PhysicalPath = "ParkingControlWebServices\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55802\"
@@ -56,7 +56,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ParkingControlWebServices",
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingSpotAndroidApp", "ParkingSpotAndroidApp\ParkingSpotAndroidApp.csproj", "{07272096-7498-4F50-B9FC-AA5202BDA99D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingControlAndroidApp", "ParkingControlAndroidApp\ParkingControlAndroidApp.csproj", "{9440FDE5-D82B-497E-92A7-2198C5A652F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,12 +80,12 @@ Global
 		{2977A137-0F90-4C83-9358-162A87FA8D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2977A137-0F90-4C83-9358-162A87FA8D6E}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{2977A137-0F90-4C83-9358-162A87FA8D6E}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{07272096-7498-4F50-B9FC-AA5202BDA99D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07272096-7498-4F50-B9FC-AA5202BDA99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07272096-7498-4F50-B9FC-AA5202BDA99D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{07272096-7498-4F50-B9FC-AA5202BDA99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07272096-7498-4F50-B9FC-AA5202BDA99D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07272096-7498-4F50-B9FC-AA5202BDA99D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9440FDE5-D82B-497E-92A7-2198C5A652F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9440FDE5-D82B-497E-92A7-2198C5A652F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9440FDE5-D82B-497E-92A7-2198C5A652F8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9440FDE5-D82B-497E-92A7-2198C5A652F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9440FDE5-D82B-497E-92A7-2198C5A652F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9440FDE5-D82B-497E-92A7-2198C5A652F8}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

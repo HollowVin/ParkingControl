@@ -57,6 +57,23 @@ Public Class ParkingSpotsDBConnection
 
     End Function
 
+    Public Function GetAllValues() As DataSet
+
+        Dim sentence As String = "SELECT * FROM par_parkingspots"
+        Dim command As New Data.OleDb.OleDbCommand(sentence, connection)
+        Dim adapter As New Data.OleDb.OleDbDataAdapter(command)
+        Dim Data As New DataSet
+
+        Try
+            adapter.Fill(Data, "par_parkingspots")
+        Catch ex As Exception
+            Return Nothing
+        End Try
+
+        Return Data
+
+    End Function
+
     Public Function Modify(ByVal id As String, ByVal latitud As String, ByVal longitud As String) As String
         Dim Sentence As String = "Update par_parkingspots set par_latitude=?, par_longitude=? where par_id=?"
         Dim Comando As New Data.OleDb.OleDbCommand(Sentence, connection)
