@@ -11,100 +11,96 @@
     <form id="form1" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager> 
         <div style="background-color: #17A086; text-align: center;">
-            <span class="auto-style5">Parking Find</span><br />
+            <span class="auto-style5" >Parking Find</span><br />
             <span class="auto-style6"><em>Encuentra parqueaderos disponibles cercanos a ti</em></span>
         </div>
-        <asp:CheckBox runat="server" id="check2" AutoPostBack="true"/>
-        <asp:CheckBox runat="server" id="check"/>
-        <label for="check" class="icon-menu">&nbsp;&nbsp;&nbsp;Ver Parqueaderos</label>
+        <asp:CheckBox runat="server" id="check2" />
+        <asp:CheckBox runat="server" id="check"  AutoPostBack="true"/>
+        <label for="check" class="icon-menu" style=" font-family:'OCR A Extended'">&nbsp;&nbsp;&nbsp;Ver Parqueaderos</label>
         <br />
         <nav class="menu">
             <ul>
                 <li>
-                    <a>
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderStyle="None" GridLines="None">
-                            <Columns>
-                                <asp:BoundField DataField="par_id" HeaderText="ID" />
-                                <asp:BoundField DataField="par_name" HeaderText="Nombre" />
-                                <asp:BoundField DataField="par_address" ReadOnly="True" HeaderText="Dirección" />
-                                <asp:BoundField DataField="par_spaces" HeaderText="Espacios Libres" />
-                                <asp:ButtonField ButtonType="Image" HeaderText="Ruta" ImageUrl="~/Resources/right-arrow.png" Text="Detalles" />
-                            </Columns>
-                            <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" BorderWidth="20px" BorderColor="#2D3E50"/>
-                        </asp:GridView>
-                    </a>
-                    <ul>
-                        <li>
-                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                                <ContentTemplate>
-                                    <asp:Panel ID="pnlCard" runat="server"> 
-                                    <p>
-                                        Nombre:
-                                        <asp:Label ID="NameLbl" runat="server" Text="Label" />
-                                    </p>
-                                    <br />
-                                    <br />
-                                    <p>
-                                        Capacidad:&nbsp;
-                                        <asp:Label ID="CapacityLbl" runat="server" Text="Label"/>
-                                    </p>
-                                    <br />
-                                    <br />
-                                    <p>
-                                        Atencion:</p>
-                                    <p>
-                                        De:&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="FromLbl" runat="server" Text="Label"/>
-                                        &nbsp;&nbsp;&nbsp; a&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="ToLbl" runat="server" Text="Label"/>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                    </p>
-                                    <br />
-                                    <br />
-                                    <p>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hora de Apertura:&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="OpenLbl" runat="server" Text="Label"/>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hora de Cierre:&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="CloseLbl" runat="server" Text="Label"/>
-                                    </p>
-                                    <br />
-                                    <br />
-                                    <p>
-                                        Tarifas:</p>
-                                    <p>
-                                        15 min:&nbsp;&nbsp;&nbsp;&nbsp; 
-                                        <asp:Label ID="QuarterLbl" runat="server" Text="Label" />
-                                    </p>
-                                    <br />
-                                    <br />
-                                    <p>
-                                        30 min:&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="HalfLbl" runat="server" Text="Label" />
-                                    </p>
-                                    <br />
-                                    <br />
-                                    <p>
-                                        1 hora:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Label ID="HourLbl" runat="server" Text="Label"/>
-                                    </p>
-                                    <br />
-                                    <br />
-                                    <p>
-                                        <asp:Button ID="Button1" runat="server" Text="Llévame allá" Width="100px"/>
-                                    </p>
-                                    </asp:Panel>
-                                </ContentTemplate>
-                                <Triggers> 
-                                    <asp:AsyncPostBackTrigger ControlID="check2" />  
-                                </Triggers> 
-                            </asp:UpdatePanel>
-                        </li>
-                    </ul>
+                    <asp:UpdatePanel runat="server">
+                        <ContentTemplate>
+                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderStyle="None" GridLines="None">
+                                <Columns>
+                                    <asp:BoundField DataField="par_id" HeaderText="ID" />
+                                    <asp:BoundField DataField="par_name" HeaderText="Nombre" />
+                                    <asp:BoundField DataField="par_address" ReadOnly="True" HeaderText="Dirección" />
+                                    <asp:BoundField DataField="par_spaces" HeaderText="Espacios Libres" />
+                                    <asp:ButtonField ButtonType="Image" HeaderText="Ruta" ImageUrl="~/Resources/right-arrow.png" Text="Detalles" />
+                                </Columns>
+                                <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" BorderWidth="20px" BorderColor="#2D3E50"/>
+                            </asp:GridView>
+                            </ContentTemplate>
+                            <Triggers>
+                                <asp:AsyncPostBackTrigger  ControlID="check" />
+                            </Triggers>
+                    </asp:UpdatePanel>
                 </li>
             </ul>
-            
         </nav>
-        
+        <nav class="menu2">
+                <ul>
+                    <li>
+                        <p>
+                            Nombre:
+                            <asp:Label ID="NameLbl" runat="server" Text="Label" />
+                        </p>
+                        <br />
+                        <br />
+                        <p>
+                            Capacidad:&nbsp;
+                            <asp:Label ID="CapacityLbl" runat="server" Text="Label"/>
+                        </p>
+                        <br />
+                        <br />
+                        <p>
+                            Atencion:</p>
+                        <p>
+                            De:&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="FromLbl" runat="server" Text="Label"/>
+                            &nbsp;&nbsp;&nbsp; a&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="ToLbl" runat="server" Text="Label"/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                        </p>
+                        <br />
+                        <br />
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hora de Apertura:&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="OpenLbl" runat="server" Text="Label"/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hora de Cierre:&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="CloseLbl" runat="server" Text="Label"/>
+                        </p>
+                        <br />
+                        <br />
+                        <p>
+                            Tarifas:</p>
+                        <p>
+                            15 min:&nbsp;&nbsp;&nbsp;&nbsp; 
+                            <asp:Label ID="QuarterLbl" runat="server" Text="Label" />
+                        </p>
+                        <br />
+                        <br />
+                        <p>
+                            30 min:&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="HalfLbl" runat="server" Text="Label" />
+                        </p>
+                        <br />
+                        <br />
+                        <p>
+                            1 hora:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="HourLbl" runat="server" Text="Label"/>
+                        </p>
+                        <br />
+                        <br />
+                        <p>
+                            <asp:Button ID="Button1" runat="server" Text="Llévame allá" Width="100px"/>
+                        </p>
+                    </li>
+                </ul>
+            </nav>
         <br />
         <hr />
         <table class="auto-style4">
