@@ -9,35 +9,27 @@
     </head>
 <body>
     <form id="form1" runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager> 
         <div style="background-color: #17A086; text-align: center;">
             <span class="auto-style5" >Parking Find</span><br />
             <span class="auto-style6"><em>Encuentra parqueaderos disponibles cercanos a ti</em></span>
         </div>
-        <asp:CheckBox runat="server" id="check2" />
-        <asp:CheckBox runat="server" id="check"  AutoPostBack="true"/>
+        <asp:CheckBox runat="server" id="check2"/>
+        <asp:CheckBox runat="server" id="check"/>
         <label for="check" class="icon-menu" style=" font-family:'OCR A Extended'">&nbsp;&nbsp;&nbsp;Ver Parqueaderos</label>
         <br />
         <nav class="menu">
             <ul>
                 <li>
-                    <asp:UpdatePanel runat="server">
-                        <ContentTemplate>
-                            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderStyle="None" GridLines="None">
-                                <Columns>
-                                    <asp:BoundField DataField="par_id" HeaderText="ID" />
-                                    <asp:BoundField DataField="par_name" HeaderText="Nombre" />
-                                    <asp:BoundField DataField="par_address" ReadOnly="True" HeaderText="Dirección" />
-                                    <asp:BoundField DataField="par_spaces" HeaderText="Espacios Libres" />
-                                    <asp:ButtonField ButtonType="Image" HeaderText="Ruta" ImageUrl="~/Resources/right-arrow.png" Text="Detalles" />
-                                </Columns>
-                                <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" BorderWidth="20px" BorderColor="#2D3E50"/>
-                            </asp:GridView>
-                            </ContentTemplate>
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger  ControlID="check" />
-                            </Triggers>
-                    </asp:UpdatePanel>
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderStyle="None" GridLines="None">
+                        <Columns>
+                            <asp:BoundField DataField="par_id" HeaderText="ID" />
+                            <asp:BoundField DataField="par_name" HeaderText="Nombre" />
+                            <asp:BoundField DataField="par_address" ReadOnly="True" HeaderText="Dirección" />
+                            <asp:BoundField DataField="par_spaces" HeaderText="Espacios Libres" />
+                            <asp:ButtonField ButtonType="Image" HeaderText="Ruta" ImageUrl="~/Resources/right-arrow.png" Text="Detalles" />
+                        </Columns>
+                        <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" BorderWidth="20px" BorderColor="#2D3E50"/>
+                    </asp:GridView>
                 </li>
             </ul>
         </nav>
