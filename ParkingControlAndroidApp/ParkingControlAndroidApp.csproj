@@ -61,7 +61,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Web References\ParkingSpotsWebReference\Reference.cs">
+    <Compile Include="Web References\ParkingSpotsReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -69,10 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
-    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\AboutAssets.txt" />
-    <None Include="Web References\ParkingSpotsWebReference\ParkingSpotsService.wsdl" />
-    <None Include="Web References\ParkingSpotsWebReference\Reference.map">
+    <None Include="Web References\ParkingSpotsReference\ParkingSpotsService.wsdl" />
+    <None Include="Web References\ParkingSpotsReference\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -105,15 +107,18 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Android.Support.Design" Version="27.0.2" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Maps">
+      <Version>60.1142.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://192.168.0.104:55802/ParkingSpotsService.asmx">
+    <WebReferenceUrl Include="http://192.168.0.101:55802/ParkingSpotsService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\ParkingSpotsWebReference\</RelPath>
-      <UpdateFromURL>http://192.168.0.104:55802/ParkingSpotsService.asmx</UpdateFromURL>
+      <RelPath>Web References\ParkingSpotsReference\</RelPath>
+      <UpdateFromURL>http://192.168.0.101:55802/ParkingSpotsService.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -125,7 +130,7 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Web References\ParkingSpotsWebReference\ParkingSpotsService.disco" />
+    <None Include="Web References\ParkingSpotsReference\ParkingSpotsService.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

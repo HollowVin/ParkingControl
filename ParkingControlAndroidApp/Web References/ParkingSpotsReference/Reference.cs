@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace ParkingControlAndroidApp.ParkingSpotsWebReference {
+namespace ParkingControlAndroidApp.ParkingSpotsReference {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -48,7 +48,7 @@ namespace ParkingControlAndroidApp.ParkingSpotsWebReference {
         
         /// <remarks/>
         public ParkingSpotsService() {
-            this.Url = "http://192.168.0.104:55802/ParkingSpotsService.asmx";
+            this.Url = "http://192.168.0.101:55802/ParkingSpotsService.asmx";
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

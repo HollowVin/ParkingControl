@@ -105,4 +105,11 @@
         android:layout_marginTop="30px"
         android:layout_marginLeft="10px"
         android:layout_toRightOf="@id/openHoursLabel" />
+    <fragment
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_marginTop="40px"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/openHoursValue"
+        android:id="@+id/map" />
 </RelativeLayout>

@@ -329,10 +329,10 @@
   </wsdl:binding>
   <wsdl:service name="ParkingSpotsService">
     <wsdl:port name="ParkingSpotsServiceSoap" binding="tns:ParkingSpotsServiceSoap">
-      <soap:address location="http://192.168.0.104:55802/ParkingSpotsService.asmx" />
+      <soap:address location="http://192.168.0.101:55802/ParkingSpotsService.asmx" />
     </wsdl:port>
     <wsdl:port name="ParkingSpotsServiceSoap12" binding="tns:ParkingSpotsServiceSoap12">
-      <soap12:address location="http://192.168.0.104:55802/ParkingSpotsService.asmx" />
+      <soap12:address location="http://192.168.0.101:55802/ParkingSpotsService.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
