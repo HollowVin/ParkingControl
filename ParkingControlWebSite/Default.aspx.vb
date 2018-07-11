@@ -25,14 +25,8 @@ Partial Class _Default
     Private Sub GridView1_RowCommand(sender As Object, e As GridViewCommandEventArgs) Handles GridView1.RowCommand
         Dim index As Integer = Convert.ToInt32(e.CommandArgument)
         Dim ID = GridView1.Rows(index).Cells(0).Text
-        UpdateStatus(ID)
-    End Sub
-
-    Private Sub UpdateStatus(ByVal ID As Integer)
         Dim ServiceClient As New ServiceReferenceParking.ParkingSpotsServiceSoapClient
         datasetparkingspots = ServiceClient.GetValues(ID)
-        'Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
-        'datasetparkingspots = ps.GetValues(ID)
 
         NameLbl.Text = datasetparkingspots.Tables(0).Rows(0).Item("par_name")
         CapacityLbl.Text = datasetparkingspots.Tables(0).Rows(0).Item("par_capacity")
@@ -47,6 +41,7 @@ Partial Class _Default
         longitud = datasetparkingspots.Tables(0).Rows(0).Item("par_longitude")
         check2.Checked = True
     End Sub
+
     Protected Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Response.Redirect("Default.aspx?par_id=" & ID + "&par_lat=" & latitud + "&par_long=" & longitud)
     End Sub

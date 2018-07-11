@@ -6,29 +6,38 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
-    </head>
+</head>
 <body>
     <form id="form1" runat="server">
-        <div style="background-color: #17A086; text-align: center;">
-            <span class="auto-style5" >Parking Find</span><br />
-            <span class="auto-style6"><em>Encuentra parqueaderos disponibles cercanos a ti</em></span>
-        </div>
         <asp:CheckBox runat="server" id="check2"/>
         <asp:CheckBox runat="server" id="check"/>
-        <label for="check" class="icon-menu" style=" font-family:'OCR A Extended'">&nbsp;&nbsp;&nbsp;Ver Parqueaderos</label>
-        <br />
+        <div style="height:75px; width:100%; background-color: #A4C131; text-align: center;">
+            <span class="auto-style5">Parking Find</span><br />
+            <!--span class="auto-style6"><em>Encuentra parqueaderos cercanos a ti</em></span-->
+        </div>
+        <div id="menuh">
+            <ul id="button">
+                <li><a><label for="check" style="font-family:'Palatino Linotype'; cursor:pointer;">Parqueaderos</label></a></li>
+                <li><a>Contactos</a>
+                    <ul>
+                        <li><a>acooch@gmail.com</a></li>
+                    </ul>
+                </li>
+                <li><a>FAQ</a></li>
+            </ul>
+        </div>
         <nav class="menu">
             <ul>
                 <li>
-                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderStyle="None" GridLines="None">
+                    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BorderStyle="None" GridLines="None" CellPadding="60" CellSpacing="30">
                         <Columns>
                             <asp:BoundField DataField="par_id" HeaderText="ID" />
                             <asp:BoundField DataField="par_name" HeaderText="Nombre" />
                             <asp:BoundField DataField="par_address" ReadOnly="True" HeaderText="Dirección" />
                             <asp:BoundField DataField="par_spaces" HeaderText="Espacios Libres" />
-                            <asp:ButtonField ButtonType="Image" HeaderText="Ruta" ImageUrl="~/Resources/right-arrow.png" Text="Detalles" />
+                            <asp:ButtonField ButtonType="Image" HeaderText="Ruta" ImageUrl="~/Resources/right-arrow.png" />
                         </Columns>
-                        <RowStyle HorizontalAlign="Center" VerticalAlign="Middle" BorderWidth="20px" BorderColor="#2D3E50"/>
+                        <RowStyle HorizontalAlign="Left" VerticalAlign="Middle" BorderWidth="30px" BorderColor="#05172F"/>
                     </asp:GridView>
                 </li>
             </ul>
@@ -94,23 +103,22 @@
                 </ul>
             </nav>
         <br />
-        <hr />
         <table class="auto-style4">
             <tr>
                 <td class="auto-style3">
                     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnvKku6Dvwj2sUhLKuND6spgINwKDmr7c&callback=initMap"></script>
                     <script src="Map.js"></script>
-                    <div id="map_populate" style="height:500px; border: 5px solid #5E5454;">
+                    <div id="map_populate" style="height:495px; border: 5px solid #5E5454;">
                     </div>
                 </td>
             </tr>
         </table>
         <br />
-        <div id="footerBar" style="height: 89px; text-align: right; color: #C0C0C0; font-size: x-small; font-family: Arial, Helvetica, sans-serif; background-color: #2D3E50">
+        <div id="footerBar" >
             <br />
             <br />
             <br />
-            Copyright: Sergio Ochoa, Juan Corral
+            Copyright: ACOOCH
         </div>
     </form>
 </body>

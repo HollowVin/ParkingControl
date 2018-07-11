@@ -5,6 +5,59 @@
     font-family: sans-serif;
 }
 
+#button {
+    padding: 15px;
+}
+
+#button li {
+    display: inline;
+}
+
+#button li a {
+    font-family: 'Palatino Linotype';
+    padding: 20px;
+    color: #000000;
+}
+
+#button li:hover {
+    background-color: #B7D154;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    cursor: pointer;
+}
+
+#button ul {
+    display: none;
+    position: relative;
+    top: 24px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: #FFFFFF;
+}
+
+#button ul li{
+    display:block !important;
+}
+
+#button li:hover ul{
+    display:block;
+}
+
+#button li {
+    margin: 0 1px;
+    width: 98px;
+    min-height: 19px;
+    text-align: center;
+    background: #BBB;
+    list-style: none;
+    padding: 2px 0;
+}
+
+#menuh {
+    background-color: #A4C131;
+}
+
 .icon-menu{
     cursor:pointer;
 }
@@ -44,10 +97,10 @@
 
 .menu {
     position: fixed;
-    top: 131px;
+    top: 149px;
     width: 0px;
-    height: 100vh;
-    background: #2D3E50;
+    height: 517px;
+    background-color: #05172F;
     transition: all 500ms cubic-bezier(1,0,0,1);
     transition-timing-function: cubic-bezier(1,0,0,1);
     overflow: hidden;
@@ -60,16 +113,13 @@
     width: 420px;
 }
 
-.menu li:hover , .menu2 li:hover{
-    background: #17A086;
-}
 
 .menu2 {
     position: fixed;
-    top: 131px;
+    top: 149px;
     width: 0px;
-    height: 100vh;
-    background: #2D3E50;
+    height: 517px;
+    background-color: #05172F;
     transition: all 500ms cubic-bezier(1,0,0,1);
     transition-timing-function: cubic-bezier(1,0,0,1);
     overflow: hidden;
@@ -91,11 +141,6 @@
     left: 170px;
 }
 
-.auto-style2 {
-    width: 250px;
-    height: 458px;
-}
-
 .auto-style3 {    
     height: 490px;
     width: 100%; /* whichever width you want */
@@ -108,27 +153,28 @@
 }
 .auto-style5 {
     text-align: center;
-    font-family: "OCR A Extended";
+    font-family: "Bookman Old Style";
     font-size: 48pt;
-    background-color: #17A086;
+    background-color: #A4C131;
+    color: white;
 }
 
 .auto-style6 {
     text-align: center;
+    color: #F2F2F0;
+    font-family: "Palatino Linotype";
+    background-color: #99BF14;
     color: white;
-    font-family: "UD Digi Kyokasho NP-R";
-    background-color: #17A086;
 }
 
-.auto-style7 {
-    left: 31px;
-    top: 33px;
-}
-
-.auto-style8 {
-    margin-left: 80px;
-}
 
 #footerBar {
-    width:100%;
+    height: 76px;
+    width: 100%;
+    text-align: right;
+    padding-right: 15px;
+    color: #FFFFFF;
+    font-size: x-small;
+    font-family: "Palatino Linotype";
+    background-color: #05172F
 }

@@ -172,39 +172,38 @@ function initMap()
     directionsDisplay.setMap(map);
 
     // Ubicacion del Usuario
-    if (navigator.geolocation)
+    if (lati !== undefined)
     {
-        navigator.geolocation.getCurrentPosition(function (position)
-        {
-            pos =
-            {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                pos =
+                    {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
 
-            //Llama al metodo que calcula la ruta
-            calculateAndDisplayRoute(directionsService, directionsDisplay);
+                //Llama al metodo que calcula la ruta
+                calculateAndDisplayRoute(directionsService, directionsDisplay);
 
-            var marker = new google.maps.Marker
-            ({
-                position: pos,
-                map: map
-            });
+                var marker = new google.maps.Marker
+                    ({
+                        position: pos,
+                        map: map
+                    });
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Usted está aquí.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-        },
-        function ()
-        {
-            handleLocationError(true, infoWindow, map.getCenter());
-        });
-    }
-    else
-    {
-        //En caso de que le navegador no soporte la geolocalizacion, lanza este error
-        handleLocationError(false, infoWindow, map.getCenter());
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('Usted está aquí.');
+                infoWindow.open(map);
+                map.setCenter(pos);
+            },
+                function () {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+        }
+        else {
+            //En caso de que le navegador no soporte la geolocalizacion, lanza este error
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
     }
 
     //Obtiene las imagenes para los marcadores personalizados
