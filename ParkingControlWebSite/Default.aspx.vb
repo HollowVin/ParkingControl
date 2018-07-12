@@ -7,8 +7,6 @@ Partial Class _Default
         If Not Me.IsPostBack Then
             Dim ServiceClient As New ServiceReferenceParking.ParkingSpotsServiceSoapClient
             datasetparkingspots = ServiceClient.GetFrontValues()
-            'Dim ps As New ParkingSpotsDBConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\db_parkingspots.mdb")
-            'datasetparkingspots = ps.GetFrontValues()
             GridView1.DataSource = datasetparkingspots.Tables(0)
             GridView1.DataBind()
         End If

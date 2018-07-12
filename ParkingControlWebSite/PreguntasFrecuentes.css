@@ -1,0 +1,74 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#button {
+    padding: 15px;
+}
+
+#button li {
+display: inline;
+}
+
+#button li label {
+    font-family: 'Palatino Linotype';
+    padding: 12px;
+    color: #000000;
+    cursor: pointer;
+    background-color: #B7D154;
+}
+
+#button li a {
+    font-family: 'Palatino Linotype';
+    padding: 20px;
+    color: #000000;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+#button li:hover {
+    background-color: #B7D154;
+    padding-top: 14px;
+    padding-bottom: 13px;
+    cursor: pointer;
+}
+
+#menuh {
+    background-color: #A4C131;
+}
+
+p {
+    margin-left: 25px;
+    padding-bottom: 15px
+}
+
+h3 {
+    font-family: "Bookman Old Style";
+}
+
+h4 {
+    font-family: "Bookman Old Style";
+}
+
+.auto-style5 {
+    text-align: center;
+    font-family: "Bookman Old Style";
+    font-size: 48pt;
+    background-color: #A4C131;
+    color: white;
+}
+
+#footerBar {
+    height: 76px;
+    width: 100%;
+    text-align: right;
+    padding-right: 15px;
+    color: #FFFFFF;
+    font-size: x-small;
+    font-family: "Palatino Linotype";
+    background-color: #05172F;
+    margin-bottom: 0px;
+}
